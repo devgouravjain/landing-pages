@@ -1,1 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>TATA Power — Powering Progress with Dependable Energy</title>
+<style>
+  :root{
+    --navy:#003366;--navy-dark:#001f3f;--navy-light:#0a4a8f;
+    --red:#CC0000;--red-light:#e60000;
+    --gold:#F5A623;
+    --white:#ffffff;--off:#f4f6f9;--grey:#e8ecf1;--text:#1a2a3a;--muted:#5a6a7a;
+    --radius:4px;--transition:0.35s ease;
+    --shadow:0 4px 24px rgba(0,51,102,0.10);
+    --shadow-lg:0 8px 40px rgba(0,51,102,0.16);
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;font-size:16px}
+  body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;color:var(--text);background:var(--white);line-height:1.6;overflow-x:hidden}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  /* TYPOGRAPHY */
+  h1{font-size:clamp(2rem,4.5vw,3.4rem);font-weight:800;line-height:1.15;letter-spacing:-0.02em}
+  h2{font-size:clamp(1.5rem,3vw,2.4rem);font-weight:700;line-height:1.2}
+  h3{font-size:1.15rem;font-weight:600}
+  p{font-size:1.05rem;color:var(--muted)}
+  /* UTILITY */
+  .container{max-width:1180px;margin:0 auto;padding:0 24px}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 30px;border-radius:var(--radius);font-size:1rem;font-weight:600;cursor:pointer;transition:var(--transition);border:2px solid transparent;letter-spacing:0.01em}
+  .btn-primary{background:var(--red);color:var(--white);border-color:var(--red)}
+  .btn-primary:hover{background:var(--red-light);box-shadow:0 6px 20px rgba(204,0,0,0.35);transform:translateY(-2px)}
+  .btn-secondary{background:transparent;color:var(--white);border-color:rgba(255,255,255,0.7)}
+  .btn-secondary:hover{background:rgba(255,255,255,0.12);transform:translateY(-2px)}
+  .btn-navy{background:var(--navy);color:var(--white);border-color:var(--navy)}
+  .btn-navy:hover{background:var(--navy-light);box-shadow:var(--shadow);transform:translateY(-2px)}
+  .section{padding:90px 0}
+  .section-label{font-size:0.8rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--red);margin-bottom:12px}
+  .section-title{margin-bottom:16px}
+  .section-sub{font-size:1.1rem;color:var(--muted);max-width:580px;line-height:1.7}
+  /* FADE IN */
+  .fade-in{opacity:0;transform:translateY(28px);transition:opacity 0.6s ease,transform 0.6s ease}
+  .fade-in.visible{opacity:1;transform:none}
+  /* ═══ NAVBAR ═══ */
+  #navbar{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(0,31,63,0.97);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,0.08);transition:box-shadow 0.3s}
+  #navbar.scrolled{box-shadow:var(--shadow-lg)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px}
+  .nav-logo{display:flex;align-items:center;gap:10px}
+  .logo-mark{width:38px;height:38px;background:var(--red);border-radius:50%;display:flex;align-items:center;justify-content:center}
+  .logo-mark svg{fill:white;width:22px;height:22px}
+  .logo-text{display:flex;flex-direction:column;line-height:1}
+  .logo-text span:first-child{font-size:0.68rem;font-weight:700;letter-spacing:0.22em;color:rgba(255,255,255,0.6);text-transform:uppercase}
+  .logo-text span:last-child{font-size:1.18rem;font-weight:800;color:var(--white);letter-spacing:0.04em}
+  .nav-links{display:flex;align-items:center;gap:6px}
+  .nav-links a{color:rgba(255,255,255,0.82);font-size:0.9rem;font-weight:500;padding:7px 14px;border-radius:var(--radius);transition:var(--transition)}
+  .nav-links a:hover{color:var(--white);background:rgba(255,255,255,0.09)}
+  .nav-cta{padding:9px 20px;background:var(--red);color:var(--white);border-radius:var(--radius);font-size:0.88rem;font-weight:700;transition:var(--transition)}
+  .nav-cta:hover{background:var(--red-light)}
+  .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+  .nav-hamburger span{width:24px;height:2px;background:white;border-radius:2px;transition:var(--transition)}
+  /* ═══ HERO ═══ */
+  #hero{min-height:100vh;background:linear-gradient(135deg,var(--navy-dark) 0%,var(--navy) 55%,#0a3060 100%);display:flex;flex-direction:column;justify-content:center;padding-top:68px;position:relative;overflow:hidden}
+  .hero-grid{position:absolute;inset:0;opacity:0.04;background-image:linear-gradient(rgba(255,255,255,0.5) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.5) 1px,transparent 1px);background-size:60px 60px}
+  .hero-glow{position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(204,0,0,0.18) 0%,transparent 70%);top:-100px;right:-100px;pointer-events:none}
+  .hero-glow2{position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(10,74,143,0.4) 0%,transparent 70%);bottom:-80px;left:-80px;pointer-events:none}
+  .hero-content{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;padding:60px 0}
+  .hero-left{}
+  .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(204,0,0,0.15);border:1px solid rgba(204,0,0,0.3);border-radius:100px;padding:6px 16px;margin-bottom:24px}
+  .hero-eyebrow span{font-size:0.78rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.9)}
+  .hero-eyebrow::before{content:'';width:8px;height:8px;background:var(--red);border-radius:50%;animation:pulse 2s infinite}
+  @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(1.4)}}
+  .hero-title{color:var(--white);margin-bottom:20px}
+  .hero-title em{color:var(--gold);font-style:normal}
+  .hero-sub{font-size:1.15rem;color:rgba(255,255,255,0.72);margin-bottom:36px;max-width:480px;line-height:1.75}
+  .hero-btns{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:40px}
+  .hero-stats{display:flex;gap:32px;flex-wrap:wrap}
+  .stat-item{display:flex;flex-direction:column}
+  .stat-num{font-size:1.9rem;font-weight:800;color:var(--white)}
+  .stat-label{font-size:0.78rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.5)}
+  /* Hero image mosaic */
+  .hero-right{position:relative}
+  .hero-mosaic{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:200px 180px;gap:10px;border-radius:12px;overflow:hidden;box-shadow:var(--shadow-lg)}
+  .mosaic-cell{overflow:hidden;position:relative}
+  .mosaic-cell:first-child{grid-column:1/3;height:240px}
+  .mosaic-cell img{width:100%;height:100%;object-fit:cover;transition:transform 0.7s ease}
+  .mosaic-cell:hover img{transform:scale(1.06)}
+  .hero-badge{position:absolute;bottom:16px;left:16px;background:rgba(0,31,63,0.88);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.15);border-radius:8px;padding:10px 16px;display:flex;align-items:center;gap:10px}
+  .badge-dot{width:10px;height:10px;background:#22c55e;border-radius:50%;flex-shrink:0;animation:pulse 2s infinite}
+  .badge-text{font-size:0.8rem;font-weight:600;color:var(--white)}
+  /* Credibility strip */
+  .cred-strip{background:rgba(255,255,255,0.05);border-top:1px solid rgba(255,255,255,0.08);padding:18px 0}
+  .cred-inner{display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap}
+  .cred-item{display:flex;align-items:center;gap:10px;color:rgba(255,255,255,0.55);font-size:0.82rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase}
+  .cred-divider{width:1px;height:24px;background:rgba(255,255,255,0.15)}
+  .cred-logo{font-size:1rem;font-weight:900;letter-spacing:0.08em;color:rgba(255,255,255,0.8)}
+  /* ═══ USP STRIP ═══ */
+  #usps{background:var(--off);padding:70px 0}
+  .usp-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:24px}
+  .usp-card{background:var(--white);border-radius:8px;padding:28px 22px;text-align:center;border:1px solid var(--grey);box-shadow:0 2px 12px rgba(0,51,102,0.06);transition:var(--transition)}
+  .usp-card:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:rgba(0,51,102,0.15)}
+  .usp-icon{width:52px;height:52px;border-radius:12px;background:linear-gradient(135deg,var(--navy) 0%,var(--navy-light) 100%);display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+  .usp-icon svg{fill:white;width:26px;height:26px}
+  .usp-card h3{font-size:0.95rem;font-weight:700;color:var(--navy);margin-bottom:8px}
+  .usp-card p{font-size:0.83rem;color:var(--muted);line-height:1.55}
+  /* ═══ ABOUT ═══ */
+  #about{background:var(--white)}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+  .about-image{position:relative;border-radius:12px;overflow:hidden;box-shadow:var(--shadow-lg)}
+  .about-image img{width:100%;height:480px;object-fit:cover}
+  .about-accent{position:absolute;bottom:-20px;right:-20px;width:160px;height:160px;background:linear-gradient(135deg,var(--red),#ff4444);border-radius:12px;z-index:-1}
+  .about-tag{position:absolute;top:20px;left:20px;background:var(--navy-dark);color:white;font-size:0.78rem;font-weight:700;padding:8px 16px;border-radius:100px;letter-spacing:0.1em;text-transform:uppercase}
+  .about-points{display:flex;flex-direction:column;gap:16px;margin:28px 0}
+  .about-point{display:flex;align-items:flex-start;gap:14px}
+  .point-icon{width:28px;height:28px;background:rgba(204,0,0,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+  .point-icon svg{fill:var(--red);width:14px;height:14px}
+  .point-text h4{font-size:0.95rem;font-weight:700;color:var(--navy);margin-bottom:2px}
+  .point-text p{font-size:0.88rem;color:var(--muted);line-height:1.5}
+  /* ═══ GALLERY ═══ */
+  #gallery{background:var(--off)}
+  .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .gallery-tile{position:relative;border-radius:10px;overflow:hidden;aspect-ratio:4/3;box-shadow:0 2px 12px rgba(0,0,0,0.1);cursor:pointer}
+  .gallery-tile img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease}
+  .gallery-tile:hover img{transform:scale(1.07)}
+  .gallery-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,31,63,0.88) 0%,transparent 55%);opacity:0;transition:opacity 0.4s;display:flex;flex-direction:column;justify-content:flex-end;padding:22px}
+  .gallery-tile:hover .gallery-overlay{opacity:1}
+  .gallery-caption{color:var(--white)}
+  .gallery-caption h4{font-size:1rem;font-weight:700;margin-bottom:4px}
+  .gallery-caption p{font-size:0.8rem;color:rgba(255,255,255,0.75);line-height:1.4}
+  .gallery-tag{position:absolute;top:14px;left:14px;background:rgba(0,31,63,0.75);backdrop-filter:blur(6px);color:white;font-size:0.72rem;font-weight:700;padding:5px 12px;border-radius:100px;letter-spacing:0.1em;text-transform:uppercase;border:1px solid rgba(255,255,255,0.15)}
+  /* ═══ MID CTA BANNER ═══ */
+  #cta-banner{background:linear-gradient(100deg,var(--navy-dark) 0%,var(--navy) 50%,var(--red) 100%);padding:70px 0;position:relative;overflow:hidden}
+  #cta-banner::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
+  .banner-inner{display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;position:relative}
+  .banner-text h2{color:var(--white);margin-bottom:10px}
+  .banner-text p{color:rgba(255,255,255,0.75);font-size:1.05rem;max-width:520px}
+  .banner-badges{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
+  .trust-badge{display:flex;align-items:center;gap:7px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:100px;padding:7px 16px;color:white;font-size:0.8rem;font-weight:600}
+  .trust-badge svg{fill:white;width:14px;height:14px;opacity:0.8}
+  /* ═══ FORM ═══ */
+  #contact{background:var(--white)}
+  .form-wrapper{display:grid;grid-template-columns:1fr 1.5fr;gap:70px;align-items:start}
+  .form-info h2{margin-bottom:16px}
+  .form-info p{margin-bottom:28px}
+  .form-promises{display:flex;flex-direction:column;gap:14px}
+  .promise{display:flex;align-items:center;gap:12px;font-size:0.9rem;font-weight:600;color:var(--navy)}
+  .promise-icon{width:32px;height:32px;background:rgba(0,51,102,0.08);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .promise-icon svg{fill:var(--navy);width:16px;height:16px}
+  .enquiry-form{background:var(--off);border-radius:12px;padding:40px;border:1px solid var(--grey);box-shadow:var(--shadow)}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+  .form-group{display:flex;flex-direction:column;gap:6px;margin-bottom:0}
+  .form-group.full{grid-column:1/-1}
+  label{font-size:0.82rem;font-weight:700;color:var(--navy);letter-spacing:0.03em;text-transform:uppercase}
+  input,select,textarea{width:100%;padding:12px 16px;border:1.5px solid var(--grey);border-radius:var(--radius);font-size:0.95rem;color:var(--text);background:var(--white);transition:border-color 0.2s,box-shadow 0.2s;font-family:inherit;outline:none}
+  input:focus,select:focus,textarea:focus{border-color:var(--navy);box-shadow:0 0 0 3px rgba(0,51,102,0.1)}
+  textarea{resize:vertical;min-height:110px}
+  .consent-row{display:flex;align-items:flex-start;gap:12px;margin:16px 0}
+  .consent-row input[type=checkbox]{width:18px;height:18px;flex-shrink:0;margin-top:2px;accent-color:var(--navy)}
+  .consent-row label{font-size:0.82rem;font-weight:400;text-transform:none;color:var(--muted);line-height:1.5}
+  .consent-row label a{color:var(--navy);font-weight:600;text-decoration:underline}
+  .form-privacy{font-size:0.78rem;color:var(--muted);margin-top:12px;display:flex;align-items:center;gap:6px}
+  .form-privacy svg{fill:var(--muted);width:13px;height:13px;flex-shrink:0}
+  .form-submit-btn{width:100%;padding:16px;background:var(--red);color:white;border:none;border-radius:var(--radius);font-size:1rem;font-weight:700;cursor:pointer;transition:var(--transition);letter-spacing:0.02em;margin-top:4px}
+  .form-submit-btn:hover{background:var(--red-light);box-shadow:0 6px 20px rgba(204,0,0,0.3);transform:translateY(-2px)}
+  /* ═══ FOOTER ═══ */
+  #footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:60px 0 0}
+  .footer-grid{display:grid;grid-template-columns:1.8fr 1fr 1fr 1.2fr;gap:48px;padding-bottom:50px;border-bottom:1px solid rgba(255,255,255,0.1)}
+  .footer-brand p{font-size:0.88rem;line-height:1.7;margin:14px 0 22px;max-width:280px}
+  .footer-social{display:flex;gap:10px}
+  .social-btn{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;transition:var(--transition);color:white}
+  .social-btn:hover{background:var(--red);border-color:var(--red)}
+  .social-btn svg{fill:white;width:16px;height:16px}
+  .footer-col h4{font-size:0.78rem;font-weight:800;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:18px}
+  .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-col ul li a{font-size:0.88rem;color:rgba(255,255,255,0.65);transition:color 0.2s}
+  .footer-col ul li a:hover{color:white}
+  .footer-contact-item{display:flex;align-items:flex-start;gap:10px;margin-bottom:12px}
+  .footer-contact-item svg{fill:rgba(255,255,255,0.4);width:14px;height:14px;flex-shrink:0;margin-top:3px}
+  .footer-contact-item span{font-size:0.86rem;color:rgba(255,255,255,0.65);line-height:1.5}
+  .footer-bottom{display:flex;align-items:center;justify-content:space-between;padding:20px 0;flex-wrap:wrap;gap:12px}
+  .footer-bottom p{font-size:0.8rem;color:rgba(255,255,255,0.38)}
+  .footer-legal{display:flex;gap:20px;flex-wrap:wrap}
+  .footer-legal a{font-size:0.78rem;color:rgba(255,255,255,0.38);transition:color 0.2s}
+  .footer-legal a:hover{color:rgba(255,255,255,0.7)}
+  /* SUCCESS */
+  .form-success{display:none;text-align:center;padding:40px 20px}
+  .form-success .success-icon{width:64px;height:64px;background:rgba(34,197,94,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+  .form-success .success-icon svg{fill:#22c55e;width:32px;height:32px}
+  .form-success h3{color:var(--navy);margin-bottom:10px}
+  .form-success p{font-size:0.9rem;color:var(--muted)}
+  /* RESPONSIVE */
+  @media(max-width:1024px){
+    .usp-grid{grid-template-columns:repeat(3,1fr)}
+    .footer-grid{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:768px){
+    .hero-content{grid-template-columns:1fr}
+    .hero-right{display:none}
+    .about-grid{grid-template-columns:1fr}
+    .gallery-grid{grid-template-columns:1fr 1fr}
+    .form-wrapper{grid-template-columns:1fr}
+    .form-row{grid-template-columns:1fr}
+    .footer-grid{grid-template-columns:1fr 1fr}
+    .banner-inner{flex-direction:column;align-items:flex-start}
+    .nav-links{display:none}
+    .nav-hamburger{display:flex}
+    .usp-grid{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:480px){
+    .usp-grid{grid-template-columns:1fr}
+    .gallery-grid{grid-template-columns:1fr}
+    .footer-grid{grid-template-columns:1fr}
+    .hero-stats{gap:20px}
+  }
+</style>
+</head>
+<body>
 
+<!-- ═══ NAVBAR ═══ -->
+<nav id="navbar" role="navigation" aria-label="Main navigation">
+  <div class="container nav-inner">
+    <a href="#hero" class="nav-logo" aria-label="TATA Power Home">
+      <div class="logo-mark">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2.05v2.02c3.95.49 7 3.85 7 7.93 0 3.21-1.81 6-4.72 7.28L13 17v5l5-3.18C21.56 16.95 24 13.08 24 9c0-6.09-4.39-11.11-11-11.95zM11 2.05C4.39 2.89 0 7.91 0 14c0 3.08 2.44 6.95 6 8.82L11 22V2.05zM11 6.25V18.6C8.38 17.4 6 14.73 6 12c0-2.73 1.63-5.15 5-5.75zm2 0c2.8.56 5 2.84 5 5.75 0 2.73-2.38 5.4-5 6.6V6.25z"/></svg>
+      </div>
+      <div class="logo-text">
+        <span>TATA</span>
+        <span>POWER</span>
+      </div>
+    </a>
+    <div class="nav-links" role="menubar">
+      <a href="#about" role="menuitem">About</a>
+      <a href="#usps" role="menuitem">Solutions</a>
+      <a href="#gallery" role="menuitem">Projects</a>
+      <a href="#contact" role="menuitem">Contact</a>
+      <a href="#contact" class="nav-cta" role="menuitem">Request Consultation</a>
+    </div>
+    <div class="nav-hamburger" aria-label="Menu" role="button" tabindex="0">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section id="hero" aria-label="Hero">
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="hero-glow2" aria-hidden="true"></div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-left fade-in">
+        <div class="hero-eyebrow"><span>India's Most Trusted Power Brand</span></div>
+        <h1 class="hero-title">Powering progress with <em>dependable energy.</em></h1>
+        <p class="hero-sub">Reliable energy &amp; power solutions from TATA Power — trusted by millions of homes, enterprises, and institutions across India.</p>
+        <div class="hero-btns">
+          <a href="#contact" class="btn btn-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            Request a Consultation
+          </a>
+          <a href="#usps" class="btn btn-secondary">Explore Solutions</a>
+        </div>
+        <div class="hero-stats" role="list">
+          <div class="stat-item" role="listitem"><span class="stat-num">13,000+</span><span class="stat-label">MW Capacity</span></div>
+          <div class="stat-item" role="listitem"><span class="stat-num">100+</span><span class="stat-label">Years of Trust</span></div>
+          <div class="stat-item" role="listitem"><span class="stat-num">12M+</span><span class="stat-label">Customers Served</span></div>
+        </div>
+      </div>
+      <div class="hero-right fade-in" style="transition-delay:0.2s">
+        <div class="hero-mosaic" role="img" aria-label="TATA Power operations gallery">
+          <div class="mosaic-cell">
+            <img src="https://drive.google.com/uc?id=14OvBneH1Mgo5ev-fLc966leuAYJS7qTw&export=download" alt="TATA Power infrastructure operations" loading="eager"/>
+          </div>
+          <div class="mosaic-cell">
+            <img src="https://drive.google.com/uc?id=1kKYwjHdolRsC4eiSg_X37nVgAWw0JEmU&export=download" alt="TATA Power grid and network" loading="lazy"/>
+          </div>
+          <div class="mosaic-cell">
+            <img src="https://drive.google.com/uc?id=1qQktXHRonuV8WVgSkqIPX5dgCDyuoHWh&export=download" alt="TATA Power clean energy" loading="lazy"/>
+          </div>
+        </div>
+        <div class="hero-badge" role="status">
+          <div class="badge-dot" aria-hidden="true"></div>
+          <div class="badge-text">Operational 24 × 7 · ISO 9001 Certified</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Credibility Strip -->
+  <div class="cred-strip" role="complementary" aria-label="Brand affiliations">
+    <div class="container">
+      <div class="cred-inner">
+        <div class="cred-item"><span class="cred-logo">TATA</span></div>
+        <div class="cred-divider" aria-hidden="true"></div>
+        <div class="cred-item">
+          <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+          ISO 9001:2015 Certified
+        </div>
+        <div class="cred-divider" aria-hidden="true"></div>
+        <div class="cred-item">
+          <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+          BSE & NSE Listed
+        </div>
+        <div class="cred-divider" aria-hidden="true"></div>
+        <div class="cred-item">
+          <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 10l-9 7z"/></svg>
+          BEE 5-Star Rated
+        </div>
+        <div class="cred-divider" aria-hidden="true"></div>
+        <div class="cred-item"><span class="cred-logo">TATA POWER</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ USP STRIP ═══ -->
+<section id="usps" class="section" aria-labelledby="usp-heading">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:48px" class="fade-in">
+      <p class="section-label">Why TATA Power</p>
+      <h2 class="section-title" id="usp-heading">Built on five pillars of excellence</h2>
+    </div>
+    <div class="usp-grid">
+      <div class="usp-card fade-in" style="transition-delay:0.05s">
+        <div class="usp-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+        </div>
+        <h3>Proven Brand Trust</h3>
+        <p>Over a century of reliable energy delivery under the legendary TATA Group — a name synonymous with integrity.</p>
+      </div>
+      <div class="usp-card fade-in" style="transition-delay:0.1s">
+        <div class="usp-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        </div>
+        <h3>Nationwide Reach</h3>
+        <p>Extensive distribution network and project capability spanning every major state across India.</p>
+      </div>
+      <div class="usp-card fade-in" style="transition-delay:0.15s">
+        <div class="usp-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M13 2.05v2.02c3.95.49 7 3.85 7 7.93 0 3.21-1.81 6-4.72 7.28L13 17v5l5-3.18C21.56 16.95 24 13.08 24 9c0-6.09-4.39-11.11-11-11.95z"/><path d="M11 2.05C4.39 2.89 0 7.91 0 14c0 3.08 2.44 6.95 6 8.82L11 22V2.05z"/></svg>
+        </div>
+        <h3>Safety-First Culture</h3>
+        <p>Rigorous standards, certified operations, and zero-compromise safety protocols at every level.</p>
+      </div>
+      <div class="usp-card fade-in" style="transition-delay:0.2s">
+        <div class="usp-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/></svg>
+        </div>
+        <h3>Scalable Solutions</h3>
+        <p>From rooftop solar for homes to multi-megawatt installations for industries — solutions that grow with you.</p>
+      </div>
+      <div class="usp-card fade-in" style="transition-delay:0.25s">
+        <div class="usp-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        </div>
+        <h3>Responsive Support</h3>
+        <p>Dedicated account managers, 24×7 helpdesk, and transparent SLAs — your uptime is our responsibility.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ABOUT ═══ -->
+<section id="about" class="section" aria-labelledby="about-heading">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image fade-in">
+        <img src="https://drive.google.com/uc?id=1hFZF5Wq5OlyxU85QXswKW2xqajumTsKg&export=download" alt="TATA Power customer service and field operations" loading="lazy"/>
+        <div class="about-accent" aria-hidden="true"></div>
+        <div class="about-tag">Est. 1919</div>
+      </div>
+      <div class="fade-in" style="transition-delay:0.15s">
+        <p class="section-label">Our Story</p>
+        <h2 class="section-title" id="about-heading">A legacy of light, a future of clean energy</h2>
+        <p class="section-sub">TATA Power has been at the forefront of India's power sector for over a century — from building the nation's first major hydroelectric project to leading today's renewable revolution.</p>
+        <div class="about-points">
+          <div class="about-point">
+            <div class="point-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            </div>
+            <div class="point-text">
+              <h4>Integrated Power Utility</h4>
+              <p>Generation, transmission, distribution, and retail — a truly end-to-end energy partner.</p>
+            </div>
+          </div>
+          <div class="about-point">
+            <div class="point-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            </div>
+            <div class="point-text">
+              <h4>Renewable Leadership</h4>
+              <p>One of India's largest renewable portfolios — solar, wind, hydro, and storage at scale.</p>
+            </div>
+          </div>
+          <div class="about-point">
+            <div class="point-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            </div>
+            <div class="point-text">
+              <h4>ESG-Committed</h4>
+              <p>Aligned with India's net-zero roadmap — committed to responsible, sustainable growth.</p>
+            </div>
+          </div>
+        </div>
+        <a href="#contact" class="btn btn-navy">Partner With Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ GALLERY ═══ -->
+<section id="gallery" class="section" aria-labelledby="gallery-heading">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:48px" class="fade-in">
+      <p class="section-label">Our Work</p>
+      <h2 class="section-title" id="gallery-heading">From infrastructure to innovation</h2>
+      <p class="section-sub" style="margin:0 auto">A glimpse into the projects, technology, and people powering a better tomorrow.</p>
+    </div>
+    <div class="gallery-grid" role="list">
+      <div class="gallery-tile fade-in" role="listitem" style="transition-delay:0.05s">
+        <img src="https://drive.google.com/uc?id=14OvBneH1Mgo5ev-fLc966leuAYJS7qTw&export=download" alt="TATA Power large-scale infrastructure including power plants and substations" loading="lazy"/>
+        <div class="gallery-tag" aria-hidden="true">01</div>
+        <div class="gallery-overlay">
+          <div class="gallery-caption">
+            <h4>Infrastructure</h4>
+            <p>World-class power plants, substations, and distribution assets built for long-term reliability.</p>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-tile fade-in" role="listitem" style="transition-delay:0.1s">
+        <img src="https://drive.google.com/uc?id=1kKYwjHdolRsC4eiSg_X37nVgAWw0JEmU&export=download" alt="TATA Power grid and transmission networks" loading="lazy"/>
+        <div class="gallery-tag" aria-hidden="true">02</div>
+        <div class="gallery-overlay">
+          <div class="gallery-caption">
+            <h4>Grid &amp; Networks</h4>
+            <p>Smart grid technology and robust transmission networks ensuring seamless power delivery.</p>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-tile fade-in" role="listitem" style="transition-delay:0.15s">
+        <img src="https://drive.google.com/uc?id=1qQktXHRonuV8WVgSkqIPX5dgCDyuoHWh&export=download" alt="TATA Power solar and clean energy installations" loading="lazy"/>
+        <div class="gallery-tag" aria-hidden="true">03</div>
+        <div class="gallery-overlay">
+          <div class="gallery-caption">
+            <h4>Clean Energy</h4>
+            <p>Solar, wind, and hydro projects accelerating India's transition to a green energy future.</p>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-tile fade-in" role="listitem" style="transition-delay:0.2s">
+        <img src="https://drive.google.com/uc?id=1hFZF5Wq5OlyxU85QXswKW2xqajumTsKg&export=download" alt="TATA Power customer service operations and field staff" loading="lazy"/>
+        <div class="gallery-tag" aria-hidden="true">04</div>
+        <div class="gallery-overlay">
+          <div class="gallery-caption">
+            <h4>Customer Service</h4>
+            <p>Dedicated service teams ensuring responsive, transparent, and dependable customer experience.</p>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-tile fade-in" role="listitem" style="transition-delay:0.25s">
+        <img src="https://drive.google.com/uc?id=1idxFF4boCWhMmunydfh9TUQucxW2lK8z&export=download" alt="TATA Power major commercial and industrial projects" loading="lazy"/>
+        <div class="gallery-tag" aria-hidden="true">05</div>
+        <div class="gallery-overlay">
+          <div class="gallery-caption">
+            <h4>Projects</h4>
+            <p>Landmark commercial, industrial, and public sector projects delivered on time, at scale.</p>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-tile fade-in" role="listitem" style="transition-delay:0.3s">
+        <img src="https://drive.google.com/uc?id=1BykZWU4j6Xy3DEBl1LkW5Il6x7lZ6oQi&export=download" alt="TATA Power innovation labs and R&D technology" loading="lazy"/>
+        <div class="gallery-tag" aria-hidden="true">06</div>
+        <div class="gallery-overlay">
+          <div class="gallery-caption">
+            <h4>Innovation</h4>
+            <p>Investing in R&amp;D, AI-driven monitoring, and next-gen storage to shape the energy of tomorrow.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MID CTA BANNER ═══ -->
+<section id="cta-banner" aria-label="Call to action">
+  <div class="container">
+    <div class="banner-inner">
+      <div class="banner-text fade-in">
+        <h2>Ready to power your next project?</h2>
+        <p>Connect with our energy specialists today. Whether it's a rooftop solar system, a commercial grid connection, or an enterprise-scale solution — we have the expertise.</p>
+        <div class="banner-badges">
+          <div class="trust-badge">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+            ISO Certified Operations
+          </div>
+          <div class="trust-badge">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm4.24 16L12 15.45 7.77 18l1.12-4.81-3.73-3.23 4.92-.42L12 5l1.92 4.53 4.92.42-3.73 3.23L16.23 18z"/></svg>
+            5-Star Service Rating
+          </div>
+          <div class="trust-badge">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            24×7 Helpdesk
+          </div>
+        </div>
+      </div>
+      <div class="fade-in" style="transition-delay:0.15s">
+        <a href="#contact" class="btn" style="background:white;color:var(--navy);font-size:1.05rem;padding:18px 36px;box-shadow:0 8px 32px rgba(0,0,0,0.2)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--navy)" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          Request a Consultation
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONTACT FORM ═══ -->
+<section id="contact" class="section" aria-labelledby="contact-heading">
+  <div class="container">
+    <div class="form-wrapper">
+      <div class="fade-in">
+        <p class="section-label">Get in Touch</p>
+        <h2 class="section-title" id="contact-heading">Let's discuss your energy requirements</h2>
+        <p class="section-sub">Share your details and our expert team will respond within one business day.</p>
+        <div class="form-promises" role="list">
+          <div class="promise" role="listitem">
+            <div class="promise-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+            </div>
+            Your information is secure &amp; confidential
+          </div>
+          <div class="promise" role="listitem">
+            <div class="promise-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+            </div>
+            Response within 1 business day
+          </div>
+          <div class="promise" role="listitem">
+            <div class="promise-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            </div>
+            No obligation, no spam — ever
+          </div>
+        </div>
+      </div>
+      <div class="fade-in" style="transition-delay:0.15s">
+        <div class="enquiry-form" role="form" aria-label="Enquiry form">
+          <div id="form-fields">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="f-name">Full Name <span aria-label="required" style="color:var(--red)">*</span></label>
+                <input type="text" id="f-name" name="name" placeholder="Rajesh Kumar" required autocomplete="name"/>
+              </div>
+              <div class="form-group">
+                <label for="f-org">Organisation</label>
+                <input type="text" id="f-org" name="organisation" placeholder="Company / Institution" autocomplete="organization"/>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="f-email">Email Address <span aria-label="required" style="color:var(--red)">*</span></label>
+                <input type="email" id="f-email" name="email" placeholder="name@company.com" required autocomplete="email"/>
+              </div>
+              <div class="form-group">
+                <label for="f-city">City / State <span aria-label="required" style="color:var(--red)">*</span></label>
+                <input type="text" id="f-city" name="city" placeholder="Mumbai, Maharashtra" required autocomplete="address-level2"/>
+              </div>
+            </div>
+            <div class="form-row" style="margin-bottom:16px">
+              <div class="form-group full">
+                <label for="f-req">Your Requirement <span aria-label="required" style="color:var(--red)">*</span></label>
+                <select id="f-req" name="requirement" required>
+                  <option value="" disabled selected>Select your requirement</option>
+                  <option>Residential Solar &amp; Rooftop</option>
+                  <option>Commercial / Industrial Power</option>
+                  <option>EV Charging Infrastructure</option>
+                  <option>Grid Connection / Utility</option>
+                  <option>Project Partnership / EPC</option>
+                  <option>Sustainability Consulting</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group" style="margin-bottom:0">
+              <label for="f-msg">Message</label>
+              <textarea id="f-msg" name="message" placeholder="Tell us about your project, scale, timeline, or any questions..."></textarea>
+            </div>
+            <div class="consent-row">
+              <input type="checkbox" id="f-consent" name="consent" required/>
+              <label for="f-consent">I consent to TATA Power processing my personal data to respond to this enquiry, in accordance with the <a href="#footer">Privacy Policy</a>. I understand my data will not be shared with third parties without consent.</label>
+            </div>
+            <button class="form-submit-btn" type="button" onclick="submitForm()" aria-label="Submit enquiry form">Submit Enquiry →</button>
+            <p class="form-privacy">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+              SSL encrypted · GDPR compliant · Data never sold
+            </p>
+          </div>
+          <div class="form-success" id="form-success" aria-live="polite">
+            <div class="success-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            </div>
+            <h3>Thank you for reaching out!</h3>
+            <p>Your enquiry has been received. A TATA Power specialist will contact you within 1 business day.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer id="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#hero" class="nav-logo" style="display:inline-flex" aria-label="TATA Power Home">
+          <div class="logo-mark"><svg viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M13 2.05v2.02c3.95.49 7 3.85 7 7.93 0 3.21-1.81 6-4.72 7.28L13 17v5l5-3.18C21.56 16.95 24 13.08 24 9c0-6.09-4.39-11.11-11-11.95z"/><path d="M11 2.05C4.39 2.89 0 7.91 0 14c0 3.08 2.44 6.95 6 8.82L11 22V2.05z"/></svg></div>
+          <div class="logo-text"><span>TATA</span><span>POWER</span></div>
+        </a>
+        <p>TATA Power is India's largest integrated power company, committed to reliable, clean, and affordable energy for every Indian — homes, businesses, and beyond.</p>
+        <div class="footer-social" role="list" aria-label="Social media links">
+          <a href="#" class="social-btn" role="listitem" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14m-.5 15.5v-5.3a3.26 3.26 0 00-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 011.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 001.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 00-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+          </a>
+          <a href="#" class="social-btn" role="listitem" aria-label="Twitter / X">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 01-1.93.07 4.28 4.28 0 004 2.98 8.521 8.521 0 01-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/></svg>
+          </a>
+          <a href="#" class="social-btn" role="listitem" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"/></svg>
+          </a>
+          <a href="#" class="social-btn" role="listitem" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 2h-3a5 5 0 00-5 5v3H6v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Solutions</h4>
+        <ul>
+          <li><a href="#">Residential Solar</a></li>
+          <li><a href="#">Commercial Power</a></li>
+          <li><a href="#">Industrial &amp; EPC</a></li>
+          <li><a href="#">EV Charging</a></li>
+          <li><a href="#">Energy Storage</a></li>
+          <li><a href="#">Smart Metering</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About TATA Power</a></li>
+          <li><a href="#">Sustainability</a></li>
+          <li><a href="#">Investor Relations</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Newsroom</a></li>
+          <li><a href="#">CSR Initiatives</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          <span>TATA Power House, Dr. G. Deshmukh Marg, Mumbai — 400 026</span>
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          <span>1800-209-9155 (Toll Free)</span>
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          <span>customercare@tatapower.com</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom" role="contentinfo">
+      <p>© 2025 Tata Power Company Limited. All rights reserved. A TATA Group Enterprise.</p>
+      <div class="footer-legal" role="list">
+        <a href="#" role="listitem">Privacy Policy</a>
+        <a href="#" role="listitem">Terms of Use</a>
+        <a href="#" role="listitem">Cookie Policy</a>
+        <a href="#" role="listitem">Accessibility</a>
+        <a href="#" role="listitem">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Intersection Observer for fade-in
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, {threshold: 0.12});
+  document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+
+  // Navbar scroll shadow
+  const nav = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  }, {passive: true});
+
+  // Form submit
+  function submitForm() {
+    const n = document.getElementById('f-name').value.trim();
+    const e = document.getElementById('f-email').value.trim();
+    const c = document.getElementById('f-city').value.trim();
+    const r = document.getElementById('f-req').value;
+    const consent = document.getElementById('f-consent').checked;
+    if (!n || !e || !c || !r) { alert('Please fill in all required fields.'); return; }
+    if (!consent) { alert('Please provide your consent to proceed.'); return; }
+    document.getElementById('form-fields').style.display = 'none';
+    const s = document.getElementById('form-success');
+    s.style.display = 'block';
+    s.focus();
+  }
+
+  // Smooth anchor for CTA buttons
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const t = document.querySelector(a.getAttribute('href'));
+      if(t){ e.preventDefault(); t.scrollIntoView({behavior:'smooth', block:'start'}); }
+    });
+  });
+</script>
+</body>
+</html>
