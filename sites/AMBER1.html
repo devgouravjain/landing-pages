@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AMBER | Premium Residential & Retail Tower in Al Qusais, Dubai</title>
+<meta name="description" content="Discover AMBER — a ready mixed-use tower in Al Qusais, Dubai offering residential apartments, retail shops, and strong investment returns. Contact Dhiraj Jain today.">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;font-size:16px;line-height:1.7;color:#333;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+.container{width:90%;max-width:1200px;margin:0 auto}
+
+header{position:fixed;top:0;left:0;width:100%;background:#fff;border-bottom:1px solid #eee;z-index:1000;padding:12px 0}
+.header-inner{display:flex;align-items:center;justify-content:space-between}
+.logo img{max-height:55px;width:auto}
+nav ul{display:flex;gap:28px;align-items:center}
+nav ul li a{color:#2C2C2C;font-weight:500;font-size:15px;position:relative;transition:color .3s}
+nav ul li a:hover{color:#F5A623}
+nav ul li a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:#F5A623;transition:width .3s}
+nav ul li a:hover::after{width:100%}
+.header-right{display:flex;align-items:center;gap:20px}
+.header-phone{color:#F5A623;font-weight:600;font-size:14px;display:flex;align-items:center;gap:6px}
+.header-phone svg{width:16px;height:16px;fill:#F5A623}
+.btn-enquire{background:#F5A623;color:#fff;padding:10px 24px;border-radius:8px;font-weight:600;font-size:14px;border:none;cursor:pointer;box-shadow:0 2px 8px rgba(245,166,35,.3);transition:all .3s}
+.btn-enquire:hover{background:#e0941c;box-shadow:0 4px 12px rgba(245,166,35,.4)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:8px}
+.hamburger span{width:26px;height:3px;background:#2C2C2C;border-radius:2px;transition:all .3s}
+.mobile-menu{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);z-index:999}
+.mobile-menu-inner{background:#fff;width:280px;height:100%;padding:24px;position:relative;transform:translateX(-100%);transition:transform .3s}
+.mobile-menu.active{display:block}
+.mobile-menu.active .mobile-menu-inner{transform:translateX(0)}
+.mobile-menu-close{background:none;border:none;font-size:28px;cursor:pointer;position:absolute;top:16px;right:16px;color:#2C2C2C}
+.mobile-menu-inner ul{margin-top:60px;display:flex;flex-direction:column;gap:20px}
+.mobile-menu-inner ul li a{font-size:18px;color:#2C2C2C;font-weight:500}
+.mobile-menu-phone{margin-top:30px;color:#F5A623;font-weight:600;font-size:16px}
+.mobile-menu-btn{margin-top:20px}
+
+.hero{min-height:100vh;background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.65)),url('https://raw.githubusercontent.com/devgouravjain/landing-pages/main/images/Project%20Image%201.png-2026-02-19T08:15:48.334+01:00') center/cover no-repeat;display:flex;align-items:center;justify-content:center;text-align:center;padding:120px 20px 60px}
+.hero-content{max-width:800px}
+.hero h1{color:#fff;font-size:48px;font-weight:700;text-transform:uppercase;line-height:1.2;margin-bottom:20px;letter-spacing:1px}
+.hero p{color:rgba(255,255,255,.9);font-size:18px;margin-bottom:36px;line-height:1.7}
+.hero-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.btn-primary{background:#F5A623;color:#fff;padding:14px 32px;border-radius:8px;font-weight:600;font-size:16px;border:none;cursor:pointer;box-shadow:0 2px 10px rgba(245,166,35,.3);transition:all .3s;display:inline-block}
+.btn-primary:hover{background:#e0941c;transform:translateY(-2px)}
+.btn-outline{background:transparent;color:#fff;padding:14px 32px;border-radius:8px;font-weight:600;font-size:16px;border:2px solid #fff;cursor:pointer;transition:all .3s;display:inline-block}
+.btn-outline:hover{background:rgba(255,255,255,.15)}
+.scroll-arrow{margin-top:50px;animation:bounce 2s infinite}
+.scroll-arrow svg{width:30px;height:30px;fill:#fff;opacity:.7}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(10px)}}
+
+.about{background:#F9F9F9;padding:80px 0}
+.about-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:50px;align-items:center}
+.about-label{text-transform:uppercase;color:#F5A623;font-weight:600;font-size:14px;letter-spacing:2px;margin-bottom:12px}
+.about h2{color:#2C2C2C;font-size:36px;font-weight:700;margin-bottom:20px;line-height:1.3}
+.about p{color:#555;line-height:1.8}
+.about-img img{border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,.1);width:100%;object-fit:cover}
+
+.services{background:#fff;padding:80px 0}
+.section-title{text-align:center;margin-bottom:50px}
+.section-title h2{color:#2C2C2C;font-size:36px;font-weight:700;text-transform:uppercase;margin-bottom:12px}
+.section-title .underline{width:60px;height:3px;background:#F5A623;margin:0 auto}
+.cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+.card{background:#fff;border:1px solid #eee;border-radius:12px;padding:36px 24px;text-align:center;transition:all .3s;border-top:3px solid transparent}
+.card:hover{box-shadow:0 8px 30px rgba(0,0,0,.08);transform:translateY(-4px);border-top-color:#F5A623}
+.card-icon{width:56px;height:56px;margin:0 auto 20px;background:#FFF8EC;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.card-icon svg{width:28px;height:28px;fill:#F5A623}
+.card h3{color:#2C2C2C;font-size:20px;font-weight:600;margin-bottom:12px}
+.card p{color:#666;font-size:15px}
+
+.usp{background:#FFF8EC;padding:80px 0}
+.usp-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:50px;align-items:center}
+.usp h2{color:#2C2C2C;font-size:36px;font-weight:700;margin-bottom:28px}
+.usp-list{display:flex;flex-direction:column;gap:16px}
+.usp-item{display:flex;align-items:flex-start;gap:12px;font-size:16px;color:#444}
+.usp-item svg{width:22px;height:22px;fill:#F5A623;flex-shrink:0;margin-top:3px}
+.usp-img img{border-radius:12px;border:3px solid #F5A623;width:100%;object-fit:cover}
+
+.seo-block{background:#fff;padding:80px 0}
+.seo-content{max-width:800px;margin:0 auto;text-align:center}
+.seo-content h2{color:#2C2C2C;font-size:32px;font-weight:700;margin-bottom:20px}
+.seo-content p{color:#555;line-height:1.8}
+
+.gallery{background:#2C2C2C;padding:80px 0}
+.gallery .section-title h2{color:#fff}
+.gallery-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.gallery-grid img{border-radius:8px;width:100%;height:300px;object-fit:cover;transition:transform .3s}
+.gallery-grid img:hover{transform:scale(1.03)}
+
+.cta-section{background:#F5A623;padding:70px 0;text-align:center}
+.cta-section h2{color:#fff;font-size:36px;font-weight:700;margin-bottom:12px}
+.cta-section p{color:rgba(255,255,255,.9);font-size:17px;margin-bottom:32px}
+.cta-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.btn-white{background:#fff;color:#F5A623;padding:14px 32px;border-radius:8px;font-weight:600;font-size:16px;border:none;cursor:pointer;transition:all .3s;display:inline-block}
+.btn-white:hover{background:#f0f0f0}
+.btn-outline-w{background:transparent;color:#fff;padding:14px 32px;border-radius:8px;font-weight:600;font-size:16px;border:2px solid #fff;cursor:pointer;transition:all .3s;display:inline-block}
+.btn-outline-w:hover{background:rgba(255,255,255,.15)}
+
+.contact{background:#F9F9F9;padding:80px 0}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start}
+.contact-info h2{color:#2C2C2C;font-size:32px;font-weight:700;margin-bottom:24px}
+.contact-detail{margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid #F5A623}
+.contact-detail:last-child{border-bottom:none}
+.contact-detail label{font-size:13px;text-transform:uppercase;color:#999;font-weight:600;display:block;margin-bottom:4px}
+.contact-detail a,.contact-detail span{color:#2C2C2C;font-size:16px;font-weight:500}
+.contact-detail a:hover{color:#F5A623}
+.contact-form input,.contact-form textarea{width:100%;padding:14px 16px;border:1px solid #ddd;border-radius:8px;font-size:15px;font-family:inherit;margin-bottom:16px;transition:border-color .3s;background:#fff}
+.contact-form input:focus,.contact-form textarea:focus{outline:none;border-color:#F5A623;box-shadow:0 0 0 3px rgba(245,166,35,.15)}
+.contact-form textarea{resize:vertical;min-height:120px}
+.btn-submit{background:#F5A623;color:#fff;padding:14px 32px;border-radius:8px;font-weight:600;font-size:16px;border:none;cursor:pointer;width:100%;transition:all .3s}
+.btn-submit:hover{background:#e0941c}
+
+footer{background:#2C2C2C;padding:50px 0 0;color:#aaa}
+.footer-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px;padding-bottom:40px}
+.footer-col h4{color:#fff;font-size:16px;font-weight:600;margin-bottom:16px}
+.footer-logo img{max-height:40px;margin-bottom:12px}
+.footer-col p{font-size:14px;line-height:1.6}
+.footer-col ul li{margin-bottom:10px}
+.footer-col ul li a{color:#aaa;font-size:14px;transition:color .3s}
+.footer-col ul li a:hover{color:#F5A623}
+.footer-col .fc-item{margin-bottom:8px;font-size:14px}
+.footer-bottom{border-top:1px solid #444;padding:20px 0;text-align:center;font-size:13px;color:#777}
+
+@media(max-width:992px){
+.about-grid,.usp-grid,.contact-grid{grid-template-columns:1fr}
+.about-img{order:-1}
+.cards-grid{grid-template-columns:1fr 1fr}
+.footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+nav,.header-right .header-phone,.header-right .btn-enquire{display:none}
+.hamburger{display:flex}
+.hero h1{font-size:28px}
+.hero p{font-size:15px}
+.hero-btns{flex-direction:column;align-items:center}
+.about h2,.usp h2,.section-title h2,.seo-content h2,.cta-section h2,.contact-info h2{font-size:26px}
+.cards-grid{grid-template-columns:1fr;gap:24px}
+.gallery-grid{grid-template-columns:1fr}
+.gallery-grid img{height:220px}
+.cta-btns{flex-direction:column;align-items:center}
+.footer-grid{grid-template-columns:1fr;text-align:center}
+.footer-logo{margin:0 auto}
+.usp-img{order:-1}
+}
+@media(max-width:480px){
+.hero{padding:100px 16px 50px}
+.hero h1{font-size:24px}
+.about,.services,.usp,.seo-block,.gallery,.contact{padding:60px 0}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="container header-inner">
+<a href="#" class="logo"><img src="https://raw.githubusercontent.com/devgouravjain/landing-pages/main/images/logo.png-2026-02-19T08:15:45.985+01:00" alt="AMBER Logo - Premium Tower Al Qusais Dubai"></a>
+<nav id="desktopNav">
+<ul>
+<li><a href="#hero">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#gallery">Gallery</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+<div class="header-right">
+<a href="tel:971550551234" class="header-phone"><svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.24 1.01l-2.2 2.21z"/></svg>971550551234</a>
+<a href="#contact" class="btn-enquire">Enquire Now</a>
+<button class="hamburger" id="hamburgerBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
+</div>
+</div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+<div class="mobile-menu-inner">
+<button class="mobile-menu-close" id="mobileClose" aria-label="Close menu">&times;</button>
+<ul>
+<li><a href="#hero" class="mobile-link">Home</a></li>
+<li><a href="#about" class="mobile-link">About</a></li>
+<li><a href="#services" class="mobile-link">Services</a></li>
+<li><a href="#gallery" class="mobile-link">Gallery</a></li>
+<li><a href="#contact" class="mobile-link">Contact</a></li>
+</ul>
+<div class="mobile-menu-phone"><a href="tel:971550551234" style="color:#F5A623">971550551234</a></div>
+<div class="mobile-menu-btn"><a href="#contact" class="btn-enquire mobile-link">Enquire Now</a></div>
+</div>
+</div>
+
+<main>
+<section class="hero" id="hero">
+<div class="hero-content">
+<h1>AMBER — Premium Living & Retail in Al Qusais, Dubai</h1>
+<p>A ready mixed-use residential and commercial tower offering strong rental returns in one of Dubai's most connected locations.</p>
+<div class="hero-btns">
+<a href="#contact" class="btn-primary">Schedule a Viewing</a>
+<a href="#contact" class="btn-outline">Download Brochure</a>
+</div>
+<div class="scroll-arrow"><svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg></div>
+</div>
+</section>
+
+<section class="about" id="about">
+<div class="container about-grid">
+<div class="about-text">
+<div class="about-label">About AMBER</div>
+<h2>A Landmark Address in Al Qusais</h2>
+<p>AMBER is a ready mixed-use tower strategically located in the heart of Al Qusais, Dubai. Offering beautifully designed residential apartments alongside prime retail shops on the ground floor, AMBER caters to families seeking premium living and investors looking for strong rental returns. Developed by a trusted name in Dubai real estate, this Al Qusais property combines modern architecture, quality finishes, and unmatched connectivity to metro stations, schools, and commercial hubs.</p>
+</div>
+<div class="about-img">
+<img src="https://raw.githubusercontent.com/devgouravjain/landing-pages/main/images/Project%20Image%201.png-2026-02-19T08:15:48.334+01:00" alt="AMBER Tower Al Qusais Dubai - Residential and Retail Property">
+</div>
+</div>
+</section>
+
+<section class="services" id="services">
+<div class="container">
+<div class="section-title">
+<h2>What AMBER Offers</h2>
+<div class="underline"></div>
+</div>
+<div class="cards-grid">
+<div class="card">
+<div class="card-icon"><svg viewBox="0 0 24 24"><path d="M17 11V3H7v4H3v14h8v-4h2v4h8V7h-4v4zM7 19H5v-2h2v2zm0-4H5v-2h2v2zm0-4H5V9h2v2zm4 4H9v-2h2v2zm0-4H9V9h2v2zm0-4H9V5h2v2zm4 8h-2v-2h2v2zm0-4h-2V9h2v2zm0-4h-2V5h2v2zm4 12h-2v-2h2v2zm0-4h-2v-2h2v2z"/></svg></div>
+<h3>Residential Apartments</h3>
+<p>Modern layouts with premium finishes designed for comfortable, family-friendly living in a prime Dubai location.</p>
+</div>
+<div class="card">
+<div class="card-icon"><svg viewBox="0 0 24 24"><path d="M20 4H4v2h16V4zm1 10v-2l-1-5H4l-1 5v2h1v6h10v-6h4v6h2v-6h1zm-9 4H6v-4h6v4z"/></svg></div>
+<h3>Retail Shops</h3>
+<p>Ground-floor commercial spaces ideal for business owners and retail tenants seeking high foot traffic and visibility.</p>
+</div>
+<div class="card">
+<div class="card-icon"><svg viewBox="0 0 24 24"><path d="M3.5 18.49l6-6.01 4 4L22 6.92l-1.41-1.41-7.09 7.97-4-4L2 16.99z"/></svg></div>
+<h3>Investment Opportunity</h3>
+<p>A ready building in a prime location delivering strong rental returns and long-term capital appreciation for investors.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="usp" id="usp">
+<div class="container usp-grid">
+<div>
+<h2>Why Choose AMBER</h2>
+<div class="usp-list">
+<div class="usp-item"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg><span>Mixed-use residential & commercial tower</span></div>
+<div class="usp-item"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg><span>Prime Al Qusais location with excellent connectivity</span></div>
+<div class="usp-item"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg><span>Ready building — move in or rent out immediately</span></div>
+<div class="usp-item"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg><span>Strong rental returns for investors</span></div>
+<div class="usp-item"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg><span>Trusted developer with proven track record</span></div>
+</div>
+</div>
+<div class="usp-img">
+<img src="https://raw.githubusercontent.com/devgouravjain/landing-pages/main/images/Project%20Image%202.png-2026-02-19T08:15:46.805+01:00" alt="AMBER Property Investment Dubai Al Qusais">
+</div>
+</div>
+</section>
+
+<section class="seo-block">
+<div class="container seo-content">
+<h2>Invest in Dubai Real Estate at AMBER, Al Qusais</h2>
+<p>AMBER represents a compelling investment opportunity in one of Dubai's most sought-after neighborhoods. Located in Al Qusais, this ready mixed-use property features residential apartments designed for modern living and retail shops positioned for thriving businesses. With Dubai's real estate market continuing to attract global investors, AMBER offers immediate rental income potential and long-term value appreciation. The Al Qusais property market benefits from excellent metro connectivity, proximity to Dubai International Airport, and a growing residential community. Whether you are seeking a family home, a retail space, or a high-yield investment, AMBER delivers quality, location, and returns that set it apart in Dubai's competitive real estate landscape.</p>
+</div>
+</section>
+
+<section class="gallery" id="gallery">
+<div class="container">
+<div class="section-title">
+<h2>Property Gallery</h2>
+<div class="underline"></div>
+</div>
+<div class="gallery-grid">
+<img src="https://raw.githubusercontent.com/devgouravjain/landing-pages/main/images/Project%20Image%201.png-2026-02-19T08:15:48.334+01:00" alt="AMBER Residential Tower Al Qusais Dubai Exterior View">
+<img src="https://raw.githubusercontent.com/devgouravjain/landing-pages/main/images/Project%20Image%202.png-2026-02-19T08:15:46.805+01:00" alt="AMBER Mixed-Use Development Dubai Property Showcase">
+</div>
+</div>
+</section>
+
+<section class="cta-section">
+<div class="container">
+<h2>Ready to Invest in AMBER?</h2>
+<p>Get in touch with Dhiraj Jain for exclusive unit availability, pricing, and payment plans.</p>
+<div class="cta-btns">
+<a href="tel:971550551234" class="btn-white">Call Now: 971550551234</a>
+<a href="#contact" class="btn-outline-w">Send Enquiry</a>
+</div>
+</div>
+</section>
+
+<section class="contact" id="contact">
+<div class="container contact-grid">
+<div class="contact-info">
+<h2>Get In Touch</h2>
+<div class="contact-detail"><label>Contact Person</label><span>Dhiraj Jain</span></div>
+<div class="contact-detail"><label>Phone</label><a href="tel:971550551234">971550551234</a></div>
+<div class="contact-detail"><label>Email</label><a href="mailto:gouravbizzfly@gmail.com">gouravbizzfly@gmail.com</a></div>
+</div>
+<div>
+<form class="contact-form" onsubmit="return false;">
+<input type="text" placeholder="Full Name" required aria-label="Full Name">
+<input type="email" placeholder="Email Address" required aria-label="Email">
+<input type="tel" placeholder="Phone Number" aria-label="Phone">
+<textarea placeholder="Your Message" aria-label="Message"></textarea>
+<button type="submit" class="btn-submit">Send Message</button>
+</form>
+</div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="container footer-grid">
+<div class="footer-col">
+<div class="footer-logo"><img src="https://raw.githubusercontent.com/devgouravjain/landing-pages/main/images/logo.png-2026-02-19T08:15:45.985+01:00" alt="AMBER Logo"></div>
+<p>Premium Living & Retail in Al Qusais, Dubai</p>
+</div>
+<div class="footer-col">
+<h4>Quick Links</h4>
+<ul>
+<li><a href="#hero">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#gallery">Gallery</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Contact Info</h4>
+<div class="fc-item">Dhiraj Jain</div>
+<div class="fc-item"><a href="tel:971550551234" style="color:#aaa">971550551234</a></div>
+<div class="fc-item"><a href="mailto:gouravbizzfly@gmail.com" style="color:#aaa">gouravbizzfly@gmail.com</a></div>
+</div>
+</div>
+<div class="footer-bottom">
+<div class="container">&copy; 2025 AMBER. All Rights Reserved.</div>
+</div>
+</footer>
+
+<script>
+const hamburgerBtn=document.getElementById('hamburgerBtn');
+const mobileMenu=document.getElementById('mobileMenu');
+const mobileClose=document.getElementById('mobileClose');
+const mobileLinks=document.querySelectorAll('.mobile-link');
+hamburgerBtn.addEventListener('click',function(){mobileMenu.classList.add('active');});
+mobileClose.addEventListener('click',function(){mobileMenu.classList.remove('active');});
+mobileMenu.addEventListener('click',function(e){if(e.target===mobileMenu)mobileMenu.classList.remove('active');});
+mobileLinks.forEach(function(link){link.addEventListener('click',function(){mobileMenu.classList.remove('active');});});
+</script>
+</body>
+</html>
