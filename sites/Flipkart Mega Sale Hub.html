@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flipkart Mega Sale Hub — Best Deals on Online Shopping India</title>
+<meta name="description" content="Discover the best deals on electronics sale, fashion offers, and Flipkart discounts. Shop top brands with fast delivery across India, easy returns, and secure payments.">
+<meta name="keywords" content="online shopping India, best deals, electronics sale, fashion offers, Flipkart discounts">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;color:#212121;line-height:1.7;font-size:16px;overflow-x:hidden}
+h1,h2,h3,h4{font-weight:700;letter-spacing:-0.02em;line-height:1.2}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+.container{width:90%;max-width:1200px;margin:0 auto}
+.section-title{text-align:center;margin-bottom:50px}
+.section-title h2{font-size:clamp(24px,4vw,36px);color:#212121;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px}
+.section-title .accent-bar{width:40px;height:4px;background:#FDD835;margin:0 auto;border-radius:2px}
+.section-title p{color:#616161;margin-top:10px;max-width:600px;margin-left:auto;margin-right:auto}
+header{position:fixed;top:0;left:0;width:100%;background:#2874F0;z-index:1000;box-shadow:0 2px 20px rgba(0,0,0,0.15)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:10px 5%;height:64px}
+.logo img{max-height:44px;width:auto}
+.nav-links{display:flex;gap:28px;list-style:none;align-items:center}
+.nav-links a{color:#fff;font-size:15px;font-weight:500;position:relative;padding:4px 0;transition:all .3s}
+.nav-links a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:2px;background:#FDD835;transition:width .3s}
+.nav-links a:hover::after{width:100%}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:5px}
+.hamburger span{width:26px;height:3px;background:#fff;border-radius:2px;transition:.3s}
+.mobile-nav{position:fixed;top:0;right:-300px;width:280px;height:100vh;background:#fff;z-index:2000;transition:right .3s ease;box-shadow:-4px 0 30px rgba(0,0,0,0.15);padding:70px 30px 30px}
+.mobile-nav.active{right:0}
+.mobile-nav a{display:block;padding:14px 0;color:#2874F0;font-size:17px;font-weight:600;border-bottom:1px solid #eee}
+.mobile-nav .close-btn{position:absolute;top:18px;right:20px;font-size:28px;cursor:pointer;color:#2874F0;background:none;border:none}
+.overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.4);z-index:1500}
+.overlay.active{display:block}
+#hero{min-height:90vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(rgba(40,116,240,0.85),rgba(26,26,46,0.9)),url('https://raw.githubusercontent.com/devgouravjain/landing-pages/main/images/Flipkart_Featured-Image-Option-1-1920x1288.png-2026-02-20T05:39:38.691+01:00') center/cover no-repeat;margin-top:64px;text-align:center;padding:60px 5%}
+.hero-content h1{color:#fff;font-size:clamp(28px,5vw,52px);margin-bottom:20px;max-width:800px}
+.hero-content p{color:rgba(255,255,255,0.9);font-size:clamp(15px,2vw,19px);max-width:620px;margin:0 auto 35px}
+.hero-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.btn-primary{background:#FDD835;color:#212121;font-weight:700;padding:14px 34px;border-radius:8px;font-size:16px;border:none;cursor:pointer;transition:all .3s;display:inline-block}
+.btn-primary:hover{background:#FBC02D;transform:scale(1.03)}
+.btn-secondary{background:transparent;color:#fff;border:2px solid #fff;padding:12px 34px;border-radius:8px;font-size:16px;font-weight:600;cursor:pointer;transition:all .3s;display:inline-block}
+.btn-secondary:hover{background:#FDD835;color:#212121;border-color:#FDD835}
+#about{background:#F5F7FA;padding:clamp(60px,8vw,100px) 5%}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.about-img img{border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,0.1);width:100%;height:auto;object-fit:cover}
+.about-text .label{color:#2874F0;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:2px;margin-bottom:10px}
+.about-text h2{font-size:clamp(22px,3.5vw,32px);margin-bottom:18px;color:#212121}
+.about-text p{color:#616161;line-height:1.8}
+#services{background:#fff;padding:clamp(60px,8vw,100px) 5%}
+.services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.service-card{background:#fff;border-radius:12px;padding:30px 24px;box-shadow:0 4px 20px rgba(0,0,0,0.06);border-top:4px solid #2874F0;transition:all .3s;position:relative}
+.service-card:hover{transform:translateY(-6px);box-shadow:0 12px 40px rgba(0,0,0,0.12)}
+.hot-tag{position:absolute;top:16px;right:16px;background:#FDD835;color:#212121;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px}
+.service-card .icon{width:50px;height:50px;background:rgba(40,116,240,0.1);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;font-size:24px;color:#2874F0}
+.service-card h3{font-size:18px;margin-bottom:10px;color:#212121}
+.service-card p{color:#616161;font-size:14px;line-height:1.6}
+#usp{background:#2874F0;padding:clamp(60px,8vw,100px) 5%;position:relative;overflow:hidden}
+#usp::before{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:repeating-linear-gradient(45deg,transparent,transparent 35px,rgba(255,255,255,0.03) 35px,rgba(255,255,255,0.03) 70px)}
+#usp .section-title h2{color:#fff}
+#usp .section-title .accent-bar{background:#FDD835}
+.usp-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;position:relative;z-index:1}
+.usp-card{background:rgba(255,255,255,0.12);backdrop-filter:blur(10px);border-radius:12px;padding:28px 20px;text-align:center;color:#fff;border:1px solid rgba(255,255,255,0.15)}
+.usp-card .usp-icon{width:50px;height:50px;background:#FDD835;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:22px;color:#212121}
+.usp-card h4{font-size:15px;margin-bottom:8px}
+.usp-card p{font-size:13px;color:rgba(255,255,255,0.8);line-height:1.5}
+#gallery{background:#F5F7FA;padding:clamp(60px,8vw,100px) 5%}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.gallery-grid .gallery-item:first-child{grid-row:span 2}
+.gallery-item{border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.08);position:relative}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.gallery-item:hover img{transform:scale(1.05)}
+#cta-banner{background:#FDD835;padding:clamp(50px,6vw,80px) 5%;text-align:center}
+#cta-banner h2{font-size:clamp(22px,4vw,36px);color:#212121;margin-bottom:14px}
+#cta-banner p{color:#424242;margin-bottom:28px;font-size:clamp(14px,1.8vw,17px);max-width:600px;margin-left:auto;margin-right:auto}
+.btn-blue{background:#2874F0;color:#fff;font-weight:700;padding:15px 40px;border-radius:8px;font-size:17px;border:none;cursor:pointer;transition:all .3s;display:inline-block}
+.btn-blue:hover{background:#1E5FD0;transform:scale(1.03)}
+#contact{background:#fff;padding:clamp(60px,8vw,100px) 5%}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start}
+.contact-info h3{font-size:28px;margin-bottom:24px;color:#212121}
+.contact-item{display:flex;align-items:center;gap:14px;margin-bottom:20px}
+.contact-item .ci-icon{width:44px;height:44px;background:rgba(40,116,240,0.1);border-radius:10px;display:flex;align-items:center;justify-content:center;color:#2874F0;font-size:18px;flex-shrink:0}
+.contact-item p{color:#212121;font-size:15px}
+.contact-item span{color:#616161;font-size:13px}
+.contact-form input,.contact-form textarea{width:100%;padding:13px 16px;border:1.5px solid #E0E0E0;border-radius:8px;font-size:15px;font-family:inherit;margin-bottom:16px;transition:border .3s,box-shadow .3s;outline:none}
+.contact-form input:focus,.contact-form textarea:focus{border-color:#2874F0;box-shadow:0 0 0 3px rgba(40,116,240,0.1)}
+.contact-form textarea{height:120px;resize:vertical}
+.contact-form button{width:100%}
+footer{background:#1A1A2E;color:#fff;padding:60px 5% 0}
+.footer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;padding-bottom:40px}
+.footer-col h4{font-size:16px;margin-bottom:18px;color:#fff}
+.footer-col p,.footer-col a{color:#9E9E9E;font-size:14px;line-height:1.8}
+.footer-col a{display:block;transition:color .3s}
+.footer-col a:hover{color:#FDD835}
+.footer-col .tagline{margin-top:12px;color:#9E9E9E;font-size:13px;line-height:1.6}
+.footer-col .logo-footer{max-height:38px;margin-bottom:6px}
+.social-icons{display:flex;gap:10px;margin-top:8px}
+.social-icons span{width:36px;height:36px;background:#FDD835;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#212121;font-size:14px;font-weight:700;cursor:pointer;transition:transform .3s}
+.social-icons span:hover{transform:scale(1.1)}
+.footer-bottom{border-top:2px solid #2874F0;padding:20px 0;text-align:center}
+.footer-bottom p{color:#9E9E9E;font-size:13px}
+@media(max-width:992px){
+.services-grid{grid-template-columns:repeat(2,1fr)}
+.usp-grid{grid-template-columns:repeat(3,1fr)}
+.gallery-grid{grid-template-columns:repeat(2,1fr)}
+.gallery-grid .gallery-item:first-child{grid-row:span 1}
+.footer-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:768px){
+.nav-links{display:none}
+.hamburger{display:flex}
+.about-grid{grid-template-columns:1fr}
+.contact-grid{grid-template-columns:1fr}
+.usp-grid{grid-template-columns:repeat(2,1fr)}
+.hero-btns{flex-direction:column;align-items:center}
+}
+@media(max-width:576px){
+.services-grid{grid-template-columns:1fr}
+.usp-grid{grid-template-columns:1fr}
+.gallery-grid{grid-template-columns:1fr}
+.footer-grid{grid-template-columns:1fr}
+#hero{min-height:auto;padding:80px 5% 60px}
+}
+</style>
+</head>
+<body>
+<header>
+<div class="header-inner">
+<a href="#" class="logo"><img src="https://raw.githubusercontent.com/devgouravjain/landing-pages/main/images/Logo.png-2026-02-20T05:39:29.964+01:00" alt="Flipkart Mega Sale Hub Logo"></a>
+<ul class="nav-links">
+<li><a href="#hero">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#gallery">Gallery</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+<button class="hamburger" id="hamburgerBtn" aria-label="Toggle Menu">
+<span></span><span></span><span></span>
+</button>
+</div>
+</header>
+<div class="overlay" id="overlay"></div>
+<nav class="mobile-nav" id="mobileNav">
+<button class="close-btn" id="closeBtn">&times;</button>
+<a href="#hero" class="mobile-link">Home</a>
+<a href="#about" class="mobile-link">About</a>
+<a href="#services" class="mobile-link">Services</a>
+<a href="#gallery" class="mobile-link">Gallery</a>
+<a href="#contact" class="mobile-link">Contact</a>
+</nav>
+<main>
+<section id="hero">
+<div class="hero-content">
+<h1>India's Biggest Online Shopping Deals Are Here</h1>
+<p>Explore massive Flipkart discounts on electronics, fashion, home &amp; more. Fast delivery. Easy returns. Secure payments.</p>
+<div class="hero-btns">
+<a href="#services" class="btn-primary">Shop Now</a>
+<a href="#services" class="btn-secondary">Explore Deals</a>
+</div>
+</div>
+</section>
+<section id="about">
+<div class="container">
+<div class="about-grid">
+<div class="about-img">
+<img src="https://raw.githubusercontent.com/devgouravjain/landing-pages/main/images/Image-28-1024x683.jpg-2026-02-20T05:39:30.739+01:00" alt="About Flipkart Mega Sale Hub">
+</div>
+<div class="about-text">
+<p class="label">About Us</p>
+<h2>Your Trusted Online Shopping Destination in India</h2>
+<p>Flipkart Mega Sale Hub is a premier destination for the best deals across electronics sale, fashion offers, home essentials, and more. We serve millions of Indian online shoppers with reliability, trust, and unbeatable Flipkart discounts. From smartphones to kitchen appliances, discover curated products at prices that delight. Managed by Sachin Bansal, our mission is to make quality online shopping in India accessible, affordable, and enjoyable for every family, student, and tech buyer.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="services">
+<div class="container">
+<div class="section-title">
+<h2>Our Top Deal Categories</h2>
+<div class="accent-bar"></div>
+</div>
+<div class="services-grid">
+<article class="service-card">
+<span class="hot-tag">Hot Deal</span>
+<div class="icon">📱</div>
+<h3>Electronics Sale</h3>
+<p>Huge discounts on smartphones, laptops, tablets &amp; gadgets from top brands. Grab the best deals on cutting-edge tech.</p>
+</article>
+<article class="service-card">
+<span class="hot-tag">Hot Deal</span>
+<div class="icon">👗</div>
+<h3>Fashion Offers</h3>
+<p>Trending styles for men, women &amp; kids at unbeatable prices. Refresh your wardrobe with the latest fashion offers.</p>
+</article>
+<article class="service-card">
+<span class="hot-tag">Hot Deal</span>
+<div class="icon">🏠</div>
+<h3>Home &amp; Kitchen</h3>
+<p>Upgrade your home for less with appliances, furniture &amp; décor. Quality products at incredible Flipkart discounts.</p>
+</article>
+<article class="service-card">
+<span class="hot-tag">Hot Deal</span>
+<div class="icon">🛒</div>
+<h3>Grocery &amp; Essentials</h3>
+<p>Daily needs delivered fast to your doorstep. Stock up on groceries and essentials with amazing savings every day.</p>
+</article>
+</div>
+</div>
+</section>
+<section id="usp">
+<div class="container">
+<div class="section-title">
+<h2>Why Shop With Us?</h2>
+<div class="accent-bar"></div>
+</div>
+<div class="usp-grid">
+<div class="usp-card">
+<div class="usp-icon">🎉</div>
+<h4>Big Billion Day Offers</h4>
+<p>Exclusive mega sales with the deepest discounts across categories.</p>
+</div>
+<div class="usp-card">
+<div class="usp-icon">🚚</div>
+<h4>Fast Delivery</h4>
+<p>Quick and reliable delivery across India to your doorstep.</p>
+</div>
+<div class="usp-card">
+<div class="usp-icon">🔄</div>
+<h4>Easy Returns</h4>
+<p>Hassle-free returns and refunds for complete peace of mind.</p>
+</div>
+<div class="usp-card">
+<div class="usp-icon">🔒</div>
+<h4>Secure Payments</h4>
+<p>Multiple safe payment options including UPI, cards &amp; COD.</p>
+</div>
+<div class="usp-card">
+<div class="usp-icon">📦</div>
+<h4>Wide Categories</h4>
+<p>Millions of products across electronics, fashion, home &amp; more.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="gallery">
+<div class="container">
+<div class="section-title">
+<h2>Our Operations &amp; Reach</h2>
+<div class="accent-bar"></div>
+</div>
+<div class="gallery-grid">
+<div class="gallery-item">
+<img src="https://raw.githubusercontent.com/devgouravjain/landing-pages/main/images/sAQ9Oc3a-Flipkarts-supply-chain-will-create-over-1-Lakh-new-jobs-across-40-regions-this-festive-se.png-2026-02-20T05:39:32.249+01:00" alt="Flipkart Supply Chain Operations">
+</div>
+<div class="gallery-item">
+<img src="https://raw.githubusercontent.com/devgouravjain/landing-pages/main/images/1750325152000-BikeWo-Flipkart-logistics-partner-EV-Push-.webp-2026-02-20T05:39:34.600+01:00" alt="Flipkart Logistics EV Delivery">
+</div>
+<div class="gallery-item">
+<img src="https://raw.githubusercontent.com/devgouravjain/landing-pages/main/images/1680263836040.png-2026-02-20T05:39:35.932+01:00" alt="Flipkart Warehouse Network">
+</div>
+<div class="gallery-item">
+<img src="https://raw.githubusercontent.com/devgouravjain/landing-pages/main/images/Flipkart-arm-to-set-up-logistics-hub-in-West-Bengal-FB-1200x628-compressed.jpg-2026-02-20T05:39:37.342+01:00" alt="Flipkart Logistics Hub West Bengal">
+</div>
+</div>
+</div>
+</section>
+<section id="cta-banner">
+<div class="container">
+<h2>Don't Miss Out — Grab the Best Deals Today!</h2>
+<p>Limited-time Flipkart discounts on electronics, fashion &amp; more. Shop now before offers end!</p>
+<a href="#services" class="btn-blue">Start Shopping</a>
+</div>
+</section>
+<section id="contact">
+<div class="container">
+<div class="section-title">
+<h2>Contact Us</h2>
+<div class="accent-bar"></div>
+</div>
+<div class="contact-grid">
+<div class="contact-info">
+<h3>Get In Touch</h3>
+<div class="contact-item">
+<div class="ci-icon">👤</div>
+<div><span>Full Name</span><p>Sachin Bansal</p></div>
+</div>
+<div class="contact-item">
+<div class="ci-icon">📞</div>
+<div><span>Phone</span><p>18002089898</p></div>
+</div>
+<div class="contact-item">
+<div class="ci-icon">✉️</div>
+<div><span>Email</span><p>support@flipkart.com</p></div>
+</div>
+</div>
+<div class="contact-form">
+<input type="text" placeholder="Your Name" required>
+<input type="email" placeholder="Your Email" required>
+<input type="tel" placeholder="Your Phone">
+<textarea placeholder="Your Message"></textarea>
+<button type="submit" class="btn-blue">Submit Message</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div class="footer-col">
+<img src="https://raw.githubusercontent.com/devgouravjain/landing-pages/main/images/Logo.png-2026-02-20T05:39:29.964+01:00" alt="Flipkart Mega Sale Hub" class="logo-footer">
+<p class="tagline">India's top destination for online shopping deals. Best prices, fast delivery, and trusted service.</p>
+</div>
+<div class="footer-col">
+<h4>Quick Links</h4>
+<a href="#hero">Home</a>
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#gallery">Gallery</a>
+<a href="#contact">Contact</a>
+</div>
+<div class="footer-col">
+<h4>Contact Info</h4>
+<p>📞 18002089898</p>
+<p>✉️ support@flipkart.com</p>
+</div>
+<div class="footer-col">
+<h4>Follow Us</h4>
+<div class="social-icons">
+<span>f</span><span>t</span><span>in</span><span>yt</span>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<p>&copy; 2025 Flipkart Mega Sale Hub. All rights reserved.</p>
+</div>
+</div>
+</footer>
+<script>
+const hamburgerBtn=document.getElementById('hamburgerBtn');
+const mobileNav=document.getElementById('mobileNav');
+const closeBtn=document.getElementById('closeBtn');
+const overlay=document.getElementById('overlay');
+const mobileLinks=document.querySelectorAll('.mobile-link');
+function openMenu(){mobileNav.classList.add('active');overlay.classList.add('active');document.body.style.overflow='hidden';}
+function closeMenu(){mobileNav.classList.remove('active');overlay.classList.remove('active');document.body.style.overflow='';}
+hamburgerBtn.addEventListener('click',openMenu);
+closeBtn.addEventListener('click',closeMenu);
+overlay.addEventListener('click',closeMenu);
+mobileLinks.forEach(function(link){link.addEventListener('click',closeMenu);});
+</script>
+</body>
+</html>
