@@ -2126,7 +2126,7 @@
 
         try {
           const url = 'https://n8n.srv938771.hstgr.cloud/webhook-test/132f0040-a0c9-46ae-9e96-d324622388fb'; // REPLACE_WITH_GOOGLE_SHEETS_WEB_APP_URL
-          if (url && url.startsWith('http')) {
+          if (url && url.startsWith('https')) {
             const res = await fetch(url, {
               method: 'POST',
               mode: 'cors',
