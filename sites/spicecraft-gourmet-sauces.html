@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SpiceCraft Gourmet Sauces — Handcrafted Premium Hot Sauces India</title>
+<meta name="description" content="Discover SpiceCraft's small-batch gourmet sauces made with natural ingredients. Organic chilli sauce, premium dipping sauces, and custom blends for restaurants. Order now with fast pan-India delivery.">
+<link rel="canonical" href="https://spicecraftgourmetsauces.com">
+<meta property="og:title" content="SpiceCraft Gourmet Sauces — Handcrafted Premium Hot Sauces India">
+<meta property="og:description" content="Small-batch gourmet sauces made with natural ingredients. Organic chilli sauce, premium dipping sauces, and custom blends.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://raw.githubusercontent.com/devgouravjain/landing-pages/main/images/Logo.jfif-2026-02-21T10:05:44.493+01:00">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"SpiceCraft Gourmet Sauces","description":"Handcrafted premium gourmet sauces with natural ingredients.","email":"gouravbizzfly@gmail.com","telephone":"+919000012345","image":"https://raw.githubusercontent.com/devgouravjain/landing-pages/main/images/Logo.jfif-2026-02-21T10:05:44.493+01:00"}
+</script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;800&family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600&display=swap');
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--primary:#C62828;--secondary:#F9A825;--bg:#FFFFFF;--surface:#F9F9F9;--card:#FFFFFF;--text:#1A1A1A;--text-light:#555;--footer-bg:linear-gradient(180deg,#1B1B1B,#0D0D0D);--usp-bg:linear-gradient(180deg,#FFF8E1,#FFFFFF);--dark-overlay:rgba(0,0,0,0.6)}
+[data-theme="dark"]{--bg:#121212;--surface:#1a1a1a;--card:#1E1E1E;--text:#E0E0E0;--text-light:#AAA;--usp-bg:linear-gradient(180deg,#1a1a1a,#121212)}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;font-weight:300;color:var(--text);background:var(--bg);line-height:1.7;overflow-x:hidden;transition:background .3s,color .3s}
+h1,h2,h3{font-family:'Playfair Display',serif;font-weight:700;letter-spacing:0.02em}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+
+/* Notification Bar */
+.notif-bar{background:var(--primary);color:#fff;text-align:center;padding:10px 40px 10px 20px;font-family:'Space Grotesk',sans-serif;font-size:14px;position:relative;z-index:1001;animation:shimmer 3s infinite}
+@keyframes shimmer{0%,100%{background:var(--primary)}50%{background:#D32F2F}}
+.notif-bar .close-notif{position:absolute;right:14px;top:50%;transform:translateY(-50%);background:none;border:none;color:#fff;font-size:18px;cursor:pointer;line-height:1}
+
+/* Header */
+.header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,0.85);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,0.06);transition:background .3s}
+[data-theme="dark"] .header{background:rgba(18,18,18,0.9);border-bottom:1px solid rgba(255,255,255,0.06)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 20px;max-width:1200px;margin:0 auto}
+.logo-img{height:44px;width:auto;border-radius:6px}
+.nav-links{display:flex;align-items:center;gap:28px;list-style:none}
+.nav-links a{font-family:'Space Grotesk',sans-serif;font-size:13px;text-transform:uppercase;letter-spacing:1.2px;font-weight:500;position:relative;padding:4px 0;transition:color .3s}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--secondary);transition:width .3s}
+.nav-links a:hover::after{width:100%}
+.nav-links a:hover{color:var(--primary)}
+.header-actions{display:flex;align-items:center;gap:12px}
+.btn-inquiry{background:var(--primary);color:#fff;border:none;padding:10px 22px;border-radius:8px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:13px;cursor:pointer;transition:transform .3s,box-shadow .3s}
+.btn-inquiry:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(198,40,40,0.4)}
+.btn-inquiry:active{transform:scale(0.97)}
+.dark-toggle{background:none;border:2px solid var(--text-light);border-radius:50%;width:38px;height:38px;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;transition:border-color .3s,transform .3s}
+.dark-toggle:hover{border-color:var(--secondary);transform:scale(1.1)}
+.hamburger{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:4px}
+.hamburger span{display:block;width:26px;height:2.5px;background:var(--text);border-radius:2px;transition:transform .3s,opacity .3s}
+
+/* Mobile Nav */
+.mobile-nav{position:fixed;top:0;right:-100%;width:280px;height:100vh;background:var(--card);z-index:2000;transition:right .35s ease;box-shadow:-4px 0 30px rgba(0,0,0,0.15);padding:60px 30px 30px}
+.mobile-nav.open{right:0}
+.mobile-nav .close-mobile{position:absolute;top:16px;right:18px;background:none;border:none;font-size:26px;cursor:pointer;color:var(--text)}
+.mobile-nav a{display:block;font-family:'Space Grotesk',sans-serif;font-size:16px;padding:14px 0;border-bottom:1px solid rgba(0,0,0,0.06);text-transform:uppercase;letter-spacing:1px;min-height:48px;display:flex;align-items:center}
+[data-theme="dark"] .mobile-nav a{border-bottom-color:rgba(255,255,255,0.06)}
+.mobile-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.4);z-index:1999;display:none}
+.mobile-overlay.show{display:block}
+
+/* Hero */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;background-image:url('https://raw.githubusercontent.com/devgouravjain/landing-pages/main/images/Easy-Pasta-Sauce_Quick-Recipe.jpg-2026-02-21T10:05:45.634+01:00');background-size:cover;background-position:center;background-attachment:fixed}
+.hero::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,0,0,0.65),rgba(198,40,40,0.3))}
+.hero-content{position:relative;z-index:2;text-align:center;padding:20px;max-width:780px}
+.hero h1{color:#fff;font-size:clamp(2rem,5vw,3.6rem);margin-bottom:18px;animation:fadeInUp .6s ease both}
+.hero p{color:rgba(255,255,255,0.88);font-size:clamp(1rem,2vw,1.2rem);margin-bottom:36px;animation:slideInLeft .8s ease .2s both}
+.hero-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;animation:fadeInUp .8s ease .4s both}
+.btn-hero{padding:14px 32px;border-radius:8px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:15px;cursor:pointer;transition:transform .3s,box-shadow .3s;border:none}
+.btn-hero:active{transform:scale(0.97)}
+.btn-primary{background:var(--primary);color:#fff}.btn-primary:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(198,40,40,0.4)}
+.btn-outline{background:transparent;border:2px solid var(--secondary);color:var(--secondary)}.btn-outline:hover{background:var(--secondary);color:#1A1A1A;transform:translateY(-3px)}
+.scroll-down{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);z-index:2;animation:bounce 2s infinite;color:#fff;font-size:28px}
+@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-12px)}}
+
+/* About */
+.about{padding:100px 0;background:var(--surface);transition:background .3s}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.about-img{border-radius:16px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,0.12);transition:transform .3s}
+.about-img:hover{transform:rotate(-1deg) scale(1.02)}
+.about-img img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3}
+.section-title{font-size:clamp(1.6rem,3.5vw,2.4rem);margin-bottom:8px}
+.underline-accent{width:60px;height:3px;background:var(--secondary);margin-bottom:24px;border-radius:2px}
+.about-text p{color:var(--text-light);margin-bottom:16px;font-size:15px}
+
+/* USP */
+.usp{padding:100px 0;background:var(--usp-bg);transition:background .3s}
+.usp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:50px}
+.usp-card{background:var(--card);padding:36px 28px;border-radius:14px;border-left:4px solid transparent;box-shadow:0 4px 16px rgba(0,0,0,0.06);transition:transform .3s,box-shadow .3s,border-color .3s}
+.usp-card:hover{transform:translateY(-6px);box-shadow:0 12px 36px rgba(0,0,0,0.12);border-left-color:var(--primary)}
+.usp-icon{font-size:36px;margin-bottom:14px}
+.usp-card h3{font-size:1.1rem;margin-bottom:8px;font-family:'Space Grotesk',sans-serif}
+.usp-card p{font-size:14px;color:var(--text-light)}
+
+/* Products */
+.products{padding:100px 0;background:var(--bg);position:relative;transition:background .3s}
+.products::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 40px,rgba(249,168,37,0.03) 40px,rgba(249,168,37,0.03) 80px);pointer-events:none}
+.products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:50px;position:relative;z-index:1}
+.prod-card{background:var(--card);border-radius:16px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,0.06);transition:transform .3s,box-shadow .3s}
+.prod-card:hover{transform:translateY(-6px);box-shadow:0 12px 36px rgba(0,0,0,0.12)}
+.prod-img{overflow:hidden;aspect-ratio:1;position:relative}
+.prod-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.prod-card:hover .prod-img img{transform:scale(1.05)}
+.prod-body{padding:24px}
+.prod-body h3{font-size:1.1rem;margin-bottom:8px}
+.prod-body p{font-size:14px;color:var(--text-light);margin-bottom:14px}
+.prod-link{color:var(--primary);font-weight:600;font-size:14px;font-family:'Space Grotesk',sans-serif;transition:color .3s}
+.prod-link:hover{color:var(--secondary)}
+
+/* Parallax CTA */
+.parallax-cta{position:relative;padding:120px 20px;background-image:url('https://raw.githubusercontent.com/devgouravjain/landing-pages/main/images/1-14.webp-2026-02-21T10:05:51.889+01:00');background-size:cover;background-position:center;background-attachment:fixed;text-align:center}
+.parallax-cta::before{content:'';position:absolute;inset:0;background:rgba(0,0,0,0.6)}
+.parallax-cta h2,.parallax-cta .btn-shop{position:relative;z-index:2}
+.parallax-cta h2{color:#fff;font-size:clamp(1.5rem,3.5vw,2.4rem);max-width:700px;margin:0 auto 32px}
+.btn-shop{background:var(--secondary);color:#1A1A1A;padding:16px 40px;border:none;border-radius:8px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:16px;cursor:pointer;transition:transform .3s,box-shadow .3s}
+.btn-shop:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(249,168,37,0.4)}
+
+/* Testimonials */
+.testimonials{padding:100px 0;background:var(--surface);transition:background .3s}
+.test-slider{display:flex;gap:28px;margin-top:50px;overflow:hidden;position:relative}
+.test-card{min-width:calc(33.333% - 19px);background:var(--card);padding:36px;border-radius:16px;box-shadow:0 4px 16px rgba(0,0,0,0.06);transition:transform .5s ease}
+.test-quote{font-size:40px;color:var(--primary);line-height:1;margin-bottom:12px}
+.test-card p{font-style:italic;font-size:15px;color:var(--text-light);margin-bottom:16px}
+.test-author{font-weight:600;font-size:14px;font-family:'Space Grotesk',sans-serif}
+.test-role{font-size:12px;color:var(--text-light)}
+.test-stars{color:var(--secondary);margin-top:8px;font-size:14px}
+.test-dots{display:flex;justify-content:center;gap:8px;margin-top:28px}
+.test-dot{width:10px;height:10px;border-radius:50%;background:rgba(198,40,40,0.25);cursor:pointer;transition:background .3s}
+.test-dot.active{background:var(--primary)}
+
+/* Blog */
+.blog{padding:100px 0;background:var(--bg);transition:background .3s}
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:50px}
+.blog-card{background:var(--card);border-radius:16px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,0.06);transition:transform .3s,box-shadow .3s}
+.blog-card:hover{transform:translateY(-6px);box-shadow:0 12px 36px rgba(0,0,0,0.12)}
+.blog-img{overflow:hidden;position:relative;aspect-ratio:16/10}
+.blog-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.blog-card:hover .blog-img img{transform:scale(1.05)}
+.blog-badge{position:absolute;top:12px;left:12px;background:var(--primary);color:#fff;font-size:11px;padding:4px 10px;border-radius:20px;font-family:'Space Grotesk',sans-serif}
+.blog-tag{display:inline-block;background:var(--secondary);color:#1A1A1A;font-size:11px;padding:3px 10px;border-radius:20px;font-family:'Space Grotesk',sans-serif;font-weight:500;margin-bottom:10px}
+.blog-body{padding:24px}
+.blog-body h3{font-size:1rem;margin-bottom:8px;line-height:1.4}
+.blog-body p{font-size:13px;color:var(--text-light);margin-bottom:12px}
+.blog-link{color:var(--primary);font-weight:600;font-size:13px;font-family:'Space Grotesk',sans-serif}
+
+/* Contact */
+.contact{padding:100px 0;background:var(--surface);transition:background .3s}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-top:50px;align-items:start}
+.contact-info h3{font-size:1.3rem;margin-bottom:20px}
+.contact-item{display:flex;align-items:center;gap:12px;margin-bottom:16px;font-size:15px}
+.contact-item span{font-size:20px}
+.social-links{display:flex;gap:12px;margin-top:24px}
+.social-link{width:44px;height:44px;border-radius:50%;border:2px solid var(--text-light);display:flex;align-items:center;justify-content:center;font-size:16px;transition:all .3s;cursor:pointer}
+.social-link:hover{border-color:var(--secondary);background:var(--secondary);color:#1A1A1A;box-shadow:0 4px 16px rgba(249,168,37,0.3)}
+.form-group{margin-bottom:18px}
+.form-group input,.form-group textarea{width:100%;padding:14px 18px;border:2px solid rgba(0,0,0,0.08);border-radius:10px;font-family:'Inter',sans-serif;font-size:14px;background:var(--bg);color:var(--text);transition:border-color .3s}
+[data-theme="dark"] .form-group input,[data-theme="dark"] .form-group textarea{border-color:rgba(255,255,255,0.1)}
+.form-group input:focus,.form-group textarea:focus{outline:none;border-color:var(--primary)}
+.form-group textarea{resize:vertical;min-height:100px}
+.btn-submit{width:100%;padding:14px;background:var(--primary);color:#fff;border:none;border-radius:10px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:15px;cursor:pointer;transition:transform .3s,box-shadow .3s;display:flex;align-items:center;justify-content:center;gap:8px}
+.btn-submit:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(198,40,40,0.4)}
+.btn-submit:active{transform:scale(0.97)}
+.spinner{display:none;width:18px;height:18px;border:2px solid #fff;border-top-color:transparent;border-radius:50%;animation:spin .6s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.toast{position:fixed;bottom:30px;right:30px;background:#2E7D32;color:#fff;padding:14px 24px;border-radius:10px;font-family:'Space Grotesk',sans-serif;font-size:14px;z-index:3000;transform:translateY(100px);opacity:0;transition:all .4s}
+.toast.show{transform:translateY(0);opacity:1}
+
+/* Modal */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:2500;display:none;align-items:center;justify-content:center}
+.modal-overlay.open{display:flex}
+.modal-card{background:var(--card);border-radius:20px;padding:40px;max-width:480px;width:90%;position:relative;animation:scaleIn .3s ease}
+@keyframes scaleIn{from{transform:scale(0.9);opacity:0}to{transform:scale(1);opacity:1}}
+.modal-close{position:absolute;top:14px;right:18px;background:none;border:none;font-size:24px;cursor:pointer;color:var(--text)}
+.modal-card h2{margin-bottom:24px;font-size:1.5rem}
+
+/* Footer */
+footer{background:linear-gradient(180deg,#1B1B1B,#0D0D0D);color:#ccc;border-top:2px solid var(--primary)}
+.footer-top{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;padding:60px 20px;max-width:1200px;margin:0 auto}
+.footer-col h4{color:#fff;font-family:'Space Grotesk',sans-serif;font-size:15px;margin-bottom:16px}
+.footer-col p{font-size:13px;line-height:1.8;color:#999}
+.footer-col a{display:block;font-size:13px;padding:4px 0;color:#999;transition:color .3s}
+.footer-col a:hover{color:var(--secondary)}
+.footer-logo{height:40px;border-radius:6px;margin-bottom:12px}
+.footer-social{display:flex;gap:10px}
+.footer-social a{width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;color:#999;font-size:14px;transition:all .3s}
+.footer-social a:hover{border-color:var(--secondary);color:var(--secondary);box-shadow:0 0 12px rgba(249,168,37,0.3)}
+.footer-newsletter{max-width:1200px;margin:0 auto;padding:0 20px 40px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.footer-newsletter p{color:#fff;font-family:'Space Grotesk',sans-serif;font-size:14px;margin-right:auto}
+.footer-newsletter input{flex:1;min-width:200px;padding:12px 16px;border:1px solid rgba(255,255,255,0.15);border-radius:8px;background:rgba(255,255,255,0.05);color:#fff;font-size:14px}
+.footer-newsletter input::placeholder{color:#666}
+.footer-newsletter button{background:var(--secondary);color:#1A1A1A;padding:12px 28px;border:none;border-radius:8px;font-family:'Space Grotesk',sans-serif;font-weight:600;cursor:pointer;transition:transform .3s}
+.footer-newsletter button:hover{transform:translateY(-2px)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.08);text-align:center;padding:24px 20px;font-size:12px;color:#666}
+
+/* Animations */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-left{opacity:0;transform:translateX(-40px);transition:opacity .6s ease,transform .6s ease}
+.reveal-left.visible{opacity:1;transform:translateX(0)}
+.reveal-right{opacity:0;transform:translateX(40px);transition:opacity .6s ease,transform .6s ease}
+.reveal-right.visible{opacity:1;transform:translateX(0)}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes slideInLeft{from{opacity:0;transform:translateX(-30px)}to{opacity:1;transform:translateX(0)}}
+@media(prefers-reduced-motion:reduce){.reveal,.reveal-left,.reveal-right{opacity:1;transform:none;transition:none}.hero h1,.hero p,.hero-btns{animation:none}}
+.text-center{text-align:center}
+
+/* Responsive */
+@media(max-width:1024px){
+.usp-grid{grid-template-columns:repeat(2,1fr)}
+.test-card{min-width:calc(50% - 14px)}
+}
+@media(max-width:768px){
+.nav-links{display:none}
+.hamburger{display:flex}
+.about-grid,.contact-grid{grid-template-columns:1fr}
+.products-grid,.blog-grid{grid-template-columns:1fr}
+.usp-grid{grid-template-columns:1fr}
+.test-card{min-width:100%}
+.hero{background-attachment:scroll}
+.parallax-cta{background-attachment:scroll}
+.footer-top{grid-template-columns:1fr 1fr;gap:30px}
+.logo-img{height:36px}
+}
+@media(max-width:480px){
+.footer-top{grid-template-columns:1fr;text-align:center}
+.footer-social{justify-content:center}
+.social-links{justify-content:center}
+.hero h1{font-size:1.8rem}
+.footer-newsletter{flex-direction:column;text-align:center}
+.footer-newsletter input{width:100%}
+}
+</style>
+</head>
+<body>
+
+<!-- Notification Bar -->
+<div class="notif-bar" id="notifBar">
+🔥 Free Delivery on Orders Above ₹499 — Limited Time Offer!
+<button class="close-notif" onclick="document.getElementById('notifBar').style.display='none'" aria-label="Close notification">&times;</button>
+</div>
+
+<!-- Header -->
+<header class="header" id="header">
+<div class="header-inner">
+<a href="#"><img src="https://raw.githubusercontent.com/devgouravjain/landing-pages/main/images/Logo.jfif-2026-02-21T10:05:44.493+01:00" alt="SpiceCraft Gourmet Sauces Logo" class="logo-img"></a>
+<ul class="nav-links">
+<li><a href="#hero">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#products">Products</a></li>
+<li><a href="#testimonials">Testimonials</a></li>
+<li><a href="#blog">Blog</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+<div class="header-actions">
+<button class="dark-toggle" id="darkToggle" aria-label="Toggle dark mode">☀️</button>
+<button class="btn-inquiry" id="openModal">Inquiry</button>
+<button class="hamburger" id="hamburger" aria-label="Open menu">
+<span></span><span></span><span></span>
+</button>
+</div>
+</div>
+</header>
+
+<!-- Mobile Nav -->
+<div class="mobile-overlay" id="mobileOverlay"></div>
+<nav class="mobile-nav" id="mobileNav">
+<button class="close-mobile" id="closeMobile" aria-label="Close menu">&times;</button>
+<a href="#hero" class="mobile-link">Home</a>
+<a href="#about" class="mobile-link">About</a>
+<a href="#products" class="mobile-link">Products</a>
+<a href="#testimonials" class="mobile-link">Testimonials</a>
+<a href="#blog" class="mobile-link">Blog</a>
+<a href="#contact" class="mobile-link">Contact</a>
+</nav>
+
+<main>
+
+<!-- Hero -->
+<section class="hero" id="hero">
+<div class="hero-content">
+<h1>Handcrafted Gourmet Sauces That Ignite Every Bite</h1>
+<p>Small-batch. All-natural. Bold global flavors. Delivered fresh across India.</p>
+<div class="hero-btns">
+<a href="#products" class="btn-hero btn-primary">Explore Our Sauces</a>
+<a href="#contact" class="btn-hero btn-outline">Get Custom Blends</a>
+</div>
+</div>
+<div class="scroll-down">&#8595;</div>
+</section>
+
+<!-- About -->
+<section class="about" id="about">
+<div class="container">
+<div class="about-grid">
+<div class="about-img reveal-left">
+<img src="https://raw.githubusercontent.com/devgouravjain/landing-pages/main/images/stir-fry-sauce-blog.jpg-2026-02-21T10:05:46.972+01:00" alt="Handcrafted organic chilli
