@@ -1,0 +1,2133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SpiceCraft Gourmet Sauces — Handcrafted Premium Hot Sauces India</title>
+  <meta name="description" content="Discover SpiceCraft's small-batch gourmet sauces made with natural ingredients. Organic chilli sauce, premium dipping sauces, and custom blends for restaurants. Order now with fast pan-India delivery." />
+  <meta name="keywords" content="gourmet sauces, spicy sauces India, organic chilli sauce, premium dipping sauces, hot sauce brand" />
+  <link rel="canonical" href="https://example.com/" />
+
+  <meta property="og:title" content="SpiceCraft Gourmet Sauces — Handcrafted Premium Hot Sauces India" />
+  <meta property="og:description" content="Small-batch gourmet sauces with natural ingredients. Organic chilli sauce, premium dipping sauces, and custom blends for restaurants with fast pan-India delivery." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://example.com/" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/devgouravjain/landing-pages/main/images/Easy-Pasta-Sauce_Quick-Recipe.jpg-2026-02-21T10:05:45.634+01:00" />
+
+  <style>
+    :root{
+      --primary:#C62828;
+      --secondary:#F9A825;
+      --bg:#ffffff;
+      --surface:#ffffff;
+      --muted:#5a5a5a;
+      --text:#141414;
+      --border:rgba(18,18,18,.12);
+      --shadow: 0 10px 25px rgba(0,0,0,.10);
+      --shadow2: 0 16px 40px rgba(0,0,0,.16);
+      --glass: rgba(255,255,255,.72);
+      --radius: 18px;
+      --radius2: 24px;
+      --max: 1180px;
+      --focus: 0 0 0 4px rgba(249,168,37,.28);
+    }
+    [data-theme="dark"]{
+      --bg:#121212;
+      --surface:#1E1E1E;
+      --muted:#b8b8b8;
+      --text:#E0E0E0;
+      --border:rgba(255,255,255,.14);
+      --shadow: 0 12px 30px rgba(0,0,0,.35);
+      --shadow2: 0 18px 48px rgba(0,0,0,.48);
+      --glass: rgba(18,18,18,.70);
+      --focus: 0 0 0 4px rgba(198,40,40,.28);
+    }
+
+    /* Base */
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, "Inter", "Plus Jakarta Sans", "DM Sans", "Segoe UI", Roboto, Arial, "Noto Sans", sans-serif;
+      line-height:1.5;
+      overflow-x:hidden;
+      text-rendering:optimizeLegibility;
+    }
+    img{max-width:100%; display:block}
+    a{color:inherit; text-decoration:none}
+    button, input, textarea{
+      font:inherit;
+      color:inherit;
+    }
+    .container{max-width:var(--max); margin:0 auto; padding:0 20px}
+    .section{padding:80px 0}
+    .section.tight{padding:64px 0}
+    .title{
+      font-family: ui-serif, "Playfair Display", "DM Serif Display", Georgia, "Times New Roman", serif;
+      letter-spacing:.2px;
+      font-weight:800;
+      font-size:clamp(1.6rem, 2.3vw, 2.4rem);
+      margin:0 0 18px;
+    }
+    .subtitle{
+      margin:0;
+      color:var(--muted);
+      font-weight:350;
+      max-width:70ch;
+    }
+    .kicker{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      font-family: ui-sans-serif, "Space Grotesk", "Sora", system-ui, sans-serif;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      font-size:.78rem;
+      color:var(--muted);
+    }
+    .underline{
+      position:relative; display:inline-block;
+    }
+    .underline:after{
+      content:"";
+      position:absolute; left:0; bottom:-10px;
+      width:100%; height:4px;
+      background:linear-gradient(90deg,var(--secondary), rgba(249,168,37,.15));
+      border-radius:999px;
+    }
+
+    /* Notification bar */
+    .notice{
+      position:sticky;
+      top:0;
+      z-index:60;
+      background:var(--primary);
+      color:#fff;
+      padding:10px 14px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:12px;
+      box-shadow: 0 10px 20px rgba(0,0,0,.12);
+      overflow:hidden;
+    }
+    .notice:before{
+      content:"";
+      position:absolute; inset:0;
+      background:linear-gradient(110deg, rgba(255,255,255,.0) 0%, rgba(255,255,255,.18) 30%, rgba(255,255,255,.0) 60%);
+      transform:translateX(-120%);
+      animation: shimmer 5.8s linear infinite;
+      pointer-events:none;
+    }
+    @keyframes shimmer{
+      0%{transform:translateX(-120%)}
+      55%{transform:translateX(120%)}
+      100%{transform:translateX(120%)}
+    }
+    .notice p{
+      margin:0;
+      font-weight:650;
+      letter-spacing:.2px;
+      text-align:center;
+    }
+    .notice .close{
+      position:absolute;
+      right:10px;
+      width:36px; height:36px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.28);
+      background:rgba(255,255,255,.08);
+      color:#fff;
+      display:grid; place-items:center;
+      cursor:pointer;
+      transition: transform .15s ease, background .2s ease, border-color .2s ease;
+    }
+    .notice .close:hover{background:rgba(255,255,255,.14); transform:translateY(-1px)}
+    .notice .close:active{transform:scale(.97)}
+    .notice .close:focus-visible{outline:none; box-shadow: 0 0 0 4px rgba(255,255,255,.18)}
+
+    /* Header */
+    header{
+      position:sticky;
+      top:var(--noticeH, 0px);
+      z-index:55;
+      border-bottom:1px solid transparent;
+      transition: background .25s ease, border-color .25s ease, box-shadow .25s ease, transform .25s ease;
+    }
+    header.scrolled{
+      background:var(--glass);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom-color: var(--border);
+      box-shadow: 0 10px 25px rgba(0,0,0,.10);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0;
+      gap:14px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px; min-width:210px;
+    }
+    .brand img{
+      height:48px;
+      width:auto;
+      border-radius:10px;
+      box-shadow: 0 8px 18px rgba(0,0,0,.12);
+      background:#fff;
+      object-fit:cover;
+    }
+    .brand span{
+      font-family: ui-serif, "Playfair Display", "DM Serif Display", serif;
+      font-weight:800;
+      letter-spacing:.2px;
+      font-size:1.02rem;
+      white-space:nowrap;
+    }
+    .links{
+      display:flex; align-items:center; gap:18px;
+      font-family: ui-sans-serif, "Space Grotesk", "Sora", system-ui, sans-serif;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      font-size:.78rem;
+    }
+    .links a{
+      position:relative;
+      padding:10px 10px;
+      border-radius:12px;
+      color:var(--text);
+      opacity:.92;
+      transition: opacity .2s ease, transform .15s ease, background .2s ease;
+    }
+    .links a:after{
+      content:"";
+      position:absolute;
+      left:10px; right:10px; bottom:6px;
+      height:2px;
+      background:var(--secondary);
+      transform:scaleX(0);
+      transform-origin:left;
+      transition: transform .22s ease;
+      border-radius:999px;
+      opacity:.95;
+    }
+    .links a:hover{opacity:1; transform:translateY(-1px)}
+    .links a:hover:after{transform:scaleX(1)}
+    .actions{
+      display:flex; align-items:center; gap:10px;
+    }
+    .icon-btn{
+      width:42px; height:42px;
+      border-radius:14px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.0);
+      cursor:pointer;
+      display:grid; place-items:center;
+      transition: transform .15s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
+    }
+    [data-theme="dark"] .icon-btn{background:rgba(255,255,255,.02)}
+    .icon-btn:hover{transform:translateY(-2px); box-shadow:var(--shadow); border-color:rgba(249,168,37,.45)}
+    .icon-btn:active{transform:scale(.97)}
+    .icon{
+      width:18px; height:18px;
+      display:block;
+      fill:currentColor;
+      opacity:.92;
+    }
+
+    .btn{
+      border:none;
+      cursor:pointer;
+      border-radius:16px;
+      padding:12px 14px;
+      font-weight:750;
+      letter-spacing:.02em;
+      transition: transform .15s ease, box-shadow .2s ease, filter .2s ease, background .2s ease, color .2s ease, border-color .2s ease;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      min-height:44px;
+      white-space:nowrap;
+    }
+    .btn:active{transform:scale(.97)}
+    .btn-primary{
+      background:var(--primary);
+      color:#fff;
+      box-shadow: 0 14px 28px rgba(198,40,40,.22);
+    }
+    .btn-primary:hover{
+      transform:translateY(-3px);
+      box-shadow: 0 18px 38px rgba(198,40,40,.40);
+      filter:saturate(1.05);
+    }
+    .btn-secondary{
+      background:transparent;
+      color:var(--text);
+      border:1px solid rgba(249,168,37,.65);
+    }
+    .btn-secondary:hover{
+      background:var(--secondary);
+      color:#1b1b1b;
+      transform:translateY(-3px);
+      box-shadow: 0 18px 38px rgba(249,168,37,.28);
+      border-color:transparent;
+    }
+
+    /* Mobile drawer */
+    .burger{
+      display:none;
+    }
+    .drawer-backdrop{
+      position:fixed; inset:0;
+      background:rgba(0,0,0,.45);
+      opacity:0; visibility:hidden;
+      transition: opacity .25s ease, visibility .25s ease;
+      z-index:80;
+    }
+    .drawer{
+      position:fixed;
+      top:0; right:0;
+      height:100dvh;
+      width:min(360px, 92vw);
+      background:var(--surface);
+      border-left:1px solid var(--border);
+      box-shadow: -18px 0 50px rgba(0,0,0,.22);
+      transform:translateX(102%);
+      transition: transform .28s ease;
+      z-index:90;
+      display:flex;
+      flex-direction:column;
+    }
+    .drawer.open{transform:translateX(0)}
+    .drawer-backdrop.open{opacity:1; visibility:visible}
+    .drawer-head{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:16px;
+      border-bottom:1px solid var(--border);
+    }
+    .drawer-head .mini{
+      display:flex; align-items:center; gap:10px;
+      font-family: ui-serif, "Playfair Display", serif;
+      font-weight:800;
+    }
+    .drawer-head img{height:36px; border-radius:10px}
+    .drawer-links{
+      padding:10px;
+      display:flex; flex-direction:column;
+      gap:6px;
+    }
+    .drawer-links a{
+      min-height:48px;
+      display:flex; align-items:center;
+      padding:0 14px;
+      border-radius:14px;
+      border:1px solid transparent;
+      font-family: ui-sans-serif, "Space Grotesk", "Sora", system-ui, sans-serif;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      font-size:.82rem;
+      color:var(--text);
+      transition: transform .15s ease, background .2s ease, border-color .2s ease;
+    }
+    .drawer-links a:hover{
+      background:rgba(249,168,37,.14);
+      border-color:rgba(249,168,37,.28);
+      transform:translateY(-1px);
+    }
+    .drawer-actions{
+      margin-top:auto;
+      padding:14px;
+      border-top:1px solid var(--border);
+      display:grid;
+      gap:10px;
+    }
+
+    /* Hero */
+    .hero{
+      min-height:calc(100dvh - 0px);
+      display:flex;
+      align-items:center;
+      position:relative;
+      overflow:hidden;
+      background:
+        linear-gradient(120deg, rgba(0,0,0,.65), rgba(198,40,40,.30)),
+        url("https://raw.githubusercontent.com/devgouravjain/landing-pages/main/images/Easy-Pasta-Sauce_Quick-Recipe.jpg-2026-02-21T10:05:45.634+01:00");
+      background-size:cover;
+      background-position:center;
+    }
+    .hero .container{
+      padding-top:38px;
+      padding-bottom:70px;
+      position:relative;
+      z-index:2;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:28px;
+      align-items:center;
+    }
+    .hero h1{
+      font-family: ui-serif, "Playfair Display", "DM Serif Display", serif;
+      font-weight:900;
+      letter-spacing:.3px;
+      margin:0 0 14px;
+      color:#fff;
+      font-size:clamp(2.15rem, 4.6vw, 4.2rem);
+      line-height:1.08;
+    }
+    .hero p{
+      margin:0 0 22px;
+      color:rgba(255,255,255,.88);
+      font-weight:340;
+      font-size:clamp(1rem, 1.15vw, 1.12rem);
+      max-width:64ch;
+    }
+    .hero-ctas{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+    .hero .badge-row{
+      margin-top:22px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      color:rgba(255,255,255,.86);
+      font-family: ui-sans-serif, "Space Grotesk", "Sora", system-ui, sans-serif;
+      letter-spacing:.10em;
+      text-transform:uppercase;
+      font-size:.72rem;
+    }
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:10px 12px;
+      border-radius:999px;
+      background:rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.16);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+    .hero-aside{
+      display:flex;
+      justify-content:flex-end;
+    }
+    .hero-card{
+      width:min(420px, 100%);
+      border-radius:var(--radius2);
+      border:1px solid rgba(255,255,255,.18);
+      background:rgba(0,0,0,.18);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      padding:18px;
+      box-shadow: 0 18px 60px rgba(0,0,0,.25);
+    }
+    .hero-card .mini-title{
+      color:#fff;
+      margin:0 0 10px;
+      font-weight:800;
+      letter-spacing:.02em;
+    }
+    .hero-card ul{
+      margin:0;
+      padding:0 0 0 18px;
+      color:rgba(255,255,255,.86);
+    }
+    .hero-card li{margin:8px 0}
+    .particles{
+      position:absolute; inset:0;
+      background:
+        radial-gradient(circle at 15% 30%, rgba(249,168,37,.16), transparent 35%),
+        radial-gradient(circle at 80% 25%, rgba(198,40,40,.20), transparent 42%),
+        radial-gradient(circle at 60% 75%, rgba(249,168,37,.12), transparent 40%);
+      animation: floaty 10s ease-in-out infinite;
+      mix-blend-mode: screen;
+      opacity:.8;
+      pointer-events:none;
+    }
+    @keyframes floaty{
+      0%,100%{transform:translate3d(0,0,0)}
+      50%{transform:translate3d(0,-12px,0)}
+    }
+    .scroll-indicator{
+      position:absolute;
+      left:50%;
+      bottom:20px;
+      transform:translateX(-50%);
+      width:40px; height:40px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.26);
+      background:rgba(0,0,0,.14);
+      display:grid; place-items:center;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      cursor:pointer;
+      transition: transform .2s ease, background .2s ease, border-color .2s ease;
+      z-index:3;
+      animation: bounce 1.6s ease-in-out infinite;
+    }
+    .scroll-indicator:hover{background:rgba(255,255,255,.10); border-color:rgba(249,168,37,.45)}
+    @keyframes bounce{
+      0%,100%{transform:translateX(-50%) translateY(0)}
+      50%{transform:translateX(-50%) translateY(-6px)}
+    }
+
+    /* Reveal animations */
+    .reveal{opacity:0; transform:translateY(16px); transition: opacity .6s ease, transform .6s ease}
+    .reveal.in{opacity:1; transform:translateY(0)}
+    .reveal-left{opacity:0; transform:translateX(-18px); transition: opacity .7s ease, transform .7s ease}
+    .reveal-right{opacity:0; transform:translateX(18px); transition: opacity .7s ease, transform .7s ease}
+    .reveal-left.in, .reveal-right.in{opacity:1; transform:translateX(0)}
+    .stagger > *{opacity:0; transform:translateY(14px)}
+    .stagger.in > *{opacity:1; transform:translateY(0); transition: opacity .55s ease, transform .55s ease}
+    .stagger.in > *:nth-child(1){transition-delay:.05s}
+    .stagger.in > *:nth-child(2){transition-delay:.20s}
+    .stagger.in > *:nth-child(3){transition-delay:.35s}
+    .stagger.in > *:nth-child(4){transition-delay:.50s}
+    .stagger.in > *:nth-child(5){transition-delay:.65s}
+
+    /* About */
+    .about{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap:34px;
+      align-items:center;
+    }
+    .media{
+      border-radius:var(--radius2);
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      border:1px solid var(--border);
+      position:relative;
+      transform: rotate(-.7deg);
+      transition: transform .25s ease, box-shadow .25s ease;
+      background:var(--surface);
+    }
+    .media:hover{transform: rotate(0deg) translateY(-4px); box-shadow:var(--shadow2)}
+    .media img{
+      width:100%;
+      height:420px;
+      object-fit:cover;
+    }
+
+    /* USP */
+    .usp{
+      background: linear-gradient(180deg, rgba(249,168,37,.14), rgba(255,255,255,0));
+    }
+    [data-theme="dark"] .usp{
+      background: linear-gradient(180deg, rgba(249,168,37,.08), rgba(18,18,18,0));
+    }
+    .center{
+      text-align:center;
+      display:grid;
+      justify-items:center;
+      gap:10px;
+      margin-bottom:26px;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:16px;
+    }
+    .card{
+      background:var(--surface);
+      border:1px solid var(--border);
+      border-radius:var(--radius2);
+      padding:18px;
+      box-shadow:var(--shadow);
+      transition: transform .18s ease, box-shadow .22s ease, border-color .22s ease;
+      position:relative;
+      overflow:hidden;
+    }
+    .card:before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: radial-gradient(600px 180px at 20% 0%, rgba(249,168,37,.12), transparent 60%),
+                  radial-gradient(700px 220px at 100% 20%, rgba(198,40,40,.10), transparent 58%);
+      opacity:.9;
+      pointer-events:none;
+    }
+    .card:hover{
+      transform:translateY(-6px);
+      box-shadow:var(--shadow2);
+      border-color: rgba(198,40,40,.30);
+    }
+    .card .accent{
+      position:absolute;
+      left:0; top:0; bottom:0;
+      width:4px;
+      background: linear-gradient(180deg, var(--primary), rgba(198,40,40,.12));
+      opacity:.0;
+      transition: opacity .2s ease;
+    }
+    .card:hover .accent{opacity:1}
+    .card .icon-wrap{
+      width:46px; height:46px;
+      border-radius:16px;
+      display:grid; place-items:center;
+      border:1px solid rgba(249,168,37,.35);
+      background: rgba(249,168,37,.12);
+      margin-bottom:12px;
+    }
+    .card h3{
+      margin:0 0 6px;
+      font-size:1.02rem;
+      font-weight:820;
+      letter-spacing:.2px;
+    }
+    .card p{
+      margin:0;
+      color:var(--muted);
+      font-weight:340;
+    }
+
+    /* Products */
+    .products{
+      position:relative;
+    }
+    .products:before{
+      content:"";
+      position:absolute; inset:0;
+      background:
+        linear-gradient(135deg, rgba(249,168,37,.08) 0%, rgba(249,168,37,0) 40%),
+        repeating-linear-gradient(135deg, rgba(249,168,37,.05) 0 10px, rgba(249,168,37,0) 10px 22px);
+      opacity:.7;
+      pointer-events:none;
+    }
+    .products .container{position:relative; z-index:1}
+    .product-grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:18px;
+      margin-top:22px;
+    }
+    .p-card{
+      border-radius:var(--radius2);
+      overflow:hidden;
+      background:var(--surface);
+      border:1px solid var(--border);
+      box-shadow:var(--shadow);
+      transition: transform .18s ease, box-shadow .22s ease, border-color .22s ease;
+      display:flex; flex-direction:column;
+      min-height:420px;
+    }
+    .p-card:hover{transform:translateY(-6px); box-shadow:var(--shadow2); border-color: rgba(249,168,37,.35)}
+    .p-media{position:relative; overflow:hidden}
+    .p-media img{
+      width:100%;
+      height:240px;
+      object-fit:cover;
+      transition: transform .45s ease;
+    }
+    .p-card:hover .p-media img{transform:scale(1.05)}
+    .p-body{
+      padding:16px 16px 18px;
+      display:flex; flex-direction:column;
+      gap:8px;
+      flex:1;
+    }
+    .p-body h3{margin:0; font-weight:850; letter-spacing:.2px}
+    .p-body p{margin:0; color:var(--muted); font-weight:340}
+    .p-link{
+      margin-top:auto;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      color:var(--primary);
+      font-weight:820;
+      letter-spacing:.01em;
+      padding-top:6px;
+    }
+    .p-link span{transition: transform .2s ease}
+    .p-link:hover span{transform:translateX(3px)}
+
+    /* Parallax CTA */
+    .cta-parallax{
+      position:relative;
+      padding:86px 0;
+      background:
+        linear-gradient(120deg, rgba(0,0,0,.62), rgba(198,40,40,.30)),
+        url("https://raw.githubusercontent.com/devgouravjain/landing-pages/main/images/1-14.webp-2026-02-21T10:05:51.889+01:00");
+      background-size:cover;
+      background-position:center;
+      background-attachment:fixed;
+      overflow:hidden;
+    }
+    .cta-parallax .container{
+      display:grid;
+      justify-items:center;
+      text-align:center;
+      gap:16px;
+      position:relative;
+      z-index:2;
+    }
+    .cta-parallax h2{
+      margin:0;
+      color:#fff;
+      font-family: ui-serif, "Playfair Display", serif;
+      font-weight:900;
+      letter-spacing:.2px;
+      font-size:clamp(1.6rem, 3.2vw, 2.8rem);
+      max-width:28ch;
+      line-height:1.12;
+    }
+    .cta-parallax .btn{
+      background:var(--secondary);
+      color:#1b1b1b;
+      padding:14px 18px;
+      border-radius:18px;
+      box-shadow: 0 18px 44px rgba(249,168,37,.20);
+      min-height:48px;
+    }
+    .cta-parallax .btn:hover{
+      transform:translateY(-2px);
+      box-shadow: 0 22px 56px rgba(249,168,37,.30);
+    }
+
+    /* Testimonials */
+    .t-wrap{
+      margin-top:20px;
+      position:relative;
+    }
+    .carousel{
+      display:flex;
+      gap:14px;
+      overflow:hidden;
+      scroll-behavior:smooth;
+      touch-action: pan-y;
+    }
+    .t-card{
+      flex:0 0 calc((100% - 28px)/3);
+      border-radius:var(--radius2);
+      background:var(--surface);
+      border:1px solid var(--border);
+      box-shadow:var(--shadow);
+      padding:18px;
+      position:relative;
+      min-height:240px;
+      transition: transform .18s ease, box-shadow .22s ease;
+    }
+    .t-card:hover{transform:translateY(-5px); box-shadow:var(--shadow2)}
+    .quote{
+      position:absolute;
+      top:12px; right:14px;
+      width:32px; height:32px;
+      border-radius:12px;
+      background: rgba(198,40,40,.12);
+      display:grid; place-items:center;
+      color:var(--primary);
+      border:1px solid rgba(198,40,40,.20);
+      font-weight:900;
+      font-family: ui-serif, "Playfair Display", serif;
+    }
+    .t-text{
+      margin:8px 0 14px;
+      color:var(--text);
+      font-style:italic;
+      font-weight:360;
+    }
+    .t-meta{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:10px;
+      margin-top:auto;
+    }
+    .t-name{
+      font-weight:850;
+      margin:0;
+    }
+    .t-title{
+      margin:2px 0 0;
+      color:var(--muted);
+      font-size:.92rem;
+      font-weight:340;
+    }
+    .stars{
+      display:flex; gap:2px;
+      color:var(--secondary);
+    }
+    .dots{
+      display:flex; justify-content:center; gap:8px;
+      margin-top:14px;
+    }
+    .dot{
+      width:9px; height:9px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background:transparent;
+      cursor:pointer;
+      transition: transform .15s ease, background .2s ease, border-color .2s ease;
+    }
+    .dot.active{background:var(--secondary); border-color: rgba(249,168,37,.55)}
+    .dot:hover{transform:scale(1.1)}
+    .t-bg{
+      position:absolute; inset:-30px -30px auto -30px;
+      height:220px;
+      background:
+        linear-gradient(120deg, rgba(255,255,255,.88), rgba(255,255,255,0)),
+        url("https://raw.githubusercontent.com/devgouravjain/landing-pages/main/images/17%20Restaurant%20Sauces%20Explained%20A%20Delicious%20Guide%20for%20Food%20Lovers.jpg-2026-02-21T10:05:54.539+01:00");
+      background-size:cover;
+      background-position:center;
+      filter:saturate(1.05);
+      opacity:.12;
+      pointer-events:none;
+      border-radius:var(--radius2);
+    }
+    [data-theme="dark"] .t-bg{
+      background:
+        linear-gradient(120deg, rgba(18,18,18,.92), rgba(18,18,18,0)),
+        url("https://raw.githubusercontent.com/devgouravjain/landing-pages/main/images/17%20Restaurant%20Sauces%20Explained%20A%20Delicious%20Guide%20for%20Food%20Lovers.jpg-2026-02-21T10:05:54.539+01:00");
+      opacity:.18;
+    }
+
+    /* Blog */
+    .blog-grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:18px;
+      margin-top:22px;
+    }
+    article.blog{
+      border-radius:var(--radius2);
+      overflow:hidden;
+      background:var(--surface);
+      border:1px solid var(--border);
+      box-shadow:var(--shadow);
+      transition: transform .18s ease, box-shadow .22s ease, border-color .22s ease;
+      display:flex; flex-direction:column;
+      min-height:420px;
+    }
+    article.blog:hover{transform:translateY(-6px); box-shadow:var(--shadow2); border-color: rgba(198,40,40,.26)}
+    .b-media{position:relative; overflow:hidden}
+    .b-media img{
+      width:100%;
+      height:230px;
+      object-fit:cover;
+      transition: transform .45s ease;
+    }
+    article.blog:hover .b-media img{transform:scale(1.05)}
+    .badge-date{
+      position:absolute;
+      left:12px; top:12px;
+      background:var(--primary);
+      color:#fff;
+      font-family: ui-sans-serif, "Space Grotesk", "Sora", system-ui, sans-serif;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      font-size:.72rem;
+      padding:8px 10px;
+      border-radius:999px;
+      box-shadow: 0 10px 24px rgba(198,40,40,.22);
+    }
+    .badge-cat{
+      position:absolute;
+      right:12px; top:12px;
+      background:var(--secondary);
+      color:#1b1b1b;
+      font-family: ui-sans-serif, "Space Grotesk", "Sora", system-ui, sans-serif;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      font-size:.70rem;
+      padding:8px 10px;
+      border-radius:999px;
+      box-shadow: 0 12px 26px rgba(249,168,37,.20);
+    }
+    .b-body{
+      padding:16px 16px 18px;
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+      flex:1;
+    }
+    .b-body h3{margin:0; font-weight:900; letter-spacing:.2px}
+    .b-body p{margin:0; color:var(--muted); font-weight:340}
+    .read{
+      margin-top:auto;
+      display:inline-flex; align-items:center; gap:8px;
+      color:var(--primary);
+      font-weight:860;
+    }
+    .read span{transition: transform .2s ease}
+    .read:hover span{transform:translateX(3px)}
+
+    /* Contact */
+    .contact-grid{
+      display:grid;
+      grid-template-columns: .95fr 1.05fr;
+      gap:18px;
+      align-items:start;
+      margin-top:16px;
+    }
+    .panel{
+      border-radius:var(--radius2);
+      background:var(--surface);
+      border:1px solid var(--border);
+      box-shadow:var(--shadow);
+      padding:18px;
+      position:relative;
+      overflow:hidden;
+    }
+    .panel:before{
+      content:"";
+      position:absolute; inset:0;
+      background: radial-gradient(600px 200px at 10% 0%, rgba(198,40,40,.10), transparent 60%),
+                  radial-gradient(650px 230px at 100% 25%, rgba(249,168,37,.12), transparent 60%);
+      pointer-events:none;
+    }
+    .panel > *{position:relative; z-index:1}
+    .contact-item{
+      display:flex; gap:12px; align-items:flex-start;
+      padding:10px 0;
+      border-bottom:1px solid var(--border);
+    }
+    .contact-item:last-child{border-bottom:none}
+    .contact-item .b{
+      width:38px; height:38px;
+      border-radius:14px;
+      background: rgba(249,168,37,.12);
+      border:1px solid rgba(249,168,37,.30);
+      display:grid; place-items:center;
+      flex:0 0 auto;
+    }
+    .contact-item strong{display:block}
+    .social{
+      display:flex; gap:10px; flex-wrap:wrap;
+      margin-top:12px;
+    }
+    .sbtn{
+      width:44px; height:44px;
+      border-radius:999px;
+      border:1px solid rgba(249,168,37,.28);
+      background: rgba(249,168,37,.10);
+      display:grid; place-items:center;
+      transition: transform .15s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
+    }
+    .sbtn:hover{
+      transform:translateY(-3px);
+      background: rgba(249,168,37,.18);
+      border-color: rgba(249,168,37,.52);
+      box-shadow: 0 16px 40px rgba(249,168,37,.22);
+    }
+    .form{
+      display:grid; gap:10px;
+    }
+    .row2{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:10px;
+    }
+    label{
+      font-family: ui-sans-serif, "Space Grotesk", "Sora", system-ui, sans-serif;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      font-size:.74rem;
+      color:var(--muted);
+      display:block;
+      margin:0 0 6px;
+    }
+    .field{
+      width:100%;
+      border-radius:16px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.02);
+      padding:12px 12px;
+      outline:none;
+      transition: box-shadow .2s ease, border-color .2s ease, background .2s ease;
+      min-height:46px;
+    }
+    textarea.field{min-height:120px; resize:vertical}
+    .field:focus{box-shadow: var(--focus); border-color: rgba(249,168,37,.55)}
+    .submit{
+      justify-content:center;
+      gap:10px;
+      min-height:48px;
+    }
+    .spinner{
+      width:16px; height:16px;
+      border-radius:999px;
+      border:2px solid rgba(255,255,255,.35);
+      border-top-color:#fff;
+      display:none;
+      animation: spin 1s linear infinite;
+    }
+    .btn-secondary .spinner{border-color: rgba(0,0,0,.25); border-top-color:#1b1b1b}
+    @keyframes spin{to{transform:rotate(360deg)}}
+
+    /* Modal */
+    .modal-backdrop{
+      position:fixed; inset:0;
+      background:rgba(0,0,0,.60);
+      opacity:0; visibility:hidden;
+      transition: opacity .2s ease, visibility .2s ease;
+      z-index:120;
+      display:grid; place-items:center;
+      padding:18px;
+    }
+    .modal-backdrop.open{opacity:1; visibility:visible}
+    .modal{
+      width:min(560px, 100%);
+      background:var(--surface);
+      border-radius:24px;
+      border:1px solid var(--border);
+      box-shadow: 0 28px 80px rgba(0,0,0,.42);
+      transform: scale(.96) translateY(10px);
+      opacity:0;
+      transition: transform .22s ease, opacity .22s ease;
+      overflow:hidden;
+    }
+    .modal-backdrop.open .modal{transform:scale(1) translateY(0); opacity:1}
+    .modal-head{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:18px 18px 10px;
+      border-bottom:1px solid var(--border);
+    }
+    .modal-head h3{
+      margin:0;
+      font-family: ui-serif, "Playfair Display", serif;
+      font-weight:900;
+      letter-spacing:.2px;
+    }
+    .modal-body{padding:18px}
+
+    /* Toast */
+    .toast{
+      position:fixed;
+      left:50%;
+      bottom:22px;
+      transform:translateX(-50%) translateY(12px);
+      background: rgba(20,20,20,.92);
+      color:#fff;
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:16px;
+      padding:12px 14px;
+      box-shadow: 0 18px 60px rgba(0,0,0,.35);
+      opacity:0;
+      visibility:hidden;
+      transition: opacity .25s ease, transform .25s ease, visibility .25s ease;
+      z-index:140;
+      max-width:min(520px, 92vw);
+    }
+    .toast.show{
+      opacity:1; visibility:visible;
+      transform:translateX(-50%) translateY(0);
+    }
+
+    /* Footer */
+    footer{
+      background: linear-gradient(180deg, #1B1B1B, #0D0D0D);
+      color: rgba(255,255,255,.86);
+      border-top:2px solid var(--primary);
+      position:relative;
+      overflow:hidden;
+    }
+    footer:before{
+      content:"";
+      position:absolute; inset:-80px -80px auto -80px;
+      height:240px;
+      background: radial-gradient(700px 240px at 20% 20%, rgba(198,40,40,.20), transparent 60%),
+                  radial-gradient(750px 260px at 85% 15%, rgba(249,168,37,.16), transparent 60%);
+      opacity:.8;
+      pointer-events:none;
+    }
+    .footer-top{
+      position:relative;
+      z-index:1;
+      padding:56px 0 22px;
+    }
+    .footer-grid{
+      display:grid;
+      grid-template-columns: 1.2fr 1fr 1fr 1fr;
+      gap:18px;
+      align-items:start;
+    }
+    .f-brand{
+      display:flex; flex-direction:column; gap:12px;
+    }
+    .f-brand img{
+      height:44px;
+      width:auto;
+      border-radius:12px;
+      background:#fff;
+      padding:4px;
+    }
+    .f-title{
+      font-family: ui-serif, "Playfair Display", serif;
+      font-weight:900;
+      margin:0;
+      letter-spacing:.2px;
+      color:#fff;
+    }
+    .f-text{
+      margin:0;
+      color: rgba(255,255,255,.72);
+      font-weight:340;
+      max-width:44ch;
+    }
+    .f-col h4{
+      margin:0 0 12px;
+      color:#fff;
+      font-family: ui-sans-serif, "Space Grotesk", "Sora", system-ui, sans-serif;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      font-size:.78rem;
+    }
+    .f-links{
+      display:grid; gap:10px;
+    }
+    .f-links a{
+      color: rgba(255,255,255,.74);
+      transition: color .2s ease, transform .15s ease;
+      min-height:28px;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+    }
+    .f-links a:hover{color:#fff; transform:translateX(2px)}
+    .newsletter{
+      margin-top:18px;
+      border-radius:22px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:14px;
+    }
+    .newsletter strong{
+      color:#fff;
+      display:block;
+      font-family: ui-serif, "Playfair Display", serif;
+      letter-spacing:.2px;
+    }
+    .news-form{
+      display:flex; gap:10px;
+      align-items:center;
+      flex:1;
+      justify-content:flex-end;
+      min-width:240px;
+    }
+    .news-form input{
+      flex:1;
+      min-height:46px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.16);
+      background: rgba(0,0,0,.20);
+      padding:10px 12px;
+      color:#fff;
+      outline:none;
+      transition: box-shadow .2s ease, border-color .2s ease;
+    }
+    .news-form input:focus{box-shadow: 0 0 0 4px rgba(249,168,37,.22); border-color: rgba(249,168,37,.55)}
+    .news-form button{
+      background:var(--secondary);
+      color:#1b1b1b;
+      border:none;
+      border-radius:16px;
+      padding:12px 14px;
+      min-height:46px;
+      font-weight:850;
+      cursor:pointer;
+      transition: transform .15s ease, box-shadow .2s ease, filter .2s ease;
+      white-space:nowrap;
+    }
+    .news-form button:hover{transform:translateY(-2px); box-shadow: 0 18px 40px rgba(249,168,37,.22)}
+    .news-form button:active{transform:scale(.97)}
+    .footer-bottom{
+      position:relative; z-index:1;
+      padding:16px 0 26px;
+    }
+    .hr{
+      height:1px;
+      background: rgba(255,255,255,.10);
+      margin:18px 0 14px;
+    }
+    .copy{
+      text-align:center;
+      color: rgba(255,255,255,.62);
+      font-size:.92rem;
+      margin:0;
+    }
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .hero-grid{grid-template-columns: 1fr; gap:18px}
+      .hero-aside{justify-content:flex-start}
+      .grid{grid-template-columns: repeat(2, 1fr)}
+      .product-grid{grid-template-columns: repeat(2, 1fr)}
+      .blog-grid{grid-template-columns: repeat(2, 1fr)}
+      .t-card{flex:0 0 calc((100% - 14px)/2)}
+      .footer-grid{grid-template-columns: 1fr 1fr}
+      .brand{min-width:auto}
+    }
+    @media (max-width: 768px){
+      .links{display:none}
+      .burger{display:grid}
+      .brand img{height:36px}
+      .brand span{display:none}
+      .section{padding:68px 0}
+      .about{grid-template-columns: 1fr}
+      .media img{height:320px}
+      .product-grid{grid-template-columns: 1fr}
+      .blog-grid{grid-template-columns: 1fr}
+      .contact-grid{grid-template-columns: 1fr}
+      .row2{grid-template-columns: 1fr}
+      .t-card{flex:0 0 100%}
+      .cta-parallax{background-attachment:scroll}
+      .newsletter{flex-direction:column; align-items:flex-start}
+      .news-form{width:100%; justify-content:stretch; min-width:unset}
+    }
+    @media (prefers-reduced-motion: reduce){
+      html{scroll-behavior:auto}
+      .notice:before, .particles, .scroll-indicator{animation:none}
+      .reveal, .reveal-left, .reveal-right, .stagger > *{transition:none !important}
+      .drawer, .drawer-backdrop, header, .modal, .modal-backdrop{transition:none !important}
+      .p-media img, .b-media img{transition:none !important}
+    }
+    /* Focus */
+    a:focus-visible, button:focus-visible{outline:none; box-shadow: var(--focus)}
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "SpiceCraft Gourmet Sauces",
+    "description": "Handcrafted small-batch gourmet sauces made with natural ingredients, including organic chilli sauce and premium dipping sauces with pan-India delivery.",
+    "image": "https://raw.githubusercontent.com/devgouravjain/landing-pages/main/images/Logo.jfif-2026-02-21T10:05:44.493+01:00",
+    "telephone": "919000012345",
+    "email": "gouravbizzfly@gmail.com",
+    "url": "https://example.com/",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "IN"
+    }
+  }
+  </script>
+</head>
+
+<body data-theme="light">
+  <!-- SECTION 0: Notification Bar -->
+  <div class="notice" id="notice" role="region" aria-label="Promotion">
+    <p>🔥 Free Delivery on Orders Above ₹499 — Limited Time Offer!</p>
+    <button class="close" id="noticeClose" aria-label="Close notification">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.3 5.71a1 1 0 0 0-1.41 0L12 10.59 7.11 5.7A1 1 0 0 0 5.7 7.11L10.59 12 5.7 16.89a1 1 0 1 0 1.41 1.41L12 13.41l4.89 4.89a1 1 0 0 0 1.41-1.41L13.41 12l4.89-4.89a1 1 0 0 0 0-1.4Z"/></svg>
+    </button>
+  </div>
+
+  <!-- SECTION 1: Header / Navigation -->
+  <header id="siteHeader" aria-label="Main header">
+    <div class="container">
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="#home" aria-label="SpiceCraft Gourmet Sauces home">
+          <img src="https://raw.githubusercontent.com/devgouravjain/landing-pages/main/images/Logo.jfif-2026-02-21T10:05:44.493+01:00" alt="SpiceCraft Gourmet Sauces logo" />
+          <span>SpiceCraft</span>
+        </a>
+
+        <div class="links" aria-label="Site links">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#products">Products</a>
+          <a href="#testimonials">Testimonials</a>
+          <a href="#blog">Blog</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <div class="actions">
+          <button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle dark mode">
+            <svg class="icon" id="themeIcon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12Zm0-14a1 1 0 0 1-1-1V2a1 1 0 1 1 2 0v1a1 1 0 0 1-1 1Zm0 20a1 1 0 0 1-1-1v-1a1 1 0 1 1 2 0v1a1 1 0 0 1-1 1ZM4 13H3a1 1 0 1 1 0-2h1a1 1 0 1 1 0 2Zm18 0h-1a1 1 0 1 1 0-2h1a1 1 0 1 1 0 2ZM5.64 6.64a1 1 0 0 1-1.41 0L3.5 5.91a1 1 0 1 1 1.41-1.41l.73.73a1 1 0 0 1 0 1.41Zm14.86 14.86a1 1 0 0 1-1.41 0l-.73-.73a1 1 0 1 1 1.41-1.41l.73.73a1 1 0 0 1 0 1.41ZM18.36 6.64a1 1 0 0 1 0-1.41l.73-.73a1 1 0 1 1 1.41 1.41l-.73.73a1 1 0 0 1-1.41 0ZM4.91 21.5a1 1 0 0 1 0-1.41l.73-.73a1 1 0 1 1 1.41 1.41l-.73.73a1 1 0 0 1-1.41 0Z"/>
+            </svg>
+          </button>
+
+          <button class="btn btn-primary" id="inquiryOpen" type="button" aria-label="Open inquiry form">Inquiry</button>
+
+          <button class="icon-btn burger" id="burger" type="button" aria-label="Open menu">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H5A1 1 0 0 1 4 6Zm0 6a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1Zm1 5a1 1 0 1 0 0 2h14a1 1 0 1 0 0-2H5Z"/></svg>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="drawer-backdrop" id="drawerBackdrop" aria-hidden="true"></div>
+  <aside class="drawer" id="drawer" aria-label="Mobile menu">
+    <div class="drawer-head">
+      <div class="mini">
+        <img src="https://raw.githubusercontent.com/devgouravjain/landing-pages/main/images/Logo.jfif-2026-02-21T10:05:44.493+01:00" alt="SpiceCraft Gourmet Sauces logo" />
+        <span>SpiceCraft</span>
+      </div>
+      <button class="icon-btn" id="drawerClose" type="button" aria-label="Close menu">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.3 5.71a1 1 0 0 0-1.41 0L12 10.59 7.11 5.7A1 1 0 0 0 5.7 7.11L10.59 12 5.7 16.89a1 1 0 1 0 1.41 1.41L12 13.41l4.89 4.89a1 1 0 0 0 1.41-1.41L13.41 12l4.89-4.89a1 1 0 0 0 0-1.4Z"/></svg>
+      </button>
+    </div>
+    <nav class="drawer-links" aria-label="Mobile site links">
+      <a href="#home" data-drawer-link>Home</a>
+      <a href="#about" data-drawer-link>About</a>
+      <a href="#products" data-drawer-link>Products</a>
+      <a href="#testimonials" data-drawer-link>Testimonials</a>
+      <a href="#blog" data-drawer-link>Blog</a>
+      <a href="#contact" data-drawer-link>Contact</a>
+    </nav>
+    <div class="drawer-actions">
+      <button class="btn btn-secondary" id="drawerTheme" type="button">Toggle Dark Mode</button>
+      <button class="btn btn-primary" id="drawerInquiry" type="button">Inquiry</button>
+    </div>
+  </aside>
+
+  <main id="main">
+    <!-- SECTION 2: Hero -->
+    <section class="hero" id="home" aria-label="Hero">
+      <div class="particles" aria-hidden="true"></div>
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <div class="kicker reveal in">Premium • Small-batch • Pan-India</div>
+            <h1 class="reveal in" style="transition-delay:.05s">Handcrafted Gourmet Sauces That Ignite Every Bite</h1>
+            <p class="reveal-left in" style="transition-delay:.20s">Small-batch. All-natural. Bold global flavors. Delivered fresh across India. Discover a hot sauce brand built for home chefs and restaurants seeking premium dipping sauces and unforgettable heat.</p>
+
+            <div class="hero-ctas reveal in" style="transition-delay:.30s">
+              <a class="btn btn-primary" href="#products">Explore Our Sauces</a>
+              <a class="btn btn-secondary" href="#contact">Get Custom Blends</a>
+            </div>
+
+            <div class="badge-row reveal in" style="transition-delay:.40s" aria-label="Highlights">
+              <span class="pill">Gourmet sauces</span>
+              <span class="pill">Spicy sauces India</span>
+              <span class="pill">Organic chilli sauce</span>
+            </div>
+          </div>
+
+          <div class="hero-aside reveal-right in" style="transition-delay:.25s">
+            <div class="hero-card" aria-label="Quality promise">
+              <p class="mini-title">Luxury flavour, crafted for speed.</p>
+              <ul>
+                <li>Natural ingredients, no preservatives</li>
+                <li>Bold global profiles with balanced heat</li>
+                <li>Fast, reliable pan-India delivery</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a class="scroll-indicator" href="#about" aria-label="Scroll to About section">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16.5a1 1 0 0 1-.7-.29l-6-6a1 1 0 1 1 1.4-1.42L12 13.1l5.3-5.3a1 1 0 1 1 1.4 1.42l-6 6a1 1 0 0 1-.7.28Z"/></svg>
+      </a>
+    </section>
+
+    <!-- SECTION 3: About -->
+    <section class="section" id="about" aria-label="About SpiceCraft">
+      <div class="container">
+        <div class="about">
+          <div class="media reveal-left">
+            <img src="https://raw.githubusercontent.com/devgouravjain/landing-pages/main/images/stir-fry-sauce-blog.jpg-2026-02-21T10:05:46.972+01:00" alt="Small-batch gourmet sauces in action, organic chilli sauce inspiration" />
+          </div>
+          <div class="reveal-right">
+            <h2 class="title"><span class="underline">Our Story — Crafted with Passion</span></h2>
+            <p class="subtitle">
+              SpiceCraft Gourmet Sauces began with one obsession: build gourmet sauces that taste like a chef made them moments ago. We source clean produce, grind spices in controlled batches, and cook low-and-slow for depth—not shortcuts.
+              The result is a refined lineup of spicy sauces India can be proud of: layered heat, bright acidity, and a finish that elevates every plate. From an organic chilli sauce for everyday cooking to premium dipping sauces for entertaining, every bottle is tuned for balance, not burn.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: USP -->
+    <section class="section usp" aria-label="Why choose SpiceCraft">
+      <div class="container">
+        <div class="center reveal">
+          <h2 class="title">Why SpiceCraft?</h2>
+          <p class="subtitle">Luxury flavour, consistent quality, and a process built for freshness.</p>
+        </div>
+
+        <div class="grid stagger reveal" id="uspGrid" aria-label="Unique selling points">
+          <div class="card">
+            <span class="accent" aria-hidden="true"></span>
+            <div class="icon-wrap" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24"><path d="M7 6a3 3 0 0 1 6 0v2h2a3 3 0 0 1 3 3v1a1 1 0 1 1-2 0v-1a1 1 0 0 0-1-1h-2v8a3 3 0 0 1-6 0V6Zm2 0v12a1 1 0 1 0 2 0V6a1 1 0 1 0-2 0Z"/></svg>
+            </div>
+            <h3>Small-batch handcrafted sauces</h3>
+            <p>Made in focused runs for a fresher pour and tighter flavour control.</p>
+          </div>
+
+          <div class="card">
+            <span class="accent" aria-hidden="true"></span>
+            <div class="icon-wrap" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24"><path d="M12 2c-3.3 3.3-6 6.3-6 10a6 6 0 0 0 12 0c0-3.7-2.7-6.7-6-10Zm0 18a4 4 0 0 1-4-4c0-2.4 1.6-4.6 4-7.2 2.4 2.6 4 4.8 4 7.2a4 4 0 0 1-4 4Z"/></svg>
+            </div>
+            <h3>Natural, no preservatives</h3>
+            <p>Clean labels with ingredients you can recognize and trust.</p>
+          </div>
+
+          <div class="card">
+            <span class="accent" aria-hidden="true"></span>
+            <div class="icon-wrap" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm7.9 9H16a15.7 15.7 0 0 0-1.1-6.1A8 8 0 0 1 19.9 11ZM12 4c1.1 1.6 2 4 2.2 7H9.8C10 8 10.9 5.6 12 4ZM4.1 13H8a15.7 15.7 0 0 0 1.1 6.1A8 8 0 0 1 4.1 13Zm0-2a8 8 0 0 1 5-6.1A15.7 15.7 0 0 0 8 11H4.1ZM12 20c-1.1-1.6-2-4-2.2-7h4.4C14 16 13.1 18.4 12 20Zm2.9-.9A15.7 15.7 0 0 0 16 13h3.9a8 8 0 0 1-5 6.1Z"/></svg>
+            </div>
+            <h3>Bold global flavors</h3>
+            <p>Chef-driven profiles inspired by kitchens from Seoul to Sicily.</p>
+          </div>
+
+          <div class="card">
+            <span class="accent" aria-hidden="true"></span>
+            <div class="icon-wrap" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v7h1.5a2 2 0 0 0 1.6-.8l1.4-1.9a1 1 0 0 1 .8-.4V14a2 2 0 0 1-2 2h-1.3a3 3 0 0 1-5.7 0H10a3 3 0 0 1-6 0H3V7Zm6 11a1 1 0 1 0 0-2 1 1 0 0 0 0 2Zm8 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z"/></svg>
+            </div>
+            <h3>Fast pan-India delivery</h3>
+            <p>Speedy dispatch designed for online shoppers and busy kitchens.</p>
+          </div>
+
+          <div class="card">
+            <span class="accent" aria-hidden="true"></span>
+            <div class="icon-wrap" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24"><path d="M7 22a1 1 0 0 1-1-1v-2.2a3 3 0 0 1-.9-2.1V13a7 7 0 0 1 14 0v3.7c0 .8-.3 1.6-.9 2.1V21a1 1 0 1 1-2 0v-1h-8v1a1 1 0 0 1-1 1Zm5-18a5 5 0 0 0-5 5v3.7c0 .4.3.7.7.7h8.6c.4 0 .7-.3.7-.7V9a5 5 0 0 0-5-5Z"/></svg>
+            </div>
+            <h3>Custom blends for restaurants</h3>
+            <p>Signature sauces tailored for your menu, consistency, and heat level.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: Products -->
+    <section class="section products" id="products" aria-label="Product showcase">
+      <div class="container">
+        <div class="center reveal">
+          <h2 class="title">Our Premium Collection</h2>
+          <p class="subtitle">Gourmet sauces crafted to finish, dip, glaze, and marinate with confidence.</p>
+        </div>
+
+        <div class="product-grid reveal" aria-label="Product cards">
+          <div class="p-card">
+            <div class="p-media">
+              <img src="https://raw.githubusercontent.com/devgouravjain/landing-pages/main/images/1kg-sauce-square-1000x1000.jpg-2026-02-21T10:05:48.159+01:00" alt="Premium dipping sauces jar - gourmet sauces collection" />
+            </div>
+            <div class="p-body">
+              <h3>Signature Chilli & Garlic</h3>
+              <p>Deep aromatics, clean heat, and a silky finish for everyday upgrade.</p>
+              <a class="p-link" href="#contact" aria-label="View details for Signature Chilli & Garlic">View Details <span>→</span></a>
+            </div>
+          </div>
+
+          <div class="p-card">
+            <div class="p-media">
+              <img src="https://raw.githubusercontent.com/devgouravjain/landing-pages/main/images/how-to-make-tomato-sauce-646.webp-2026-02-21T10:05:49.492+01:00" alt="Tomato-forward gourmet sauce - premium dipping sauces" />
+            </div>
+            <div class="p-body">
+              <h3>Roasted Tomato Basil</h3>
+              <p>Slow-roasted sweetness with herb lift—perfect for pasta and dips.</p>
+              <a class="p-link" href="#blog" aria-label="View details for Roasted Tomato Basil">View Details <span>→</span></a>
+            </div>
+          </div>
+
+          <div class="p-card">
+            <div class="p-media">
+              <img src="https://raw.githubusercontent.com/devgouravjain/landing-pages/main/images/Steak-sauces-hub-9c4abd9.webp-2026-02-21T10:05:50.837+01:00" alt="Bold steak sauce style - hot sauce brand premium range" />
+            </div>
+            <div class="p-body">
+              <h3>Peppercorn Smoke Glaze</h3>
+              <p>Luxurious pepper warmth with smoky depth for grills and bowls.</p>
+              <a class="p-link" href="#contact" aria-label="View details for Peppercorn Smoke Glaze">View Details <span>→</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: Parallax CTA -->
+    <section class="cta-parallax" aria-label="Order call to action">
+      <div class="container reveal">
+        <h2>Ready to Fire Up Your Kitchen? Order Your Favourite Sauces Today.</h2>
+        <a class="btn" href="#contact" aria-label="Shop now and contact SpiceCraft">Shop Now</a>
+      </div>
+    </section>
+
+    <!-- SECTION 7: Testimonials -->
+    <section class="section tight" id="testimonials" aria-label="Testimonials">
+      <div class="container">
+        <div class="center reveal">
+          <h2 class="title">What Our Customers Say</h2>
+          <p class="subtitle">Real feedback from home cooks, spice enthusiasts, and restaurant teams.</p>
+        </div>
+
+        <div class="t-wrap reveal">
+          <div class="t-bg" aria-hidden="true"></div>
+          <div class="carousel" id="carousel" aria-label="Testimonials carousel">
+            <div class="t-card" role="group" aria-label="Testimonial 1">
+              <div class="quote" aria-hidden="true">“</div>
+              <p class="t-text">The chilli-garlic sauce tastes like it came straight from a premium kitchen—bold, clean, and never harsh.</p>
+              <div class="t-meta">
+                <div>
+                  <p class="t-name">Neha R.</p>
+                  <p class="t-title">Home Chef</p>
+                </div>
+                <div class="stars" aria-label="5 star rating">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="t-card" role="group" aria-label="Testimonial 2">
+              <div class="quote" aria-hidden="true">“</div>
+              <p class="t-text">Fast delivery and excellent packaging. The roasted tomato profile is rich and perfect for premium dipping sauces.</p>
+              <div class="t-meta">
+                <div>
+                  <p class="t-name">Amit K.</p>
+                  <p class="t-title">Online Shopper</p>
+                </div>
+                <div class="stars" aria-label="5 star rating">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="t-card" role="group" aria-label="Testimonial 3">
+              <div class="quote" aria-hidden="true">“</div>
+              <p class="t-text">We requested a custom blend for our fries and wings. Consistent batches, great aroma—solid hot sauce brand.</p>
+              <div class="t-meta">
+                <div>
+                  <p class="t-name">Chef Dev</p>
+                  <p class="t-title">Restaurant Partner</p>
+                </div>
+                <div class="stars" aria-label="5 star rating">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="t-card" role="group" aria-label="Testimonial 4">
+              <div class="quote" aria-hidden="true">“</div>
+              <p class="t-text">The heat is balanced and the ingredients feel real. This organic chilli sauce is now my go-to for noodles.</p>
+              <div class="t-meta">
+                <div>
+                  <p class="t-name">Sahil M.</p>
+                  <p class="t-title">Spice Enthusiast</p>
+                </div>
+                <div class="stars" aria-label="5 star rating">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="t-card" role="group" aria-label="Testimonial 5">
+              <div class="quote" aria-hidden="true">“</div>
+              <p class="t-text">Smooth textures, premium flavour, and quick service. Our staff loves how versatile the sauces are.</p>
+              <div class="t-meta">
+                <div>
+                  <p class="t-name">Riya S.</p>
+                  <p class="t-title">Café Manager</p>
+                </div>
+                <div class="stars" aria-label="5 star rating">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="dots" id="dots" aria-label="Carousel controls"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 8: Blog Preview -->
+    <section class="section" id="blog" aria-label="Blog preview">
+      <div class="container">
+        <div class="center reveal">
+          <h2 class="title">From Our Kitchen — Latest Stories</h2>
+          <p class="subtitle">Techniques, pairings, and flavor notes to help you cook bolder.</p>
+        </div>
+
+        <div class="blog-grid reveal" aria-label="Blog cards">
+          <article class="blog">
+            <div class="b-media">
+              <img src="https://raw.githubusercontent.com/devgouravjain/landing-pages/main/images/p4q5dr88_tomato-sauce_625x300_21_September_18.webp-2026-02-21T10:05:53.316+01:00" alt="Homemade tomato sauce tips - gourmet sauces guide" />
+              <span class="badge-date">Sep 21</span>
+              <span class="badge-cat">Chefs</span>
+            </div>
+            <div class="b-body">
+              <h3>The Art of Homemade Tomato Sauce: Tips from Our Chefs</h3>
+              <p>Build sweetness, balance acidity, and finish with herb notes for a premium, restaurant-style pour.</p>
+              <a class="read" href="#contact" aria-label="Read more about homemade tomato sauce tips">Read More <span>→</span></a>
+            </div>
+          </article>
+
+          <article class="blog">
+            <div class="b-media">
+              <img src="https://raw.githubusercontent.com/devgouravjain/landing-pages/main/images/17%20Restaurant%20Sauces%20Explained%20A%20Delicious%20Guide%20for%20Food%20Lovers.jpg-2026-02-21T10:05:54.539+01:00" alt="Restaurant sauces explained - premium dipping sauces inspiration" />
+              <span class="badge-date">Oct 08</span>
+              <span class="badge-cat">Guide</span>
+            </div>
+            <div class="b-body">
+              <h3>17 Restaurant Sauces Every Food Lover Must Try</h3>
+              <p>From smoky glazes to bright chilli finishes—learn what makes premium sauces truly memorable.</p>
+              <a class="read" href="#products" aria-label="Read more about restaurant sauces guide">Read More <span>→</span></a>
+            </div>
+          </article>
+
+          <article class="blog">
+            <div class="b-media">
+              <img src="https://raw.githubusercontent.com/devgouravjain/landing-pages/main/images/stir-fry-sauce-blog.jpg-2026-02-21T10:05:46.972+01:00" alt="Stir-fry sauce secrets - spicy sauces India cooking ideas" />
+              <span class="badge-date">Nov 14</span>
+              <span class="badge-cat">Wok</span>
+            </div>
+            <div class="b-body">
+              <h3>Stir-Fry Secrets: How the Right Sauce Changes Everything</h3>
+              <p>Heat control, gloss, and aroma—use sauces like a finishing touch, not an afterthought.</p>
+              <a class="read" href="#contact" aria-label="Read more about stir-fry sauce secrets">Read More <span>→</span></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 9: Contact -->
+    <section class="section" id="contact" aria-label="Contact">
+      <div class="container">
+        <div class="center reveal">
+          <h2 class="title">Get In Touch</h2>
+          <p class="subtitle">For wholesale, restaurant custom blends, or online orders—message us and we’ll respond quickly.</p>
+        </div>
+
+        <div class="contact-grid">
+          <aside class="panel reveal-left" aria-label="Contact details">
+            <div class="contact-item">
+              <div class="b" aria-hidden="true">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M20 6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6Zm-2 0-6 4L6 6h12Zm0 12H6V8l6 4 6-4v10Z"/></svg>
+              </div>
+              <div>
+                <strong>Email</strong>
+                <div><a href="mailto:gouravbizzfly@gmail.com">gouravbizzfly@gmail.com</a></div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="b" aria-hidden="true">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.2 1.2.4 2.5.7 3.8.7.7 0 1.2.5 1.2 1.2V20c0 .7-.5 1.2-1.2 1.2C10.5 21.2 2.8 13.5 2.8 4.2 2.8 3.5 3.3 3 4 3h3.5c.7 0 1.2.5 1.2 1.2 0 1.3.2 2.6.7 3.8.1.4 0 .9-.2 1.2l-2.6 2.6Z"/></svg>
+              </div>
+              <div>
+                <strong>Phone</strong>
+                <div><a href="tel:919000012345">919000012345</a></div>
+              </div>
+            </div>
+
+            <div style="padding-top:10px">
+              <div class="kicker" style="color:rgba(0,0,0,.0)"></div>
+              <div class="kicker" style="color:var(--muted)">Follow</div>
+              <div class="social" aria-label="Social links">
+                <a class="sbtn" href="#home" aria-label="Facebook">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-8h2.7l.4-3H13.5V9c0-.9.3-1.6 1.6-1.6h1.6V4.7c-.8-.1-1.8-.2-2.9-.2-2.8 0-4.8 1.7-4.8 4.9V11H6.4v3H9v8h4.5Z"/></svg>
+                </a>
+                <a class="sbtn" href="#home" aria-label="Instagram">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3Zm-5 4a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.8-2.1a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0Z"/></svg>
+                </a>
+                <a class="sbtn" href="#home" aria-label="X (Twitter)">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 2H22l-6.8 7.8L23 22h-6.2l-4.9-6.3L6.4 22H3.3l7.3-8.4L1 2h6.3l4.4 5.7L18.9 2Zm-1.1 18h1.7L6.2 3.9H4.4L17.8 20Z"/></svg>
+                </a>
+                <a class="sbtn" href="#home" aria-label="LinkedIn">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 6.5A2.5 2.5 0 1 1 6.5 1.5a2.5 2.5 0 0 1 0 5ZM4 22V8h5v14H4Zm7 0V8h4.8v1.9h.1c.7-1.2 2.1-2.4 4.4-2.4 4.7 0 5.6 3.1 5.6 7.2V22h-5v-6.1c0-1.5 0-3.4-2.1-3.4s-2.4 1.6-2.4 3.3V22h-5Z"/></svg>
+                </a>
+              </div>
+            </div>
+          </aside>
+
+          <div class="panel reveal-right" aria-label="Contact form">
+            <form class="form" id="contactForm">
+              <div class="row2">
+                <div>
+                  <label for="cName">Full Name</label>
+                  <input class="field" id="cName" name="fullName" type="text" autocomplete="name" required />
+                </div>
+                <div>
+                  <label for="cEmail">Email Address</label>
+                  <input class="field" id="cEmail" name="email" type="email" autocomplete="email" required />
+                </div>
+              </div>
+
+              <div class="row2">
+                <div>
+                  <label for="cPhone">Phone Number</label>
+                  <input class="field" id="cPhone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required />
+                </div>
+                <div>
+                  <label for="cTopic">Your Message</label>
+                  <input class="field" id="cTopic" name="messageSubject" type="text" value="Custom blends / Orders / Wholesale" aria-label="Message subject" />
+                </div>
+              </div>
+
+              <div>
+                <label for="cMsg">Your Message</label>
+                <textarea class="field" id="cMsg" name="message" required></textarea>
+              </div>
+
+              <button class="btn btn-primary submit" id="contactSubmit" type="submit">
+                <span class="spinner" id="contactSpinner" aria-hidden="true"></span>
+                <span>Send Message</span>
+              </button>
+
+              <p class="subtitle" style="margin:0; font-size:.92rem">Your details map to Google Sheets columns: A Full Name, B Email Address, C Phone Number, D Your Message.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- SECTION 10: Inquiry Modal -->
+  <div class="modal-backdrop" id="modalBackdrop" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-head">
+        <h3 id="modalTitle">Send an Inquiry</h3>
+        <button class="icon-btn" id="inquiryClose" type="button" aria-label="Close inquiry modal">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.3 5.71a1 1 0 0 0-1.41 0L12 10.59 7.11 5.7A1 1 0 0 0 5.7 7.11L10.59 12 5.7 16.89a1 1 0 1 0 1.41 1.41L12 13.41l4.89 4.89a1 1 0 0 0 1.41-1.41L13.41 12l4.89-4.89a1 1 0 0 0 0-1.4Z"/></svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class="form" id="inquiryForm">
+          <div class="row2">
+            <div>
+              <label for="iName">Full Name</label>
+              <input class="field" id="iName" name="fullName" type="text" autocomplete="name" required />
+            </div>
+            <div>
+              <label for="iEmail">Email Address</label>
+              <input class="field" id="iEmail" name="email" type="email" autocomplete="email" required />
+            </div>
+          </div>
+
+          <div>
+            <label for="iPhone">Phone Number</label>
+            <input class="field" id="iPhone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required />
+          </div>
+
+          <div>
+            <label for="iMsg">Your Message</label>
+            <textarea class="field" id="iMsg" name="message" required></textarea>
+          </div>
+
+          <button class="btn btn-primary submit" id="inquirySubmit" type="submit" style="width:100%">
+            <span class="spinner" id="inquirySpinner" aria-hidden="true"></span>
+            <span>Send Inquiry</span>
+          </button>
+
+          <p class="subtitle" style="margin:0; font-size:.92rem">For restaurants, ask for custom sauce blends and preferred heat level.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- SECTION 11: Footer -->
+  <footer aria-label="Footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-grid" aria-label="Footer columns">
+          <div class="f-brand">
+            <img src="https://raw.githubusercontent.com/devgouravjain/landing-pages/main/images/Logo.jfif-2026-02-21T10:05:44.493+01:00" alt="SpiceCraft Gourmet Sauces logo" />
+            <p class="f-title">SpiceCraft Gourmet Sauces</p>
+            <p class="f-text">Handcrafted gourmet sauces with natural ingredients—premium dipping sauces, bold heat, and fast pan-India delivery.</p>
+          </div>
+
+          <div class="f-col">
+            <h4>Quick Links</h4>
+            <div class="f-links">
+              <a href="#home">Home</a>
+              <a href="#about">About</a>
+              <a href="#products">Products</a>
+              <a href="#blog">Blog</a>
+              <a href="#contact">Contact</a>
+            </div>
+          </div>
+
+          <div class="f-col">
+            <h4>Contact</h4>
+            <div class="f-links">
+              <a href="mailto:gouravbizzfly@gmail.com">gouravbizzfly@gmail.com</a>
+              <a href="tel:919000012345">919000012345</a>
+              <a href="#contact">Custom blends for restaurants</a>
+            </div>
+          </div>
+
+          <div class="f-col">
+            <h4>Social</h4>
+            <div class="social" aria-label="Footer social links">
+              <a class="sbtn" href="#home" aria-label="Facebook">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-8h2.7l.4-3H13.5V9c0-.9.3-1.6 1.6-1.6h1.6V4.7c-.8-.1-1.8-.2-2.9-.2-2.8 0-4.8 1.7-4.8 4.9V11H6.4v3H9v8h4.5Z"/></svg>
+              </a>
+              <a class="sbtn" href="#home" aria-label="Instagram">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3Zm-5 4a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.8-2.1a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0Z"/></svg>
+              </a>
+              <a class="sbtn" href="#home" aria-label="X (Twitter)">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 2H22l-6.8 7.8L23 22h-6.2l-4.9-6.3L6.4 22H3.3l7.3-8.4L1 2h6.3l4.4 5.7L18.9 2Zm-1.1 18h1.7L6.2 3.9H4.4L17.8 20Z"/></svg>
+              </a>
+              <a class="sbtn" href="#home" aria-label="LinkedIn">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 6.5A2.5 2.5 0 1 1 6.5 1.5a2.5 2.5 0 0 1 0 5ZM4 22V8h5v14H4Zm7 0V8h4.8v1.9h.1c.7-1.2 2.1-2.4 4.4-2.4 4.7 0 5.6 3.1 5.6 7.2V22h-5v-6.1c0-1.5 0-3.4-2.1-3.4s-2.4 1.6-2.4 3.3V22h-5Z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="newsletter" aria-label="Newsletter signup">
+          <div>
+            <strong>Stay Updated with SpiceCraft</strong>
+            <div style="color:rgba(255,255,255,.72); font-weight:340">New launches, pairing ideas, and limited drops.</div>
+          </div>
+          <form class="news-form" id="newsletterForm">
+            <input type="email" name="newsletterEmail" aria-label="Email for newsletter" required />
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="hr" aria-hidden="true"></div>
+        <p class="copy">© 2026 SpiceCraft Gourmet Sauces. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      const root = document.body;
+
+      // Ensure header doesn't collide with notice
+      const notice = document.getElementById('notice');
+      const header = document.getElementById('siteHeader');
+
+      function setNoticeHeightVar(){
+        const h = notice && notice.offsetParent !== null ? notice.offsetHeight : 0;
+        document.documentElement.style.setProperty('--noticeH', h + 'px');
+      }
+
+      // Notification close
+      const noticeClose = document.getElementById('noticeClose');
+      if (noticeClose && notice){
+        noticeClose.addEventListener('click', () => {
+          notice.style.display = 'none';
+          setNoticeHeightVar();
+        });
+      }
+
+      // Header glass on scroll
+      function onScroll(){
+        const y = window.scrollY || document.documentElement.scrollTop;
+        header.classList.toggle('scrolled', y > 8);
+      }
+      window.addEventListener('scroll', onScroll, {passive:true});
+
+      // Theme toggle
+      const themeToggle = document.getElementById('themeToggle');
+      const drawerTheme = document.getElementById('drawerTheme');
+      const themeIcon = document.getElementById('themeIcon');
+
+      function setTheme(theme){
+        root.setAttribute('data-theme', theme);
+        localStorage.setItem('spicecraft_theme', theme);
+        // Update icon (sun in light, moon in dark)
+        if(theme === 'dark'){
+          themeIcon.innerHTML = '<path d="M21 14.5A7.5 7.5 0 0 1 9.5 3a6.5 6.5 0 1 0 11.5 11.5Z"/>';
+        }else{
+          themeIcon.innerHTML = '<path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12Zm0-14a1 1 0 0 1-1-1V2a1 1 0 1 1 2 0v1a1 1 0 0 1-1 1Zm0 20a1 1 0 0 1-1-1v-1a1 1 0 1 1 2 0v1a1 1 0 0 1-1 1ZM4 13H3a1 1 0 1 1 0-2h1a1 1 0 1 1 0 2Zm18 0h-1a1 1 0 1 1 0-2h1a1 1 0 1 1 0 2ZM5.64 6.64a1 1 0 0 1-1.41 0L3.5 5.91a1 1 0 1 1 1.41-1.41l.73.73a1 1 0 0 1 0 1.41Zm14.86 14.86a1 1 0 0 1-1.41 0l-.73-.73a1 1 0 1 1 1.41-1.41l.73.73a1 1 0 0 1 0 1.41ZM18.36 6.64a1 1 0 0 1 0-1.41l.73-.73a1 1 0 1 1 1.41 1.41l-.73.73a1 1 0 0 1-1.41 0ZM4.91 21.5a1 1 0 0 1 0-1.41l.73-.73a1 1 0 1 1 1.41 1.41l-.73.73a1 1 0 0 1-1.41 0Z"/>';
+        }
+      }
+      function toggleTheme(){
+        const current = root.getAttribute('data-theme') || 'light';
+        setTheme(current === 'light' ? 'dark' : 'light');
+      }
+      const saved = localStorage.getItem('spicecraft_theme');
+      if(saved === 'dark' || saved === 'light') setTheme(saved);
+
+      themeToggle.addEventListener('click', toggleTheme);
+      if(drawerTheme) drawerTheme.addEventListener('click', toggleTheme);
+
+      // Mobile drawer
+      const burger = document.getElementById('burger');
+      const drawer = document.getElementById('drawer');
+      const drawerBackdrop = document.getElementById('drawerBackdrop');
+      const drawerClose = document.getElementById('drawerClose');
+      const drawerInquiry = document.getElementById('drawerInquiry');
+
+      function openDrawer(){
+        drawer.classList.add('open');
+        drawerBackdrop.classList.add('open');
+        drawerBackdrop.setAttribute('aria-hidden','false');
+        document.documentElement.style.overflow = 'hidden';
+      }
+      function closeDrawer(){
+        drawer.classList.remove('open');
+        drawerBackdrop.classList.remove('open');
+        drawerBackdrop.setAttribute('aria-hidden','true');
+        document.documentElement.style.overflow = '';
+      }
+      burger.addEventListener('click', openDrawer);
+      drawerClose.addEventListener('click', closeDrawer);
+      drawerBackdrop.addEventListener('click', closeDrawer);
+
+      document.querySelectorAll('[data-drawer-link]').forEach(a => {
+        a.addEventListener('click', () => setTimeout(closeDrawer, 60));
+      });
+
+      // Modal
+      const modalBackdrop = document.getElementById('modalBackdrop');
+      const inquiryOpen = document.getElementById('inquiryOpen');
+      const inquiryClose = document.getElementById('inquiryClose');
+
+      function openModal(){
+        modalBackdrop.classList.add('open');
+        modalBackdrop.setAttribute('aria-hidden','false');
+        document.documentElement.style.overflow = 'hidden';
+        // focus first field
+        const first = document.getElementById('iName');
+        if(first) setTimeout(()=>first.focus(), 60);
+      }
+      function closeModal(){
+        modalBackdrop.classList.remove('open');
+        modalBackdrop.setAttribute('aria-hidden','true');
+        document.documentElement.style.overflow = '';
+      }
+
+      inquiryOpen.addEventListener('click', openModal);
+      inquiryClose.addEventListener('click', closeModal);
+      modalBackdrop.addEventListener('click', (e) => {
+        if(e.target === modalBackdrop) closeModal();
+      });
+      document.addEventListener('keydown', (e) => {
+        if(e.key === 'Escape'){
+          if(drawer.classList.contains('open')) closeDrawer();
+          if(modalBackdrop.classList.contains('open')) closeModal();
+        }
+      });
+      if(drawerInquiry){
+        drawerInquiry.addEventListener('click', () => {
+          closeDrawer();
+          setTimeout(openModal, 80);
+        });
+      }
+
+      // Toast
+      const toast = document.getElementById('toast');
+      let toastTimer = null;
+      function showToast(message){
+        toast.textContent = message;
+        toast.classList.add('show');
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => toast.classList.remove('show'), 3200);
+      }
+
+      // Intersection Observer reveals
+      const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .stagger');
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(en => {
+          if(en.isIntersecting){
+            en.target.classList.add('in');
+            io.unobserve(en.target);
+          }
+        });
+      }, {threshold: 0.14});
+      revealEls.forEach(el => {
+        // hero already in
+        if(el.closest('.hero')) return;
+        io.observe(el);
+      });
+
+      // Testimonials carousel
+      const carousel = document.getElementById('carousel');
+      const dotsWrap = document.getElementById('dots');
+      const cards = Array.from(carousel.querySelectorAll('.t-card'));
+
+      let index = 0;
+      let autoTimer = null;
+
+      function cardsPerView(){
+        const w = window.innerWidth;
+        if(w <= 768) return 1;
+        if(w <= 980) return 2;
+        return 3;
+      }
+      function maxIndex(){
+        const per = cardsPerView();
+        return Math.max(0, cards.length - per);
+      }
+      function goTo(i, smooth=true){
+        const per = cardsPerView();
+        index = Math.max(0, Math.min(i, maxIndex()));
+        const card = cards[0];
+        const gap = 14;
+        const cardW = card.getBoundingClientRect().width;
+        const x = index * (cardW + gap);
+        carousel.scrollTo({left: x, behavior: smooth ? 'smooth' : 'auto'});
+        updateDots(per);
+      }
+      function updateDots(per){
+        const pages = maxIndex() + 1;
+        dotsWrap.innerHTML = '';
+        for(let p=0;p<pages;p++){
+          const b = document.createElement('button');
+          b.className = 'dot' + (p===index ? ' active' : '');
+          b.type='button';
+          b.setAttribute('aria-label', 'Go to testimonial set ' + (p+1));
+          b.addEventListener('click', () => {
+            stopAuto();
+            goTo(p);
+            startAuto();
+          });
+          dotsWrap.appendChild(b);
+        }
+      }
+      function startAuto(){
+        stopAuto();
+        autoTimer = setInterval(() => {
+          const next = (index + 1) > maxIndex() ? 0 : (index + 1);
+          goTo(next);
+        }, 5000);
+      }
+      function stopAuto(){
+        if(autoTimer) clearInterval(autoTimer);
+        autoTimer = null;
+      }
+
+      // Swipe/drag handling
+      let isDown = false, startX = 0, startScroll = 0;
+      carousel.addEventListener('pointerdown', (e) => {
+        isDown = true;
+        startX = e.clientX;
+        startScroll = carousel.scrollLeft;
+        carousel.setPointerCapture(e.pointerId);
+        stopAuto();
+      });
+      carousel.addEventListener('pointermove', (e) => {
+        if(!isDown) return;
+        const dx = e.clientX - startX;
+        carousel.scrollLeft = startScroll - dx;
+      });
+      carousel.addEventListener('pointerup', () => {
+        isDown = false;
+        // Snap to nearest
+        const cardW = cards[0].getBoundingClientRect().width;
+        const gap = 14;
+        const step = cardW + gap;
+        const nearest = Math.round(carousel.scrollLeft / step);
+        goTo(nearest, true);
+        startAuto();
+      });
+      carousel.addEventListener('pointercancel', () => { isDown = false; startAuto(); });
+
+      window.addEventListener('resize', () => goTo(index, false), {passive:true});
+
+      // Forms: validation + Google Sheets ready handler
+      const SHEETS_URL = 'REPLACE_WITH_GOOGLE_SHEETS_WEB_APP_URL'; // REPLACE_WITH_GOOGLE_SHEETS_WEB_APP_URL
+
+      async function submitToSheets(payload){
+        if(!SHEETS_URL || SHEETS_URL.includes('REPLACE_WITH_GOOGLE_SHEETS_WEB_APP_URL')){
+          await new Promise(r => setTimeout(r, 700)); // simulate
+          return {ok:true, simulated:true};
+        }
+        const res = await fetch(SHEETS_URL, {
+          method:'POST',
+          headers:{'Content-Type':'application/json'},
+          body: JSON.stringify(payload)
+        });
+        return {ok: res.ok, status: res.status};
+      }
+
+      function setLoading(btn, spinner, loading){
+        if(loading){
+          btn.setAttribute('disabled','disabled');
+          btn.style.opacity = '.92';
+          spinner.style.display = 'inline-block';
+        }else{
+          btn.removeAttribute('disabled');
+          btn.style.opacity = '';
+          spinner.style.display = 'none';
+        }
+      }
+
+      function buildPayload(form){
+        // Columns: A Full Name, B Email Address, C Phone Number, D Your Message
+        const fd = new FormData(form);
+        const fullName = String(fd.get('fullName') || '').trim();
+        const email = String(fd.get('email') || '').trim();
+        const phone = String(fd.get('phone') || '').trim();
+        const message = String(fd.get('message') || '').trim();
+
+        return { fullName, email, phone, message };
+      }
+
+      async function handleForm(formId, submitId, spinnerId, after){
+        const form = document.getElementById(formId);
+        const btn = document.getElementById(submitId);
+        const spinner = document.getElementById(spinnerId);
+
+        form.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          const payload = buildPayload(form);
+
+          if(!payload.fullName || !payload.email || !payload.phone || !payload.message){
+            showToast('Please fill in all fields to continue.');
+            return;
+          }
+
+          setLoading(btn, spinner, true);
+          try{
+            const result = await submitToSheets(payload);
+            if(result.ok){
+              form.reset();
+              showToast('Thanks—your message has been sent. We’ll reach out shortly.');
+              if(typeof after === 'function') after();
+            }else{
+              showToast('Submission failed. Please try again in a moment.');
+            }
+          }catch(err){
+            showToast('Network error. Please try again.');
+          }finally{
+            setLoading(btn, spinner, false);
+          }
+        });
+      }
+
+      handleForm('contactForm', 'contactSubmit', 'contactSpinner');
+      handleForm('inquiryForm', 'inquirySubmit', 'inquirySpinner', () => closeModal());
+
+      // Newsletter (lightweight)
+      const newsletterForm = document.getElementById('newsletterForm');
+      newsletterForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = new FormData(newsletterForm).get('newsletterEmail');
+        if(!email){ showToast('Please enter your email to subscribe.'); return; }
+        newsletterForm.reset();
+        showToast('You’re subscribed. Watch your inbox for SpiceCraft updates.');
+      });
+
+      // Initialize
+      setNoticeHeightVar();
+      onScroll();
+      // Setup carousel dots and auto
+      goTo(0, false);
+      startAuto();
+
+      // Gentle hero parallax (desktop only)
+      const hero = document.querySelector('.hero');
+      const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      function heroParallax(){
+        if(reduce) return;
+        if(window.innerWidth <= 768) return;
+        const y = window.scrollY || 0;
+        hero.style.backgroundPosition = `center calc(50% + ${Math.min(40, y * 0.06)}px)`;
+      }
+      window.addEventListener('scroll', heroParallax, {passive:true});
+
+    })();
+  </script>
+</body>
+</html>
