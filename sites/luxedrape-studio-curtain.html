@@ -1,0 +1,2170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#2C3E50" />
+  <meta name="description" content="LuxeDrape Studio Curtain delivers luxury custom curtains in India—blackout curtains, sheer drapes, premium blinds, and smart motorized curtain systems. On-site consultation, custom measurements, and bulk hotel & corporate projects." />
+  <title>LuxeDrape Studio Curtain | Luxury Custom Curtains & Smart Motorized Drapes India</title>
+  <link rel="icon" href="https://raw.githubusercontent.com/devgouravjain/landing-pages/main/images/Logo.jfif-2026-02-23T08:35:53.643+01:00" />
+  <style>
+    :root{
+      --primary:#2C3E50;
+      --secondary:#C8A96A;
+      --bg:#ffffff;
+      --bg2:#F6F4F0;
+      --text:#1d2a35;
+      --muted:#5b6b78;
+      --card:#ffffff;
+      --border:rgba(44,62,80,.14);
+      --shadow: 0 18px 45px rgba(16,24,40,.10);
+      --shadow2: 0 10px 22px rgba(16,24,40,.10);
+      --glow: 0 0 0 1px rgba(200,169,106,.30), 0 12px 30px rgba(200,169,106,.18);
+      --radius:18px;
+      --radius2:14px;
+      --ease:cubic-bezier(.22,1,.36,1);
+      --max:1280px;
+      --topbarH:42px;
+      --navH:74px;
+    }
+    [data-theme="dark"]{
+      --bg:#0B131A;
+      --bg2:#0F1C25;
+      --text:#EAF0F5;
+      --muted:#B5C0CA;
+      --card:#0F1E28;
+      --border:rgba(200,169,106,.18);
+      --shadow: 0 20px 55px rgba(0,0,0,.40);
+      --shadow2: 0 12px 24px rgba(0,0,0,.35);
+      --glow: 0 0 0 1px rgba(200,169,106,.35), 0 18px 40px rgba(200,169,106,.20);
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 600px at 10% -10%, rgba(200,169,106,.12), transparent 60%),
+        radial-gradient(900px 500px at 90% 0%, rgba(44,62,80,.14), transparent 55%),
+        var(--bg);
+      line-height:1.5;
+      overflow-x:hidden;
+    }
+    h1,h2,h3{
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      letter-spacing:-0.02em;
+      margin:0 0 10px;
+      color:var(--primary);
+    }
+    [data-theme="dark"] h1,[data-theme="dark"] h2,[data-theme="dark"] h3{color:#F4F0E6}
+    p{margin:0 0 12px; color:var(--muted)}
+    a{color:inherit; text-decoration:none}
+    .container{max-width:var(--max); margin:0 auto; padding:0 18px}
+    .grid{display:grid; gap:18px}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:12px 16px; border-radius:999px; border:1px solid transparent;
+      font-weight:650; letter-spacing:.01em;
+      transition: transform .18s var(--ease), box-shadow .18s var(--ease), background .18s var(--ease), border-color .18s var(--ease), color .18s var(--ease);
+      cursor:pointer; user-select:none;
+      position:relative;
+      will-change:transform;
+    }
+    .btn:focus{outline:none}
+    .btn:focus-visible{box-shadow:var(--glow)}
+    .btn-primary{background:var(--secondary); color:var(--primary); box-shadow: 0 10px 26px rgba(200,169,106,.22)}
+    .btn-primary:hover{transform:translateY(-2px); box-shadow: 0 18px 40px rgba(200,169,106,.28)}
+    .btn-ghost{background:transparent; color:var(--text); border-color:var(--border)}
+    .btn-ghost:hover{transform:translateY(-2px); border-color:rgba(200,169,106,.45); box-shadow:var(--shadow2)}
+    .btn-link{
+      padding:10px 0; border:0; background:transparent; color:var(--text); font-weight:650;
+      position:relative;
+    }
+    .btn-link::after{
+      content:""; position:absolute; left:0; bottom:4px; height:2px; width:0%;
+      background:linear-gradient(90deg, var(--secondary), transparent);
+      transition:width .25s var(--ease);
+    }
+    .btn-link:hover::after{width:100%}
+    .chip{
+      display:inline-flex; align-items:center; gap:10px;
+      border:1px solid var(--border); background:rgba(255,255,255,.55);
+      padding:10px 12px; border-radius:999px; color:var(--text);
+      backdrop-filter: blur(10px);
+    }
+    [data-theme="dark"] .chip{background:rgba(15,30,40,.55)}
+    .sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0}
+
+    .topbar{
+      position:sticky; top:0; z-index:50;
+      height:var(--topbarH);
+      background:var(--primary);
+      color:#F7F5EF;
+      border-bottom:1px solid rgba(200,169,106,.28);
+    }
+    .topbar .wrap{
+      height:100%;
+      display:flex; align-items:center; justify-content:space-between;
+      gap:14px;
+      font-size:13px;
+      letter-spacing:.01em;
+      white-space:nowrap;
+      overflow:hidden;
+    }
+    .topbar .msg{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
+    .sep{color:rgba(200,169,106,.92)}
+    .topbar a{color:#F7F5EF; font-weight:700}
+    .topbar a:hover{color:var(--secondary)}
+    .topbar .call{display:flex; align-items:center; gap:8px}
+
+    header{
+      position:sticky; top:var(--topbarH); z-index:45;
+      background: rgba(255,255,255,.78);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+    [data-theme="dark"] header{background: rgba(11,19,26,.70)}
+    .nav{
+      height:var(--navH);
+      display:flex; align-items:center; justify-content:space-between;
+      gap:16px;
+    }
+    .brand{display:flex; align-items:center; gap:12px; min-width:220px}
+    .logo{
+      width:42px; height:42px; border-radius:12px; overflow:hidden;
+      border:1px solid rgba(200,169,106,.35);
+      box-shadow: 0 10px 22px rgba(0,0,0,.10);
+      background:var(--card);
+      flex:0 0 auto;
+    }
+    .logo img{width:100%; height:100%; object-fit:cover}
+    .brand .name{display:flex; flex-direction:column; line-height:1.1}
+    .brand .name strong{
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      letter-spacing:-.02em;
+      color:var(--primary);
+      font-size:16px;
+    }
+    [data-theme="dark"] .brand .name strong{color:#F4F0E6}
+    .brand .name span{font-size:12px; color:var(--muted)}
+    nav ul{
+      list-style:none; padding:0; margin:0;
+      display:flex; gap:14px; align-items:center;
+    }
+    nav a{
+      font-weight:650; font-size:14px; color:var(--text);
+      padding:10px 10px;
+      border-radius:10px;
+      position:relative;
+      transition: background .2s var(--ease), color .2s var(--ease);
+    }
+    nav a::after{
+      content:""; position:absolute; left:10px; right:10px; bottom:8px;
+      height:2px; background:linear-gradient(90deg, var(--secondary), transparent);
+      transform:scaleX(0); transform-origin:left;
+      transition:transform .26s var(--ease);
+      opacity:.95;
+    }
+    nav a:hover{background:rgba(200,169,106,.10)}
+    nav a:hover::after{transform:scaleX(1)}
+    .nav-right{display:flex; align-items:center; gap:10px}
+    .icon-btn{
+      width:42px; height:42px; border-radius:12px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.55);
+      display:grid; place-items:center;
+      cursor:pointer;
+      transition: transform .18s var(--ease), box-shadow .18s var(--ease), border-color .18s var(--ease);
+      backdrop-filter: blur(10px);
+    }
+    [data-theme="dark"] .icon-btn{background: rgba(15,30,40,.55)}
+    .icon-btn:hover{transform:translateY(-2px); border-color:rgba(200,169,106,.45); box-shadow:var(--shadow2)}
+    .icon{width:20px; height:20px; fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round}
+    .hamburger{display:none}
+    .call-link{font-weight:750; color:var(--text); padding:10px 12px; border-radius:999px}
+    .call-link:hover{background:rgba(200,169,106,.10)}
+
+    main{display:block}
+
+    section{padding:70px 0}
+    .hero{padding:44px 0 70px}
+    .hero-grid{
+      display:grid; grid-template-columns: 1.05fr .95fr; gap:28px; align-items:center;
+    }
+    .hero h1{
+      font-size: clamp(32px, 3.2vw, 52px);
+      line-height:1.06;
+      margin-bottom:12px;
+    }
+    .kicker{
+      display:inline-flex; align-items:center; gap:10px;
+      color:var(--text);
+      border:1px solid rgba(200,169,106,.35);
+      background: linear-gradient(90deg, rgba(200,169,106,.14), transparent);
+      padding:8px 12px; border-radius:999px;
+      font-weight:700;
+      width:fit-content;
+    }
+    .kdot{width:8px; height:8px; border-radius:99px; background:var(--secondary); box-shadow:0 0 0 6px rgba(200,169,106,.12)}
+    .hero .lead{font-size:16px; max-width:56ch}
+    .bullets{
+      display:grid; grid-template-columns:1fr 1fr; gap:10px 14px;
+      margin:16px 0 22px; padding:0;
+      list-style:none;
+    }
+    .bullets li{
+      display:flex; gap:10px; align-items:flex-start;
+      padding:10px 12px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.62);
+      border-radius:14px;
+      backdrop-filter: blur(10px);
+    }
+    [data-theme="dark"] .bullets li{background:rgba(15,30,40,.55)}
+    .check{
+      width:18px; height:18px; border-radius:999px;
+      background:rgba(200,169,106,.18);
+      border:1px solid rgba(200,169,106,.40);
+      display:grid; place-items:center; flex:0 0 auto;
+      margin-top:2px;
+      box-shadow: 0 10px 18px rgba(200,169,106,.12);
+    }
+    .hero-actions{display:flex; gap:12px; flex-wrap:wrap; align-items:center}
+    .hero-media{
+      position:relative;
+      border-radius: var(--radius);
+      overflow:hidden;
+      border:1px solid rgba(200,169,106,.30);
+      box-shadow: var(--shadow);
+      background:var(--card);
+      aspect-ratio: 4 / 3;
+    }
+    .hero-media::before{
+      content:"";
+      position:absolute; inset:-30%;
+      background: radial-gradient(circle at 30% 30%, rgba(200,169,106,.35), transparent 45%),
+                  radial-gradient(circle at 70% 25%, rgba(200,169,106,.18), transparent 50%);
+      filter: blur(18px);
+      opacity:.8;
+      pointer-events:none;
+      transform: translate3d(0,0,0);
+      animation: glowFloat 8s var(--ease) infinite alternate;
+    }
+    @keyframes glowFloat{
+      from{transform: translate3d(-2%, -1%, 0)}
+      to{transform: translate3d(2%, 2%, 0)}
+    }
+    .hero-media img{
+      width:100%; height:100%;
+      object-fit:cover;
+      position:relative;
+      transform: translateY(0);
+      transition: transform .5s var(--ease);
+      filter: saturate(1.02) contrast(1.03);
+    }
+    [data-theme="dark"] .hero-media img{filter: saturate(1.02) contrast(1.03) brightness(.92)}
+    .hero-media:hover img{transform:scale(1.02)}
+    .hero-float{
+      position:absolute; left:16px; bottom:16px; right:16px;
+      display:flex; gap:10px; flex-wrap:wrap;
+    }
+
+    .trust{
+      padding:18px 0 0;
+    }
+    .trust-row{
+      display:grid;
+      grid-template-columns:repeat(4, 1fr);
+      gap:12px;
+      padding:18px;
+      border:1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255,255,255,.70), rgba(255,255,255,.45));
+      border-radius: var(--radius);
+      box-shadow: var(--shadow2);
+      backdrop-filter: blur(12px);
+    }
+    [data-theme="dark"] .trust-row{background: linear-gradient(180deg, rgba(15,30,40,.70), rgba(15,30,40,.45))}
+    .badge{
+      display:flex; align-items:center; justify-content:center; gap:10px;
+      padding:12px 10px;
+      border-radius: 14px;
+      border:1px solid rgba(200,169,106,.22);
+      background: rgba(200,169,106,.08);
+      font-weight:750;
+      color:var(--text);
+      text-align:center;
+      min-height:48px;
+    }
+
+    .section-head{
+      display:flex; align-items:flex-end; justify-content:space-between; gap:14px; margin-bottom:18px;
+    }
+    .section-head p{max-width:70ch}
+    .section-head .mini-actions{display:flex; gap:10px; flex-wrap:wrap}
+    .eyebrow{
+      color:var(--secondary);
+      font-weight:800;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      font-size:12px;
+      margin-bottom:10px;
+      display:block;
+    }
+
+    .services-grid{
+      grid-template-columns: .95fr 1.05fr;
+      align-items:stretch;
+    }
+    .side-media{
+      border-radius: var(--radius);
+      overflow:hidden;
+      border:1px solid rgba(200,169,106,.25);
+      box-shadow: var(--shadow);
+      background:var(--card);
+      min-height: 420px;
+    }
+    .side-media img{width:100%; height:100%; object-fit:cover; display:block; filter:saturate(1.03) contrast(1.02)}
+    [data-theme="dark"] .side-media img{filter:saturate(1.02) contrast(1.05) brightness(.92)}
+    .cards{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap:14px;
+    }
+    .card{
+      background: var(--card);
+      border:1px solid var(--border);
+      border-radius: var(--radius2);
+      padding:16px;
+      box-shadow: 0 10px 24px rgba(16,24,40,.06);
+      transition: transform .22s var(--ease), box-shadow .22s var(--ease), border-color .22s var(--ease);
+      position:relative;
+      overflow:hidden;
+    }
+    .card::before{
+      content:"";
+      position:absolute; top:0; left:0; right:0; height:3px;
+      background: linear-gradient(90deg, var(--secondary), rgba(200,169,106,0));
+      opacity:.95;
+    }
+    .card:hover{
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+      border-color: rgba(200,169,106,.40);
+    }
+    .card h3{margin:10px 0 6px; font-size:18px}
+    .card p{margin:0; font-size:14px}
+    .icon-wrap{
+      width:42px; height:42px; border-radius:14px;
+      display:grid; place-items:center;
+      background: rgba(200,169,106,.10);
+      border: 1px solid rgba(200,169,106,.25);
+      color: var(--primary);
+    }
+    [data-theme="dark"] .icon-wrap{color:#F4F0E6}
+    .icon-wrap svg{width:20px; height:20px}
+
+    .gallery{
+      background: linear-gradient(180deg, transparent, rgba(200,169,106,.06) 35%, transparent);
+    }
+    .masonry{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap:14px;
+    }
+    .tile{
+      grid-column: span 4;
+      border-radius: var(--radius);
+      overflow:hidden;
+      position:relative;
+      border:1px solid rgba(200,169,106,.22);
+      background: var(--card);
+      box-shadow: var(--shadow2);
+      aspect-ratio: 4/3;
+      isolation:isolate;
+      transition: transform .25s var(--ease), box-shadow .25s var(--ease), border-color .25s var(--ease);
+    }
+    .tile.tall{aspect-ratio: 4/5}
+    .tile.wide{grid-column: span 8; aspect-ratio: 16/9}
+    .tile img{
+      width:100%; height:100%; object-fit:cover; display:block;
+      transform: scale(1);
+      transition: transform .5s var(--ease), filter .3s var(--ease);
+      filter: saturate(1.03) contrast(1.02);
+    }
+    [data-theme="dark"] .tile img{filter: saturate(1.02) contrast(1.04) brightness(.90)}
+    .tile::after{
+      content:""; position:absolute; inset:0;
+      background: linear-gradient(180deg, rgba(44,62,80,0) 35%, rgba(44,62,80,.78));
+      opacity:.85;
+      z-index:1;
+      transition: opacity .35s var(--ease);
+    }
+    .tile .cap{
+      position:absolute; left:16px; right:16px; bottom:14px;
+      z-index:2;
+      transform: translateY(8px);
+      transition: transform .35s var(--ease);
+      color:#F7F5EF;
+    }
+    .tile .cap strong{display:block; font-weight:900; letter-spacing:.01em}
+    .tile .cap span{display:block; opacity:.9; font-size:13px}
+    .tile:hover{transform: translateY(-4px); box-shadow: var(--shadow); border-color: rgba(200,169,106,.42)}
+    .tile:hover img{transform: scale(1.03)}
+    .tile:hover .cap{transform: translateY(0)}
+    .gallery-actions{display:flex; justify-content:center; margin-top:18px}
+
+    .process{
+      position:relative;
+      padding:84px 0;
+      color:#F7F5EF;
+      overflow:hidden;
+    }
+    .process::before{
+      content:"";
+      position:absolute; inset:0;
+      background-image: url('https://raw.githubusercontent.com/devgouravjain/landing-pages/main/images/curtain-sec-1.webp-2026-02-23T08:36:02.280+01:00');
+      background-size:cover;
+      background-position:center;
+      background-attachment: fixed;
+      filter: saturate(1.05) contrast(1.05);
+      transform: scale(1.02);
+    }
+    .process::after{
+      content:"";
+      position:absolute; inset:0;
+      background: rgba(44,62,80,.72);
+    }
+    .process .container{position:relative; z-index:1}
+    .process h2{color:#F7F5EF}
+    .timeline{
+      display:grid; gap:14px;
+      margin-top:18px;
+      position:relative;
+    }
+    .timeline::before{
+      content:"";
+      position:absolute; left:calc(50% - 1px); top:0; bottom:0;
+      width:2px;
+      background: linear-gradient(180deg, rgba(200,169,106,.15), rgba(200,169,106,.75), rgba(200,169,106,.15));
+      opacity:.85;
+    }
+    .step{
+      display:grid; grid-template-columns: 1fr 1fr; gap:14px; align-items:center;
+      position:relative;
+    }
+    .step .box{
+      background: rgba(255,255,255,.08);
+      border:1px solid rgba(200,169,106,.22);
+      border-radius: var(--radius);
+      padding:16px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 14px 40px rgba(0,0,0,.25);
+    }
+    .step .box h3{color:#F7F5EF; margin:0 0 6px; font-size:18px}
+    .step .box p{color: rgba(247,245,239,.82); margin:0; font-size:14px}
+    .dot{
+      position:absolute; left:50%; transform:translateX(-50%);
+      width:14px; height:14px; border-radius:99px;
+      background: var(--secondary);
+      box-shadow: 0 0 0 8px rgba(200,169,106,.18);
+      border: 1px solid rgba(255,255,255,.35);
+      z-index:2;
+    }
+    .step:nth-child(odd) .box{grid-column:1}
+    .step:nth-child(odd) .spacer{grid-column:2}
+    .step:nth-child(even) .box{grid-column:2}
+    .step:nth-child(even) .spacer{grid-column:1}
+
+    .motor-grid{
+      grid-template-columns: 1.1fr .9fr;
+      align-items:center;
+      gap:22px;
+    }
+    .feature-media{
+      border-radius: var(--radius);
+      overflow:hidden;
+      border:1px solid rgba(200,169,106,.25);
+      box-shadow: var(--shadow);
+      background: var(--card);
+      aspect-ratio: 4/3;
+    }
+    .feature-media img{width:100%; height:100%; object-fit:cover; display:block}
+    .table{
+      margin-top:14px;
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      overflow:hidden;
+      background: var(--card);
+      box-shadow: var(--shadow2);
+    }
+    .row{
+      display:grid; grid-template-columns: 1.1fr 1fr 1fr;
+      gap:0;
+      padding:12px 14px;
+      border-bottom:1px solid var(--border);
+      align-items:center;
+    }
+    .row:last-child{border-bottom:0}
+    .row.head{
+      background: linear-gradient(90deg, rgba(200,169,106,.14), transparent);
+      font-weight:850;
+      color:var(--text);
+    }
+    .cell{font-size:13px; color:var(--muted)}
+    .row.head .cell{color:var(--text)}
+    .pill{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(200,169,106,.30);
+      background: rgba(200,169,106,.10);
+      color:var(--text);
+      font-weight:750;
+      font-size:12px;
+      width:fit-content;
+    }
+
+    .projects-wrap{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap:18px;
+      align-items:start;
+    }
+    .case-grid{display:grid; gap:14px}
+    .case{
+      display:grid; grid-template-columns: 140px 1fr;
+      gap:14px;
+      border-radius: var(--radius);
+      overflow:hidden;
+      border:1px solid var(--border);
+      background: var(--card);
+      box-shadow: var(--shadow2);
+      transition: transform .22s var(--ease), box-shadow .22s var(--ease), border-color .22s var(--ease);
+    }
+    .case:hover{transform: translateY(-4px); box-shadow: var(--shadow); border-color: rgba(200,169,106,.40)}
+    .case .img{height:100%; min-height:120px}
+    .case .img img{width:100%; height:100%; object-fit:cover; display:block}
+    .case .txt{padding:14px}
+    .case .txt h3{margin:0 0 6px; font-size:18px}
+    .case .txt p{margin:0; font-size:14px}
+    .stats{
+      border-radius: var(--radius);
+      border:1px solid rgba(200,169,106,.25);
+      background:
+        radial-gradient(900px 300px at 30% 0%, rgba(200,169,106,.12), transparent 55%),
+        var(--card);
+      box-shadow: var(--shadow);
+      padding:18px;
+      overflow:hidden;
+      position:relative;
+    }
+    .stats h3{margin:0 0 10px}
+    .stat-grid{display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap:12px}
+    .stat{
+      border:1px solid var(--border);
+      border-radius: 16px;
+      padding:14px;
+      background: rgba(255,255,255,.55);
+      backdrop-filter: blur(10px);
+    }
+    [data-theme="dark"] .stat{background: rgba(15,30,40,.55)}
+    .num{font-size:26px; font-weight:950; color:var(--text); letter-spacing:-.02em}
+    .lab{color:var(--muted); font-size:13px; font-weight:700}
+
+    .testimonials{
+      background: linear-gradient(180deg, rgba(44,62,80,.04), transparent 55%);
+    }
+    [data-theme="dark"] .testimonials{background: linear-gradient(180deg, rgba(200,169,106,.08), transparent 60%)}
+    .t-wrap{
+      position:relative;
+      border-radius: var(--radius);
+      border:1px solid rgba(200,169,106,.22);
+      background: linear-gradient(180deg, rgba(44,62,80,.08), rgba(44,62,80,.02));
+      padding:18px;
+      box-shadow: var(--shadow2);
+      overflow:hidden;
+    }
+    [data-theme="dark"] .t-wrap{background: linear-gradient(180deg, rgba(15,30,40,.78), rgba(15,30,40,.55))}
+    .t-grid{
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap:14px;
+    }
+    .t-card{
+      background: var(--primary);
+      color:#F7F5EF;
+      border-radius: var(--radius);
+      border:1px solid rgba(200,169,106,.22);
+      padding:16px;
+      box-shadow: 0 16px 40px rgba(0,0,0,.18);
+      position:relative;
+      min-height: 168px;
+    }
+    .t-card::before{
+      content:"“";
+      position:absolute; right:14px; top:8px;
+      font-family: ui-serif, Georgia, serif;
+      font-size:52px;
+      line-height:1;
+      color:rgba(200,169,106,.35);
+    }
+    .stars{display:flex; gap:4px; color:var(--secondary); margin-bottom:10px}
+    .stars svg{width:16px; height:16px; fill:currentColor; stroke:none}
+    .t-card p{color:rgba(247,245,239,.86); font-size:14px; margin:0 0 12px}
+    .who{font-weight:900; letter-spacing:.01em}
+    .role{opacity:.82; font-size:13px}
+    .t-controls{
+      display:none;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      margin-top:12px;
+    }
+    .dots{display:flex; gap:8px; align-items:center}
+    .dotp{width:8px; height:8px; border-radius:99px; background:rgba(200,169,106,.28); border:1px solid rgba(200,169,106,.35)}
+    .dotp.active{background:var(--secondary)}
+    .navbtn{border:1px solid rgba(200,169,106,.28); background:rgba(200,169,106,.10); color:#F7F5EF}
+    .navbtn:hover{box-shadow: 0 18px 40px rgba(200,169,106,.12)}
+
+    .blog-grid{
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap:14px;
+    }
+    .post{
+      border-radius: var(--radius);
+      overflow:hidden;
+      border:1px solid var(--border);
+      background: var(--card);
+      box-shadow: var(--shadow2);
+      transition: transform .22s var(--ease), box-shadow .22s var(--ease), border-color .22s var(--ease);
+      transform: translateZ(0);
+    }
+    .post:hover{
+      transform: translateY(-4px) rotateX(.6deg) rotateY(-.6deg);
+      border-color: rgba(200,169,106,.40);
+      box-shadow: var(--shadow);
+    }
+    .post .cover{aspect-ratio: 16/10; background:var(--bg2)}
+    .post .cover img{width:100%; height:100%; object-fit:cover; display:block; filter:saturate(1.03) contrast(1.02)}
+    [data-theme="dark"] .post .cover img{filter:saturate(1.02) contrast(1.04) brightness(.90)}
+    .post .body{padding:14px}
+    .post h3{font-size:18px; margin:0 0 8px}
+    .readmore{
+      display:inline-flex; align-items:center; gap:8px;
+      font-weight:850; color:var(--text);
+      position:relative;
+      padding-bottom:4px;
+    }
+    .readmore::after{
+      content:""; position:absolute; left:0; bottom:0;
+      height:2px; width:0%;
+      background: linear-gradient(90deg, var(--secondary), transparent);
+      transition: width .25s var(--ease);
+    }
+    .post:hover .readmore::after{width:100%}
+
+    .cta-band{
+      padding:56px 0;
+      background: radial-gradient(900px 240px at 20% 0%, rgba(200,169,106,.20), transparent 60%),
+                  radial-gradient(900px 240px at 80% 10%, rgba(200,169,106,.12), transparent 55%),
+                  var(--primary);
+      color:#F7F5EF;
+      position:relative;
+      overflow:hidden;
+    }
+    .cta-band::before{
+      content:"";
+      position:absolute; inset:-40%;
+      background: radial-gradient(circle at 40% 40%, rgba(200,169,106,.28), transparent 50%);
+      filter: blur(24px);
+      opacity:.75;
+      animation: glowFloat 9s var(--ease) infinite alternate;
+    }
+    .cta-inner{
+      position:relative; z-index:1;
+      display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;
+      border:1px solid rgba(200,169,106,.22);
+      background: rgba(255,255,255,.06);
+      border-radius: var(--radius);
+      padding:18px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 18px 55px rgba(0,0,0,.18);
+    }
+    .cta-inner h2{color:#F7F5EF; margin:0}
+    .cta-actions{display:flex; gap:12px; flex-wrap:wrap; align-items:center}
+    .pulse{
+      position:relative;
+    }
+    .pulse::after{
+      content:"";
+      position:absolute; inset:-6px;
+      border-radius:999px;
+      border:1px solid rgba(200,169,106,.45);
+      opacity:.0;
+      transform: scale(.96);
+      animation: pulse 2.6s var(--ease) infinite;
+      pointer-events:none;
+    }
+    @keyframes pulse{
+      0%{opacity:0; transform: scale(.96)}
+      20%{opacity:.55}
+      100%{opacity:0; transform: scale(1.08)}
+    }
+
+    .contact-grid{
+      grid-template-columns: 1.1fr .9fr;
+      gap:18px;
+      align-items:start;
+    }
+    .contact-card{
+      border-radius: var(--radius);
+      border:1px solid rgba(200,169,106,.22);
+      background:
+        radial-gradient(900px 250px at 30% 0%, rgba(200,169,106,.14), transparent 55%),
+        var(--card);
+      box-shadow: var(--shadow);
+      padding:18px;
+    }
+    .info{
+      display:grid; gap:10px; margin-top:10px
+    }
+    .info a{
+      display:flex; align-items:center; justify-content:space-between; gap:10px;
+      padding:12px 12px;
+      border:1px solid var(--border);
+      border-radius: 14px;
+      background: rgba(255,255,255,.55);
+      backdrop-filter: blur(10px);
+      transition: transform .2s var(--ease), border-color .2s var(--ease), box-shadow .2s var(--ease);
+    }
+    [data-theme="dark"] .info a{background: rgba(15,30,40,.55)}
+    .info a:hover{transform: translateY(-2px); border-color: rgba(200,169,106,.40); box-shadow: var(--shadow2)}
+    .info .left{display:flex; align-items:center; gap:10px}
+    .faq{
+      border-radius: var(--radius);
+      border:1px solid var(--border);
+      background: var(--card);
+      box-shadow: var(--shadow2);
+      overflow:hidden;
+    }
+    .qa{
+      border-bottom:1px solid var(--border);
+    }
+    .qa:last-child{border-bottom:0}
+    .qbtn{
+      width:100%;
+      display:flex; align-items:center; justify-content:space-between; gap:10px;
+      padding:14px 14px;
+      background:transparent; border:0; cursor:pointer;
+      color:var(--text); font-weight:850; text-align:left;
+    }
+    .qbtn:focus-visible{outline:none; box-shadow: inset 0 0 0 2px rgba(200,169,106,.35)}
+    .chev{transition: transform .25s var(--ease)}
+    .qa[aria-expanded="true"] .chev{transform: rotate(180deg)}
+    .ans{
+      max-height:0;
+      overflow:hidden;
+      transition: max-height .35s var(--ease);
+      padding:0 14px;
+    }
+    .qa[aria-expanded="true"] .ans{max-height:120px; padding-bottom:14px}
+    .ans p{margin:0; font-size:14px}
+
+    footer{
+      padding:0;
+      background:
+        radial-gradient(900px 360px at 15% 0%, rgba(200,169,106,.16), transparent 60%),
+        linear-gradient(180deg, rgba(44,62,80,.04), transparent 30%),
+        var(--bg);
+      border-top:1px solid var(--border);
+    }
+    .footer-strip{
+      padding:18px 0;
+      background: linear-gradient(90deg, rgba(200,169,106,.16), transparent);
+      border-bottom:1px solid rgba(200,169,106,.18);
+    }
+    .footer-strip .in{
+      display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap;
+    }
+    .footer-main{padding:34px 0}
+    .footer-grid{
+      display:grid; grid-template-columns: 1.2fr 1fr 1fr 1.1fr;
+      gap:16px;
+    }
+    .foot h3{margin:0 0 10px; font-size:16px}
+    .foot p{font-size:14px}
+    .foot a{
+      display:inline-flex; padding:8px 0; color:var(--muted); font-weight:650;
+    }
+    .foot a:hover{color:var(--text)}
+    .social{
+      display:flex; gap:10px; margin-top:10px; flex-wrap:wrap;
+    }
+    .social a{
+      width:42px; height:42px; border-radius:14px;
+      display:grid; place-items:center;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.55);
+      backdrop-filter: blur(10px);
+      color:var(--text);
+      transition: transform .18s var(--ease), box-shadow .18s var(--ease), border-color .18s var(--ease), color .18s var(--ease);
+    }
+    [data-theme="dark"] .social a{background: rgba(15,30,40,.55)}
+    .social a:hover{
+      transform: translateY(-2px);
+      border-color: rgba(200,169,106,.45);
+      box-shadow: var(--glow);
+      color: var(--secondary);
+    }
+    .bottom{
+      border-top:1px solid var(--border);
+      padding:14px 0;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .bottom .rowb{display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap}
+    .bottom a{color:var(--muted); font-weight:750}
+    .bottom a:hover{color:var(--text)}
+
+    .overlay{
+      position:fixed; inset:0;
+      background: rgba(8,12,16,.55);
+      backdrop-filter: blur(10px);
+      display:none;
+      z-index:90;
+    }
+    .overlay.show{display:block}
+    .drawer{
+      position:fixed; top:var(--topbarH); bottom:0; right:0;
+      width:min(420px, 92vw);
+      background: var(--card);
+      border-left:1px solid rgba(200,169,106,.22);
+      box-shadow: -18px 0 55px rgba(0,0,0,.24);
+      transform: translateX(110%);
+      transition: transform .28s var(--ease);
+      z-index:95;
+      display:flex; flex-direction:column;
+      padding:16px;
+      overflow:auto;
+      overscroll-behavior: contain;
+    }
+    .drawer.show{transform: translateX(0)}
+    .drawer .top{
+      display:flex; align-items:center; justify-content:space-between; gap:10px;
+      padding-bottom:10px;
+      border-bottom:1px solid var(--border);
+      margin-bottom:10px;
+    }
+    .drawer nav ul{display:grid; gap:6px}
+    .drawer nav a{padding:12px 12px; border:1px solid var(--border); background:rgba(200,169,106,.06); border-radius:14px}
+    .drawer nav a::after{display:none}
+    .drawer .actions{display:grid; gap:10px; margin-top:12px}
+    .drawer .actions a, .drawer .actions button{width:100%}
+
+    .modalWrap{
+      position:fixed; inset:0;
+      display:none;
+      z-index:100;
+      padding:16px;
+    }
+    .modalWrap.show{display:grid; place-items:center}
+    .modalBackdrop{
+      position:absolute; inset:0;
+      background: rgba(8,12,16,.58);
+      backdrop-filter: blur(10px);
+    }
+    .modal{
+      position:relative;
+      width:min(720px, 96vw);
+      border-radius: 22px;
+      border:1px solid rgba(200,169,106,.26);
+      background: var(--card);
+      box-shadow: 0 30px 90px rgba(0,0,0,.30);
+      overflow:hidden;
+    }
+    .modal .head{
+      display:flex; align-items:center; justify-content:space-between; gap:10px;
+      padding:16px 16px 10px;
+      border-bottom:1px solid var(--border);
+      background: linear-gradient(90deg, rgba(200,169,106,.14), transparent);
+    }
+    .modal .head h2{margin:0; font-size:20px}
+    .modal .sub{padding:0 16px 10px; color:var(--muted); font-size:14px}
+    .modal .body{padding:14px 16px 16px}
+    form{display:grid; gap:12px; margin:0}
+    .field{display:grid; gap:7px}
+    label{font-weight:850; color:var(--text); font-size:13px}
+    input, textarea{
+      width:100%;
+      padding:12px 12px;
+      border-radius: 14px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.60);
+      color:var(--text);
+      outline:none;
+      transition: box-shadow .2s var(--ease), border-color .2s var(--ease), background .2s var(--ease);
+      font: inherit;
+      backdrop-filter: blur(10px);
+    }
+    [data-theme="dark"] input, [data-theme="dark"] textarea{background: rgba(15,30,40,.60)}
+    input:focus, textarea:focus{
+      border-color: rgba(200,169,106,.55);
+      box-shadow: var(--glow);
+    }
+    textarea{min-height:110px; resize:vertical}
+    .formActions{display:flex; gap:10px; flex-wrap:wrap; align-items:center; justify-content:space-between; margin-top:4px}
+    .status{
+      font-size:13px; color:var(--muted);
+      min-height:18px;
+    }
+    .danger{color:#B42318}
+    .success{color:#067647}
+
+    .reveal{
+      opacity:0;
+      transform: translateY(14px);
+      transition: opacity .5s var(--ease), transform .5s var(--ease);
+    }
+    .reveal.in{
+      opacity:1;
+      transform: translateY(0);
+    }
+    .reveal.left{transform: translateX(-14px); }
+    .reveal.right{transform: translateX(14px); }
+    .reveal.left.in, .reveal.right.in{transform: translateX(0);}
+
+    .toTop{
+      position:fixed; right:16px; bottom:16px; z-index:40;
+      display:none;
+    }
+    .toTop.show{display:block}
+
+    @media (max-width: 980px){
+      .hero-grid{grid-template-columns: 1fr; }
+      .services-grid{grid-template-columns:1fr}
+      .masonry{grid-template-columns: repeat(6, 1fr)}
+      .tile{grid-column: span 6}
+      .tile.wide{grid-column: span 6}
+      .tile.tall{aspect-ratio: 4/3}
+      .projects-wrap{grid-template-columns: 1fr}
+      .t-grid{grid-template-columns: repeat(2, minmax(0,1fr))}
+      .blog-grid{grid-template-columns: repeat(2, minmax(0,1fr))}
+      .footer-grid{grid-template-columns: repeat(2, minmax(0,1fr))}
+      nav ul{gap:8px}
+    }
+    @media (max-width: 760px){
+      :root{--navH:70px}
+      nav{display:none}
+      .hamburger{display:grid}
+      .brand{min-width:auto}
+      .trust-row{grid-template-columns:1fr 1fr}
+      .cards{grid-template-columns:1fr}
+      .bullets{grid-template-columns:1fr}
+      .t-grid{grid-template-columns: 1fr}
+      .t-controls{display:flex}
+      .blog-grid{grid-template-columns: 1fr}
+      .case{grid-template-columns: 1fr}
+      .case .img{min-height:160px}
+      .timeline::before{left:10px}
+      .step{grid-template-columns: 1fr; padding-left:24px}
+      .dot{left:10px}
+      .step .spacer{display:none}
+      .modalWrap.show{place-items: stretch}
+      .modal{
+        width:100%;
+        border-radius: 22px;
+        margin-top: calc(var(--topbarH) + 10px);
+        max-height: calc(100vh - var(--topbarH) - 20px);
+        overflow:auto;
+      }
+      .drawer{top:0}
+      .topbar .wrap{font-size:12px}
+    }
+    @media (prefers-reduced-motion: reduce){
+      *{animation:none !important; transition:none !important; scroll-behavior:auto}
+      .process::before{background-attachment: scroll}
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar" role="region" aria-label="Top notification bar">
+    <div class="container">
+      <div class="wrap">
+        <div class="msg">
+          <span>On-site Consultation</span><span class="sep">•</span>
+          <span>Custom Measurements</span><span class="sep">•</span>
+          <span>Smart Motorized Options</span><span class="sep">•</span>
+          <span>Bulk Project Handling</span>
+        </div>
+        <div class="call">
+          <span class="sep">|</span>
+          <a href="tel:919000012345" aria-label="Call 919000012345">Call: 919000012345</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <header role="banner">
+    <div class="container">
+      <div class="nav" aria-label="Primary navigation">
+        <a class="brand" href="#home">
+          <span class="logo" aria-hidden="true">
+            <img src="https://raw.githubusercontent.com/devgouravjain/landing-pages/main/images/Logo.jfif-2026-02-23T08:35:53.643+01:00" alt="LuxeDrape Studio Curtain logo for luxury custom curtains India" loading="eager" />
+          </span>
+          <span class="name">
+            <strong>LuxeDrape Studio Curtain</strong>
+            <span>Custom window treatments • India</span>
+          </span>
+        </a>
+
+        <nav aria-label="Site sections">
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#collections">Collections</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#smart">Smart Motorized</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-right">
+          <button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 3v2"></path>
+              <path d="M12 19v2"></path>
+              <path d="M4.22 4.22l1.42 1.42"></path>
+              <path d="M18.36 18.36l1.42 1.42"></path>
+              <path d="M3 12h2"></path>
+              <path d="M19 12h2"></path>
+              <path d="M4.22 19.78l1.42-1.42"></path>
+              <path d="M18.36 5.64l1.42-1.42"></path>
+              <circle cx="12" cy="12" r="4"></circle>
+            </svg>
+          </button>
+
+          <a class="call-link" href="tel:919000012345" aria-label="Call now">Call</a>
+          <button class="btn btn-primary pulse" id="openQuote" type="button">Get a Quote</button>
+
+          <button class="icon-btn hamburger" id="menuBtn" type="button" aria-label="Open menu" title="Open menu">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 6h16"></path>
+              <path d="M4 12h16"></path>
+              <path d="M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="overlay" id="overlay" tabindex="-1" aria-hidden="true"></div>
+
+  <aside class="drawer" id="drawer" aria-label="Mobile menu" aria-hidden="true">
+    <div class="top">
+      <div class="brand" style="min-width:auto">
+        <span class="logo" aria-hidden="true">
+          <img src="https://raw.githubusercontent.com/devgouravjain/landing-pages/main/images/Logo.jfif-2026-02-23T08:35:53.643+01:00" alt="LuxeDrape Studio Curtain logo" loading="lazy" />
+        </span>
+        <span class="name">
+          <strong>LuxeDrape</strong>
+          <span>Luxury curtains India</span>
+        </span>
+      </div>
+      <button class="icon-btn" id="closeMenu" type="button" aria-label="Close menu" title="Close menu">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M18 6L6 18"></path>
+          <path d="M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+    <nav aria-label="Mobile site sections">
+      <ul>
+        <li><a href="#home" data-close-drawer="true">Home</a></li>
+        <li><a href="#services" data-close-drawer="true">Services</a></li>
+        <li><a href="#collections" data-close-drawer="true">Collections</a></li>
+        <li><a href="#projects" data-close-drawer="true">Projects</a></li>
+        <li><a href="#smart" data-close-drawer="true">Smart Motorized</a></li>
+        <li><a href="#testimonials" data-close-drawer="true">Testimonials</a></li>
+        <li><a href="#blog" data-close-drawer="true">Blog</a></li>
+        <li><a href="#contact" data-close-drawer="true">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="actions">
+      <button class="btn btn-primary" type="button" data-open-inquiry="true">Get a Quote</button>
+      <a class="btn btn-ghost" href="tel:919000012345">Call 919000012345</a>
+      <button class="btn btn-ghost" id="themeToggleMobile" type="button">Toggle Dark Mode</button>
+    </div>
+  </aside>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="reveal left">
+            <div class="kicker"><span class="kdot" aria-hidden="true"></span><span>Interior curtain design, tailored for premium spaces</span></div>
+            <h1>Luxury Custom Curtains &amp; Smart Curtain Systems in India</h1>
+            <p class="lead">From sheer drapes to blackout curtains and premium blinds, LuxeDrape Studio Curtain crafts custom window treatments with measured precision, imported fabrics, and a refined installation finish.</p>
+
+            <ul class="bullets" aria-label="Key benefits">
+              <li><span class="check" aria-hidden="true">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"></path></svg>
+              </span><span>Custom measurements &amp; on-site consultation</span></li>
+              <li><span class="check" aria-hidden="true">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"></path></svg>
+              </span><span>Imported fabrics &amp; premium stitching finish</span></li>
+              <li><span class="check" aria-hidden="true">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"></path></svg>
+              </span><span>Smart motorized options with silent tracks</span></li>
+              <li><span class="check" aria-hidden="true">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"></path></svg>
+              </span><span>Bulk project handling for hotels &amp; offices</span></li>
+            </ul>
+
+            <div class="hero-actions">
+              <button class="btn btn-primary" type="button" data-open-inquiry="true">Request Consultation</button>
+              <a class="btn btn-ghost" href="#collections">Explore Collections</a>
+              <a class="btn btn-link" href="#services">See services</a>
+            </div>
+          </div>
+
+          <div class="hero-media reveal right" id="heroMedia" aria-label="Luxury curtains lifestyle image">
+            <img src="https://raw.githubusercontent.com/devgouravjain/landing-pages/main/images/1ff0a0e8-63c0-4ff9-964a-c1c6873bb149.jfif-2026-02-23T08:35:54.708+01:00" alt="Luxury custom curtains in India for modern living room interior curtain design" loading="eager" />
+            <div class="hero-float" aria-hidden="true">
+              <span class="chip">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M12 2l7 4v6c0 5-3 9-7 10C8 21 5 17 5 12V6l7-4z"></path></svg>
+                Premium finish
+              </span>
+              <span class="chip">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M4 12h16"></path><path d="M12 4v16"></path></svg>
+                Tailored fit
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="trust">
+          <div class="trust-row reveal" aria-label="Trust badges">
+            <div class="badge">Imported Fabrics</div>
+            <div class="badge">Hotel &amp; Corporate Supplier</div>
+            <div class="badge">Blackout &amp; Sheer Specialists</div>
+            <div class="badge">Motorized Ready</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-head">
+          <div class="reveal left">
+            <span class="eyebrow">Services</span>
+            <h2>Custom window treatments for homes, hotels, and corporate offices</h2>
+            <p>Choose from luxury curtains India clients trust—built for performance, aesthetics, and easy maintenance across premium residences and high-traffic hospitality spaces.</p>
+          </div>
+          <div class="mini-actions reveal right">
+            <a class="btn btn-ghost" href="#projects">View projects</a>
+            <button class="btn btn-primary" type="button" data-open-inquiry="true">Get pricing</button>
+          </div>
+        </div>
+
+        <div class="grid services-grid">
+          <div class="side-media reveal left" aria-label="Corporate projects curtains and blinds image">
+            <img src="https://raw.githubusercontent.com/devgouravjain/landing-pages/main/images/Blinds-and-Curtains-Qatar.webp-2026-02-23T08:36:04.359+01:00" alt="Premium blinds and custom curtains for corporate projects and offices" loading="lazy" />
+          </div>
+
+          <div class="cards reveal right" aria-label="Service cards">
+            <article class="card">
+              <div class="icon-wrap" aria-hidden="true">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M7 4h10"></path><path d="M6 8h12"></path><path d="M7 12h10"></path><path d="M6 16h12"></path><path d="M7 20h10"></path></svg>
+              </div>
+              <h3>Custom Curtains</h3>
+              <p>Measured, stitched, and installed to match your elevation and interior curtain design.</p>
+            </article>
+
+            <article class="card">
+              <div class="icon-wrap" aria-hidden="true">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M4 8h16"></path><path d="M6 12h12"></path><path d="M8 16h8"></path></svg>
+              </div>
+              <h3>Blackout Curtains</h3>
+              <p>High-coverage blackout curtains for bedrooms, media rooms, and hospitality suites.</p>
+            </article>
+
+            <article class="card">
+              <div class="icon-wrap" aria-hidden="true">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M6 4v16"></path><path d="M10 4v16"></path><path d="M14 4v16"></path><path d="M18 4v16"></path></svg>
+              </div>
+              <h3>Sheer Drapes</h3>
+              <p>Soft daylight diffusion with refined folds and elegant layering options.</p>
+            </article>
+
+            <article class="card">
+              <div class="icon-wrap" aria-hidden="true">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M6 7h12"></path><path d="M6 12h12"></path><path d="M6 17h12"></path><path d="M8 5v14"></path></svg>
+              </div>
+              <h3>Premium Blinds</h3>
+              <p>Clean lines for modern spaces—privacy, glare control, and a tailored fit.</p>
+            </article>
+
+            <article class="card">
+              <div class="icon-wrap" aria-hidden="true">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M12 2v6"></path><path d="M8 8h8"></path><path d="M7 22h10"></path><path d="M9 22V14a3 3 0 0 1 6 0v8"></path></svg>
+              </div>
+              <h3>Smart Motorized Systems</h3>
+              <p>Motorized curtains with silent tracks, remote/app control, and scene-ready setups.</p>
+            </article>
+
+            <article class="card">
+              <div class="icon-wrap" aria-hidden="true">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M3 21h18"></path><path d="M6 21V7l6-4 6 4v14"></path><path d="M9 21v-6h6v6"></path></svg>
+              </div>
+              <h3>Hotel &amp; Bulk Projects</h3>
+              <p>As a hotel curtain supplier, we support BOQ, sampling, and on-site coordination.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="collections" class="gallery">
+      <div class="container">
+        <div class="section-head">
+          <div class="reveal left">
+            <span class="eyebrow">Collections</span>
+            <h2>Luxury curtains, sheer drapes, blackout performance, and premium blinds</h2>
+            <p>Explore curated materials and finishes—from soft translucence to full-room darkening—crafted as custom curtains for distinctive Indian homes and commercial interiors.</p>
+          </div>
+          <div class="mini-actions reveal right">
+            <a class="btn btn-ghost" href="#projects">View All Custom Window Treatments</a>
+          </div>
+        </div>
+
+        <div class="masonry reveal" aria-label="Gallery grid of custom window treatments">
+          <a class="tile wide" href="#smart" aria-label="Smart curtain systems tile">
+            <img src="https://raw.githubusercontent.com/devgouravjain/landing-pages/main/images/1ff0a0e8-63c0-4ff9-964a-c1c6873bb149.jfif-2026-02-23T08:35:54.708+01:00" alt="Custom window treatments with luxury custom curtains India lifestyle setting" loading="lazy" />
+            <div class="cap"><strong>Interior Curtain Design</strong><span>Layered styling for modern elevations</span></div>
+          </a>
+
+          <a class="tile tall" href="#collections" aria-label="Product detail custom curtains tile">
+            <img src="https://raw.githubusercontent.com/devgouravjain/landing-pages/main/images/curtains_520x500_520x500_c6e1c515-ca2b-477b-9f49-22a3dfabc429.webp-2026-02-23T08:35:56.426+01:00" alt="Custom curtains product detail with premium stitching and fabric texture" loading="lazy" />
+            <div class="cap"><strong>Custom Curtains</strong><span>Tailored pleats &amp; refined finish</span></div>
+          </a>
+
+          <a class="tile" href="#projects" aria-label="Wholesale and project vibe tile">
+            <img src="https://raw.githubusercontent.com/devgouravjain/landing-pages/main/images/Buy-Curtains-Online-in-India-at-Sabmix-Wholesale-India.jpeg-2026-02-23T08:36:00.382+01:00" alt="Hotel curtain supplier and bulk project handling custom curtains in India" loading="lazy" />
+            <div class="cap"><strong>Project Supply</strong><span>Sampling, BOQ &amp; consistent production</span></div>
+          </a>
+
+          <a class="tile" href="#collections" aria-label="Premium interior with sheer drapes tile">
+            <img src="https://raw.githubusercontent.com/devgouravjain/landing-pages/main/images/aspire-curtains-img-2.webp-2026-02-23T08:36:03.398+01:00" alt="Sheer drapes for daylight softening in premium interior design" loading="lazy" />
+            <div class="cap"><strong>Sheer Drapes</strong><span>Daylight softening with privacy</span></div>
+          </a>
+
+          <a class="tile" href="#smart" aria-label="Blackout performance tile">
+            <img src="https://raw.githubusercontent.com/devgouravjain/landing-pages/main/images/Blackout-Curtains-doha.webp-2026-02-23T08:36:05.321+01:00" alt="Blackout curtains for luxury bedrooms with high-performance lining" loading="lazy" />
+            <div class="cap"><strong>Blackout Curtains</strong><span>Acoustic comfort &amp; room darkening</span></div>
+          </a>
+        </div>
+
+        <div class="gallery-actions">
+          <a class="btn btn-primary" href="#projects">View All Custom Window Treatments</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="process" aria-label="Signature process">
+      <div class="container">
+        <div class="section-head">
+          <div class="reveal left">
+            <span class="eyebrow">Signature process</span>
+            <h2>Precision from measurement to after-care</h2>
+            <p style="color:rgba(247,245,239,.84)">A reliable workflow for architects, designers, and homeowners—built to deliver consistent detailing at scale.</p>
+          </div>
+          <div class="mini-actions reveal right">
+            <button class="btn btn-primary" type="button" data-open-inquiry="true">Schedule measurement</button>
+          </div>
+        </div>
+
+        <div class="timeline" aria-label="Process timeline">
+          <div class="step reveal left">
+            <span class="dot" aria-hidden="true"></span>
+            <div class="box">
+              <h3>Measure</h3>
+              <p>On-site consultation, precise drop calculations, and track/rod planning.</p>
+            </div>
+            <div class="spacer"></div>
+          </div>
+          <div class="step reveal right">
+            <span class="dot" aria-hidden="true"></span>
+            <div class="spacer"></div>
+            <div class="box">
+              <h3>Fabric Curation</h3>
+              <p>Sheer drapes, blackout linings, and textures matched to lighting and usage.</p>
+            </div>
+          </div>
+          <div class="step reveal left">
+            <span class="dot" aria-hidden="true"></span>
+            <div class="box">
+              <h3>Stitching Finish</h3>
+              <p>Premium hems, pleats, and aligned repeats—crafted for a luxury look.</p>
+            </div>
+            <div class="spacer"></div>
+          </div>
+          <div class="step reveal right">
+            <span class="dot" aria-hidden="true"></span>
+            <div class="spacer"></div>
+            <div class="box">
+              <h3>Installation</h3>
+              <p>Clean mounting, smooth glide, and precise fall—ready for styling.</p>
+            </div>
+          </div>
+          <div class="step reveal left">
+            <span class="dot" aria-hidden="true"></span>
+            <div class="box">
+              <h3>After-care</h3>
+              <p>Maintenance guidance and support for smart curtain systems and hardware.</p>
+            </div>
+            <div class="spacer"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="smart">
+      <div class="container">
+        <div class="grid motor-grid">
+          <div class="reveal left">
+            <span class="eyebrow">Smart motorized</span>
+            <h2>Motorized curtains with silent tracks and scene-ready control</h2>
+            <p>Upgrade to motorized curtains with smooth movement, reliable limits, and smart scenes. Ideal for tall windows, luxury apartments, and hospitality suites where consistency matters.</p>
+
+            <div class="table" aria-label="Comparison table for manual vs motorized vs smart scenes">
+              <div class="row head">
+                <div class="cell">Feature</div>
+                <div class="cell">Manual</div>
+                <div class="cell">Motorized / Smart</div>
+              </div>
+              <div class="row">
+                <div class="cell"><span class="pill">Operation</span></div>
+                <div class="cell">Hand pull</div>
+                <div class="cell">Remote / app</div>
+              </div>
+              <div class="row">
+                <div class="cell"><span class="pill">Consistency</span></div>
+                <div class="cell">Varies</div>
+                <div class="cell">Precise limits</div>
+              </div>
+              <div class="row">
+                <div class="cell"><span class="pill">Smart scenes</span></div>
+                <div class="cell">No</div>
+                <div class="cell">Morning / movie mode</div>
+              </div>
+            </div>
+
+            <div class="hero-actions" style="margin-top:16px">
+              <button class="btn btn-primary" type="button" data-open-inquiry="true">Plan a Smart Setup</button>
+              <a class="btn btn-ghost" href="#collections">See finishes</a>
+            </div>
+          </div>
+
+          <div class="feature-media reveal right" aria-label="Motorized and blackout curtains feature image">
+            <img src="https://raw.githubusercontent.com/devgouravjain/landing-pages/main/images/Blackout-Curtains-doha.webp-2026-02-23T08:36:05.321+01:00" alt="Motorized curtains and blackout curtains for premium bedrooms and smart curtain systems" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-head">
+          <div class="reveal left">
+            <span class="eyebrow">Projects</span>
+            <h2>Bulk handling for hotels, luxury apartments, and corporate offices</h2>
+            <p>From boutique properties to large rollouts, we coordinate timelines, finishing standards, and site execution—ideal for hotel curtain supplier requirements.</p>
+          </div>
+          <div class="mini-actions reveal right">
+            <button class="btn btn-primary" type="button" data-open-inquiry="true">Request BOQ support</button>
+          </div>
+        </div>
+
+        <div class="projects-wrap">
+          <div class="case-grid reveal left" aria-label="Case studies">
+            <article class="case">
+              <div class="img">
+                <img src="https://raw.githubusercontent.com/devgouravjain/landing-pages/main/images/Buy-Curtains-Online-in-India-at-Sabmix-Wholesale-India.jpeg-2026-02-23T08:36:00.382+01:00" alt="Hotel project custom curtains and blackout curtains supply in India" loading="lazy" />
+              </div>
+              <div class="txt">
+                <h3>Hotels</h3>
+                <p>Durable blackout curtains, consistent pleats, and room-by-room installation planning.</p>
+              </div>
+            </article>
+
+            <article class="case">
+              <div class="img">
+                <img src="https://raw.githubusercontent.com/devgouravjain/landing-pages/main/images/Blinds-and-Curtains-Qatar.webp-2026-02-23T08:36:04.359+01:00" alt="Corporate offices premium blinds and custom window treatments" loading="lazy" />
+              </div>
+              <div class="txt">
+                <h3>Corporate Offices</h3>
+                <p>Premium blinds and glare control for meeting rooms, cabins, and executive zones.</p>
+              </div>
+            </article>
+
+            <article class="case">
+              <div class="img">
+                <img src="https://raw.githubusercontent.com/devgouravjain/landing-pages/main/images/aspire-curtains-img-2.webp-2026-02-23T08:36:03.398+01:00" alt="Luxury apartments interior curtain design with sheer drapes in India" loading="lazy" />
+              </div>
+              <div class="txt">
+                <h3>Luxury Apartments</h3>
+                <p>Sheer drapes, layered custom curtains, and smart curtain systems for tall glazing.</p>
+              </div>
+            </article>
+          </div>
+
+          <aside class="stats reveal right" aria-label="Project highlights">
+            <h3>Execution highlights</h3>
+            <p style="margin-bottom:12px">Designed to keep site work smooth and outcomes consistent.</p>
+            <div class="stat-grid">
+              <div class="stat">
+                <div class="num" data-count="7" data-suffix="d+">0</div>
+                <div class="lab">Fast Turnaround</div>
+              </div>
+              <div class="stat">
+                <div class="num" data-count="12" data-suffix="+">0</div>
+                <div class="lab">On-site Team</div>
+              </div>
+              <div class="stat">
+                <div class="num" data-count="250" data-suffix="+">0</div>
+                <div class="lab">Rooms Delivered</div>
+              </div>
+              <div class="stat">
+                <div class="num" data-count="4.9" data-dec="1" data-suffix="/5">0</div>
+                <div class="lab">Client Rating</div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials" class="testimonials">
+      <div class="container">
+        <div class="section-head">
+          <div class="reveal left">
+            <span class="eyebrow">Testimonials</span>
+            <h2>Trusted for premium finish and site discipline</h2>
+            <p>Designers and property teams choose our custom curtains, blackout curtains, and smart motorized solutions for consistent delivery and polished detailing.</p>
+          </div>
+          <div class="mini-actions reveal right">
+            <button class="btn btn-ghost" type="button" data-open-inquiry="true">Discuss your project</button>
+          </div>
+        </div>
+
+        <div class="t-wrap reveal" aria-label="Testimonials slider and grid">
+          <div class="t-grid" id="tGrid">
+            <article class="t-card" data-slide="0">
+              <div class="stars" aria-label="5 star rating">
+                <svg viewBox="0 0 24 24"><path d="M12 17.3l-6.18 3.64 1.64-7.03L2 9.24l7.19-.62L12 2l2.81 6.62 7.19.62-5.46 4.67 1.64 7.03z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 17.3l-6.18 3.64 1.64-7.03L2 9.24l7.19-.62L12 2l2.81 6.62 7.19.62-5.46 4.67 1.64 7.03z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 17.3l-6.18 3.64 1.64-7.03L2 9.24l7.19-.62L12 2l2.81 6.62 7.19.62-5.46 4.67 1.64 7.03z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 17.3l-6.18 3.64 1.64-7.03L2 9.24l7.19-.62L12 2l2.81 6.62 7.19.62-5.46 4.67 1.64 7.03z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 17.3l-6.18 3.64 1.64-7.03L2 9.24l7.19-.62L12 2l2.81 6.62 7.19.62-5.46 4.67 1.64 7.03z"/></svg>
+              </div>
+              <p>“The blackout curtains and sheer drapes were layered perfectly. Finishing, fall, and installation were exceptional.”</p>
+              <div><div class="who">A.K.</div><div class="role">Architect</div></div>
+            </article>
+
+            <article class="t-card" data-slide="1">
+              <div class="stars" aria-label="5 star rating">
+                <svg viewBox="0 0 24 24"><path d="M12 17.3l-6.18 3.64 1.64-7.03L2 9.24l7.19-.62L12 2l2.81 6.62 7.19.62-5.46 4.67 1.64 7.03z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 17.3l-6.18 3.64 1.64-7.03L2 9.24l7.19-.62L12 2l2.81 6.62 7.19.62-5.46 4.67 1.64 7.03z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 17.3l-6.18 3.64 1.64-7.03L2 9.24l7.19-.62L12 2l2.81 6.62 7.19.62-5.46 4.67 1.64 7.03z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 17.3l-6.18 3.64 1.64-7.03L2 9.24l7.19-.62L12 2l2.81 6.62 7.19.62-5.46 4.67 1.64 7.03z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 17.3l-6.18 3.64 1.64-7.03L2 9.24l7.19-.62L12 2l2.81 6.62 7.19.62-5.46 4.67 1.64 7.03z"/></svg>
+              </div>
+              <p>“As a hotel team, we needed consistency across rooms. Their bulk handling and timelines were solid.”</p>
+              <div><div class="who">S.R.</div><div class="role">Hotel Manager</div></div>
+            </article>
+
+            <article class="t-card" data-slide="2">
+              <div class="stars" aria-label="5 star rating">
+                <svg viewBox="0 0 24 24"><path d="M12 17.3l-6.18 3.64 1.64-7.03L2 9.24l7.19-.62L12 2l2.81 6.62 7.19.62-5.46 4.67 1.64 7.03z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 17.3l-6.18 3.64 1.64-7.03L2 9.24l7.19-.62L12 2l2.81 6.62 7.19.62-5.46 4.67 1.64 7.03z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 17.3l-6.18 3.64 1.64-7.03L2 9.24l7.19-.62L12 2l2.81 6.62 7.19.62-5.46 4.67 1.64 7.03z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 17.3l-6.18 3.64 1.64-7.03L2 9.24l7.19-.62L12 2l2.81 6.62 7.19.62-5.46 4.67 1.64 7.03z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 17.3l-6.18 3.64 1.64-7.03L2 9.24l7.19-.62L12 2l2.81 6.62 7.19.62-5.46 4.67 1.64 7.03z"/></svg>
+              </div>
+              <p>“Motorized curtains are smooth and quiet. The smart scenes feel premium and the tracks are cleanly installed.”</p>
+              <div><div class="who">M.D.</div><div class="role">Luxury Apartment Owner</div></div>
+            </article>
+          </div>
+
+          <div class="t-controls" aria-label="Testimonial controls">
+            <button class="btn navbtn" id="tPrev" type="button" aria-label="Previous testimonial">Prev</button>
+            <div class="dots" id="tDots" aria-label="Slider progress">
+              <span class="dotp active" data-dot="0"></span>
+              <span class="dotp" data-dot="1"></span>
+              <span class="dotp" data-dot="2"></span>
+            </div>
+            <button class="btn navbtn" id="tNext" type="button" aria-label="Next testimonial">Next</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="blog">
+      <div class="container">
+        <div class="section-head">
+          <div class="reveal left">
+            <span class="eyebrow">Blog</span>
+            <h2>Insights on custom curtains, fabrics, and smart curtain systems</h2>
+            <p>Practical guidance for homeowners and design professionals selecting custom window treatments for Indian climates, light conditions, and room functions.</p>
+          </div>
+          <div class="mini-actions reveal right">
+            <a class="btn btn-ghost" href="#contact">Ask a question</a>
+          </div>
+        </div>
+
+        <div class="grid blog-grid reveal" aria-label="Blog preview cards">
+          <article class="post">
+            <div class="cover">
+              <img src="https://raw.githubusercontent.com/devgouravjain/landing-pages/main/images/B-4-CURTAIN-LABEL-ALL-YOU-NEED-TO-KNOW-04-04-04-1536x943.jpg-2026-02-23T08:35:57.317+01:00" alt="Curtain label guide for custom curtains and premium blinds selection" loading="lazy" />
+            </div>
+            <div class="body">
+              <h3>Curtain Label Guide: What to Know Before You Buy</h3>
+              <p>Decode materials, lining, and stitching terms so you can compare custom curtains confidently.</p>
+              <a class="readmore" href="#contact" aria-label="Read more about curtain label guide">Read more
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"></path><path d="M13 5l7 7-7 7"></path></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="post">
+            <div class="cover">
+              <img src="https://raw.githubusercontent.com/devgouravjain/landing-pages/main/images/B-2-CURTAIN-LABEL-HOW-TO-CHOOSE-PERFECT-02-02-1536x943.jpg-2026-02-23T08:35:58.778+01:00" alt="How to choose perfect curtains for each room including sheer drapes and blackout curtains" loading="lazy" />
+            </div>
+            <div class="body">
+              <h3>How to Choose the Perfect Curtains for Each Room</h3>
+              <p>Layer sheer drapes and blackout curtains to balance privacy, daylight, and comfort.</p>
+              <a class="readmore" href="#collections" aria-label="Read more about choosing curtains">Read more
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"></path><path d="M13 5l7 7-7 7"></path></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="post">
+            <div class="cover">
+              <img src="https://raw.githubusercontent.com/devgouravjain/landing-pages/main/images/curtain-sec-1.webp-2026-02-23T08:36:02.280+01:00" alt="Smart curtain systems guide for motorized curtains and modern homes in India" loading="lazy" />
+            </div>
+            <div class="body">
+              <h3>Smart Curtain Systems: Motorized Luxury for Modern Homes</h3>
+              <p>Learn when motorized curtains add real value, from tall glazing to daily routines.</p>
+              <a class="readmore" href="#smart" aria-label="Read more about smart curtain systems">Read more
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"></path><path d="M13 5l7 7-7 7"></path></svg>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band" aria-label="Call to action">
+      <div class="container">
+        <div class="cta-inner reveal">
+          <div>
+            <span class="eyebrow" style="color:rgba(247,245,239,.90)">Next step</span>
+            <h2>Ready for custom measurements and a premium finish?</h2>
+            <p style="color:rgba(247,245,239,.84); margin:6px 0 0">Get a tailored quote for custom curtains, premium blinds, and smart motorized options.</p>
+          </div>
+          <div class="cta-actions">
+            <button class="btn btn-primary pulse" type="button" data-open-inquiry="true">Open Inquiry Form</button>
+            <a class="btn btn-ghost" style="border-color:rgba(200,169,106,.35); color:#F7F5EF" href="tel:919000012345">Call 919000012345</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-head">
+          <div class="reveal left">
+            <span class="eyebrow">Contact</span>
+            <h2>Connect for consultation, sampling, and project scheduling</h2>
+            <p>Reach out for quick guidance on custom window treatments—fabrics, motorized tracks, and installation planning.</p>
+          </div>
+          <div class="mini-actions reveal right">
+            <button class="btn btn-primary" type="button" data-open-inquiry="true">Send Inquiry</button>
+          </div>
+        </div>
+
+        <div class="grid contact-grid">
+          <div class="contact-card reveal left" aria-label="Contact details">
+            <h3>Direct contact</h3>
+            <p>For urgent site coordination or quick selection support, use the details below.</p>
+            <div class="info">
+              <a href="tel:919000012345" aria-label="Call 919000012345">
+                <span class="left">
+                  <span class="icon-wrap" aria-hidden="true">
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 3 5.18 2 2 0 0 1 5.11 3h3a2 2 0 0 1 2 1.72c.12.86.32 1.7.6 2.5a2 2 0 0 1-.45 2.11L9.09 10.91a16 16 0 0 0 4 4l1.58-1.17a2 2 0 0 1 2.11-.45c.8.28 1.64.48 2.5.6A2 2 0 0 1 22 16.92z"></path></svg>
+                  </span>
+                  <strong>Phone</strong>
+                </span>
+                <span>919000012345</span>
+              </a>
+              <a href="mailto:gouravbizzfly@gmail.com" aria-label="Email gouravbizzfly@gmail.com">
+                <span class="left">
+                  <span class="icon-wrap" aria-hidden="true">
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M4 4h16v16H4z"></path><path d="M22 6l-10 7L2 6"></path></svg>
+                  </span>
+                  <strong>Email</strong>
+                </span>
+                <span>gouravbizzfly@gmail.com</span>
+              </a>
+            </div>
+            <div class="hero-actions" style="margin-top:12px">
+              <button class="btn btn-ghost" type="button" data-open-inquiry="true">Open Inquiry Form</button>
+              <a class="btn btn-link" href="#services">Explore services</a>
+            </div>
+          </div>
+
+          <div class="faq reveal right" aria-label="FAQ accordion">
+            <div class="qa" aria-expanded="false">
+              <button class="qbtn" type="button" aria-label="Toggle delivery timelines">
+                Delivery timelines for custom curtains
+                <svg class="icon chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg>
+              </button>
+              <div class="ans">
+                <p>Timelines depend on fabric and quantity. We confirm a clear schedule after measurement and fabric finalization.</p>
+              </div>
+            </div>
+
+            <div class="qa" aria-expanded="false">
+              <button class="qbtn" type="button" aria-label="Toggle fabric options">
+                Fabric options: sheer, blackout, textures
+                <svg class="icon chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg>
+              </button>
+              <div class="ans">
+                <p>Choose sheer drapes, blackout curtains, and blended textures. We help match privacy, light, and maintenance needs.</p>
+              </div>
+            </div>
+
+            <div class="qa" aria-expanded="false">
+              <button class="qbtn" type="button" aria-label="Toggle motorization warranty">
+                Motorization warranty and support
+                <svg class="icon chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg>
+              </button>
+              <div class="ans">
+                <p>Smart curtain systems include support for setup, limits, and basic maintenance. Warranty terms vary by chosen hardware.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer aria-label="Footer">
+      <div class="footer-strip">
+        <div class="container">
+          <div class="in">
+            <div class="reveal left">
+              <strong style="color:var(--text); letter-spacing:-.01em">Design-first guidance for custom window treatments</strong>
+              <div style="color:var(--muted); font-size:13px">Ask about blackout curtains, sheer drapes, premium blinds, and motorized curtains.</div>
+            </div>
+            <div class="reveal right" style="display:flex; gap:10px; flex-wrap:wrap">
+              <a class="btn btn-ghost" href="#blog">Read insights</a>
+              <button class="btn btn-primary" type="button" data-open-inquiry="true">Get a Quote</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-main">
+        <div class="container">
+          <div class="footer-grid">
+            <div class="foot reveal left">
+              <div class="brand" style="margin-bottom:10px">
+                <span class="logo" aria-hidden="true">
+                  <img src="https://raw.githubusercontent.com/devgouravjain/landing-pages/main/images/Logo.jfif-2026-02-23T08:35:53.643+01:00" alt="LuxeDrape Studio Curtain logo custom curtains luxury curtains India" loading="lazy" />
+                </span>
+                <span class="name">
+                  <strong>LuxeDrape Studio Curtain</strong>
+                  <span>Luxury curtains India</span>
+                </span>
+              </div>
+              <p>Premium custom curtains, blackout curtains, sheer drapes, premium blinds, and smart curtain systems—crafted with measured precision and a refined install.</p>
+              <div class="social" aria-label="Social links">
+                <a href="#home" aria-label="Facebook">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 9h3V6h-3c-1.7 0-3 1.3-3 3v3H8v3h3v6h3v-6h3l1-3h-4V9c0-.6.4-1 1-1z"></path></svg>
+                </a>
+                <a href="#home" aria-label="Instagram">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                    <circle cx="12" cy="12" r="4"></circle>
+                    <path d="M17.5 6.5h.01"></path>
+                  </svg>
+                </a>
+                <a href="#home" aria-label="X">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M4 4l16 16"></path>
+                    <path d="M20 4L4 20"></path>
+                  </svg>
+                </a>
+                <a href="#home" aria-label="LinkedIn">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4V9h4v2"></path>
+                    <rect x="2" y="9" width="4" height="12"></rect>
+                    <circle cx="4" cy="4" r="2"></circle>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="foot reveal">
+              <h3>Quick Links</h3>
+              <a href="#services">Services</a><br />
+              <a href="#collections">Collections</a><br />
+              <a href="#projects">Projects</a><br />
+              <a href="#smart">Smart Motorized</a>
+            </div>
+
+            <div class="foot reveal">
+              <h3>Services</h3>
+              <a href="#services">Custom Curtains</a><br />
+              <a href="#services">Blackout Curtains</a><br />
+              <a href="#services">Sheer Drapes</a><br />
+              <a href="#services">Premium Blinds</a>
+            </div>
+
+            <div class="foot reveal right">
+              <h3>Contact</h3>
+              <a href="tel:919000012345">Phone: 919000012345</a><br />
+              <a href="mailto:gouravbizzfly@gmail.com">Email: gouravbizzfly@gmail.com</a><br />
+              <button class="btn btn-primary" type="button" data-open-inquiry="true" style="margin-top:10px">Open Inquiry Form</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bottom">
+        <div class="container">
+          <div class="rowb">
+            <div>© <span id="year"></span> LuxeDrape Studio Curtain. All rights reserved.</div>
+            <div style="display:flex; gap:14px; flex-wrap:wrap">
+              <a href="#home">Privacy</a>
+              <a href="#home">Terms</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div class="toTop" id="toTop">
+      <a class="btn btn-ghost" href="#home" aria-label="Back to top">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5"></path><path d="M5 12l7-7 7 7"></path></svg>
+        Top
+      </a>
+    </div>
+
+    <div class="modalWrap" id="modalWrap" aria-hidden="true">
+      <div class="modalBackdrop" id="modalBackdrop"></div>
+      <div class="modal" role="dialog" aria-modal="true" aria-label="Inquiry modal">
+        <div class="head">
+          <h2>Inquiry Form</h2>
+          <button class="icon-btn" id="modalClose" type="button" aria-label="Close inquiry form">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M18 6L6 18"></path>
+              <path d="M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="sub">Share your requirements for custom curtains, blackout curtains, sheer drapes, premium blinds, or smart motorized curtain systems.</div>
+        <div class="body">
+          <form id="inquiryForm" aria-label="Inquiry Form">
+            <div class="field">
+              <label for="fullName">Full Name</label>
+              <input id="fullName" name="fullName" type="text" autocomplete="name" required aria-required="true" />
+            </div>
+
+            <div class="field">
+              <label for="phone">Phone Number</label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel" required aria-required="true" inputmode="tel" />
+            </div>
+
+            <div class="field">
+              <label for="email">Email Address</label>
+              <input id="email" name="email" type="email" autocomplete="email" required aria-required="true" inputmode="email" />
+            </div>
+
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message"></textarea>
+            </div>
+
+            <div class="formActions">
+              <div class="status" id="formStatus" aria-live="polite"></div>
+              <div style="display:flex; gap:10px; flex-wrap:wrap">
+                <button class="btn btn-ghost" type="button" id="modalCancel">Cancel</button>
+                <button class="btn btn-primary" type="submit" id="submitBtn">Submit Inquiry</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    (function(){
+      const doc = document.documentElement;
+      const year = document.getElementById('year');
+      year.textContent = new Date().getFullYear();
+
+      const siteName = "LuxeDrape Studio Curtain";
+      const publishedUrl = (function(){
+        try { return window.location.href || ""; } catch(e){ return ""; }
+      })();
+
+      const overlay = document.getElementById('overlay');
+      const drawer = document.getElementById('drawer');
+      const menuBtn = document.getElementById('menuBtn');
+      const closeMenu = document.getElementById('closeMenu');
+
+      const themeToggle = document.getElementById('themeToggle');
+      const themeToggleMobile = document.getElementById('themeToggleMobile');
+
+      const modalWrap = document.getElementById('modalWrap');
+      const modalBackdrop = document.getElementById('modalBackdrop');
+      const modalClose = document.getElementById('modalClose');
+      const modalCancel = document.getElementById('modalCancel');
+      const openQuote = document.getElementById('openQuote');
+
+      const inquiryForm = document.getElementById('inquiryForm');
+      const submitBtn = document.getElementById('submitBtn');
+      const statusEl = document.getElementById('formStatus');
+
+      const focusablesSelector = 'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])';
+      let lastFocus = null;
+
+      function setTheme(next){
+        doc.setAttribute('data-theme', next);
+        try { localStorage.setItem('theme', next); } catch(e){}
+      }
+      function toggleTheme(){
+        const cur = doc.getAttribute('data-theme') || 'light';
+        setTheme(cur === 'dark' ? 'light' : 'dark');
+      }
+      (function initTheme(){
+        let saved = null;
+        try { saved = localStorage.getItem('theme'); } catch(e){}
+        if(saved === 'dark' || saved === 'light'){
+          setTheme(saved);
+        } else {
+          const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+          setTheme(prefersDark ? 'dark' : 'light');
+        }
+      })();
+
+      themeToggle.addEventListener('click', toggleTheme);
+      themeToggleMobile.addEventListener('click', toggleTheme);
+
+      function lockScroll(locked){
+        document.body.style.overflow = locked ? 'hidden' : '';
+      }
+
+      function openDrawer(){
+        overlay.classList.add('show');
+        drawer.classList.add('show');
+        drawer.setAttribute('aria-hidden','false');
+        overlay.setAttribute('aria-hidden','false');
+        lockScroll(true);
+        lastFocus = document.activeElement;
+        const first = drawer.querySelector(focusablesSelector);
+        if(first) first.focus();
+      }
+      function closeDrawer(){
+        drawer.classList.remove('show');
+        overlay.classList.remove('show');
+        drawer.setAttribute('aria-hidden','true');
+        overlay.setAttribute('aria-hidden','true');
+        lockScroll(false);
+        if(lastFocus && lastFocus.focus) lastFocus.focus();
+      }
+
+      menuBtn.addEventListener('click', openDrawer);
+      closeMenu.addEventListener('click', closeDrawer);
+      overlay.addEventListener('click', closeDrawer);
+
+      drawer.addEventListener('click', function(e){
+        const t = e.target;
+        if(t && t.matches('[data-close-drawer="true"]')) closeDrawer();
+        if(t && t.matches('[data-open-inquiry="true"]')) { closeDrawer(); openModal(); }
+      });
+
+      function trapFocus(container, e){
+        const focusable = Array.from(container.querySelectorAll(focusablesSelector)).filter(el => el.offsetParent !== null);
+        if(!focusable.length) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+
+        if(e.key === 'Tab'){
+          if(e.shiftKey && document.activeElement === first){
+            e.preventDefault();
+            last.focus();
+          } else if(!e.shiftKey && document.activeElement === last){
+            e.preventDefault();
+            first.focus();
+          }
+        }
+      }
+
+      function openModal(){
+        lastFocus = document.activeElement;
+        modalWrap.classList.add('show');
+        modalWrap.setAttribute('aria-hidden','false');
+        lockScroll(true);
+        statusEl.textContent = "";
+        statusEl.className = "status";
+        const first = modalWrap.querySelector('#fullName');
+        if(first) first.focus();
+      }
+      function closeModal(){
+        modalWrap.classList.remove('show');
+        modalWrap.setAttribute('aria-hidden','true');
+        lockScroll(false);
+        if(lastFocus && lastFocus.focus) lastFocus.focus();
+      }
+
+      openQuote.addEventListener('click', openModal);
+      document.querySelectorAll('[data-open-inquiry="true"]').forEach(btn => btn.addEventListener('click', openModal));
+      modalBackdrop.addEventListener('click', closeModal);
+      modalClose.addEventListener('click', closeModal);
+      modalCancel.addEventListener('click', closeModal);
+
+      document.addEventListener('keydown', function(e){
+        if(e.key === 'Escape'){
+          if(modalWrap.classList.contains('show')) closeModal();
+          if(drawer.classList.contains('show')) closeDrawer();
+        }
+        if(drawer.classList.contains('show')) trapFocus(drawer, e);
+        if(modalWrap.classList.contains('show')) trapFocus(modalWrap, e);
+      });
+
+      function validateEmail(email){
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      }
+      function validatePhone(phone){
+        const digits = (phone || '').replace(/\D/g,'');
+        return digits.length >= 10 && digits.length <= 15;
+      }
+
+      inquiryForm.addEventListener('submit', async function(e){
+        e.preventDefault();
+        statusEl.textContent = "";
+        statusEl.className = "status";
+
+        const fullName = (document.getElementById('fullName').value || '').trim();
+        const phone = (document.getElementById('phone').value || '').trim();
+        const email = (document.getElementById('email').value || '').trim();
+        const message = (document.getElementById('message').value || '').trim();
+
+        if(!fullName){
+          statusEl.textContent = "Please enter Full Name.";
+          statusEl.classList.add('danger');
+          document.getElementById('fullName').focus();
+          return;
+        }
+        if(!phone || !validatePhone(phone)){
+          statusEl.textContent = "Please enter a valid Phone Number.";
+          statusEl.classList.add('danger');
+          document.getElementById('phone').focus();
+          return;
+        }
+        if(!email || !validateEmail(email)){
+          statusEl.textContent = "Please enter a valid Email Address.";
+          statusEl.classList.add('danger');
+          document.getElementById('email').focus();
+          return;
+        }
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Sending...";
+
+        const payload = { fullName, phone, email, message, siteName, publishedUrl };
+
+        try{
+          const res = await fetch('https://n8n.srv938771.hstgr.cloud/webhook-test/132f0040-a0c9-46ae-9e96-d324622388fb', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+
+          if(!res.ok){
+            throw new Error('Request failed');
+          }
+
+          statusEl.textContent = "Inquiry sent. We will contact you shortly.";
+          statusEl.classList.add('success');
+          inquiryForm.reset();
+
+          setTimeout(closeModal, 700);
+        } catch(err){
+          statusEl.textContent = "Unable to send right now. Please try again or call 919000012345.";
+          statusEl.classList.add('danger');
+        } finally{
+          submitBtn.disabled = false;
+          submitBtn.textContent = "Submit Inquiry";
+        }
+      });
+
+      const faq = document.querySelectorAll('.qa');
+      faq.forEach(item => {
+        const btn = item.querySelector('.qbtn');
+        btn.addEventListener('click', () => {
+          const open = item.getAttribute('aria-expanded') === 'true';
+          faq.forEach(x => x.setAttribute('aria-expanded','false'));
+          item.setAttribute('aria-expanded', open ? 'false' : 'true');
+        });
+      });
+
+      const reveals = Array.from(document.querySelectorAll('.reveal'));
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(en => {
+          if(en.isIntersecting){
+            en.target.classList.add('in');
+            io.unobserve(en.target);
+          }
+        });
+      }, { threshold: 0.14 });
+      reveals.forEach(el => io.observe(el));
+
+      const heroMedia = document.getElementById('heroMedia');
+      function onScroll(){
+        const y = window.scrollY || 0;
+        if(heroMedia){
+          const offset = Math.min(18, y * 0.02);
+          const img = heroMedia.querySelector('img');
+          if(img) img.style.transform = 'translateY(' + offset + 'px) scale(1.01)';
+        }
+        const toTop = document.getElementById('toTop');
+        if(toTop){
+          toTop.classList.toggle('show', y > 900);
+        }
+      }
+      window.addEventListener('scroll', onScroll, { passive:true });
+      onScroll();
+
+      const counters = Array.from(document.querySelectorAll('[data-count]'));
+      const counterIO = new IntersectionObserver((entries) => {
+        entries.forEach(en => {
+          if(!en.isIntersecting) return;
+          const el = en.target;
+          const target = parseFloat(el.getAttribute('data-count') || '0');
+          const dec = parseInt(el.getAttribute('data-dec') || '0', 10);
+          const suffix = el.getAttribute('data-suffix') || '';
+          const start = performance.now();
+          const dur = 900;
+          const from = 0;
+
+          function tick(t){
+            const p = Math.min(1, (t - start) / dur);
+            const eased = 1 - Math.pow(1 - p, 3);
+            const val = from + (target - from) * eased;
+            el.textContent = val.toFixed(dec) + suffix;
+            if(p < 1) requestAnimationFrame(tick);
+          }
+          requestAnimationFrame(tick);
+          counterIO.unobserve(el);
+        });
+      }, { threshold: 0.35 });
+      counters.forEach(el => counterIO.observe(el));
+
+      const tGrid = document.getElementById('tGrid');
+      const dots = document.getElementById('tDots');
+      const tPrev = document.getElementById('tPrev');
+      const tNext = document.getElementById('tNext');
+      let tIndex = 0;
+      let tTimer = null;
+      let isTouching = false;
+      let touchStartX = 0;
+      let touchDeltaX = 0;
+
+      function isMobileSlider(){
+        return window.matchMedia && window.matchMedia('(max-width: 760px)').matches;
+      }
+      function setDots(i){
+        if(!dots) return;
+        dots.querySelectorAll('.dotp').forEach(d => d.classList.toggle('active', parseInt(d.getAttribute('data-dot'),10) === i));
+      }
+      function showSlide(i){
+        const cards = tGrid ? Array.from(tGrid.querySelectorAll('.t-card')) : [];
+        if(!cards.length) return;
+        tIndex = (i + cards.length) % cards.length;
+        setDots(tIndex);
+        if(isMobileSlider()){
+          cards.forEach((c, idx) => {
+            c.style.display = (idx === tIndex) ? 'block' : 'none';
+          });
+        } else {
+          cards.forEach(c => { c.style.display = ''; });
+        }
+      }
+      function startAuto(){
+        stopAuto();
+        tTimer = setInterval(() => {
+          if(isTouching) return;
+          showSlide(tIndex + 1);
+        }, 5200);
+      }
+      function stopAuto(){
+        if(tTimer) clearInterval(tTimer);
+        tTimer = null;
+      }
+
+      if(tGrid){
+        tGrid.addEventListener('mouseenter', stopAuto);
+        tGrid.addEventListener('mouseleave', startAuto);
+
+        tGrid.addEventListener('touchstart', (e) => {
+          if(!isMobileSlider()) return;
+          isTouching = true;
+          touchStartX = e.touches[0].clientX;
+          touchDeltaX = 0;
+        }, { passive:true });
+
+        tGrid.addEventListener('touchmove', (e) => {
+          if(!isMobileSlider()) return;
+          touchDeltaX = e.touches[0].clientX - touchStartX;
+        }, { passive:true });
+
+        tGrid.addEventListener('touchend', () => {
+          if(!isMobileSlider()) return;
+          const thresh = 42;
+          if(touchDeltaX > thresh) showSlide(tIndex - 1);
+          if(touchDeltaX < -thresh) showSlide(tIndex + 1);
+          isTouching = false;
+          touchStartX = 0;
+          touchDeltaX = 0;
+        }, { passive:true });
+      }
+
+      if(tPrev) tPrev.addEventListener('click', () => showSlide(tIndex - 1));
+      if(tNext) tNext.addEventListener('click', () => showSlide(tIndex + 1));
+      if(dots){
+        dots.addEventListener('click', (e) => {
+          const dot = e.target && e.target.closest('.dotp');
+          if(!dot) return;
+          const idx = parseInt(dot.getAttribute('data-dot'), 10);
+          if(Number.isFinite(idx)) showSlide(idx);
+        });
+      }
+
+      window.addEventListener('resize', () => showSlide(tIndex), { passive:true });
+      showSlide(0);
+      startAuto();
+    })();
+  </script>
+</body>
+</html>
