@@ -1,0 +1,1537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuxeDrape Studio 3 - Luxury Curtains & Interior Design</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2C3E50; /* Dark Blue-Gray */
+            --secondary-color: #C8A96A; /* Gold */
+            --text-light: #f4f4f4;
+            --text-dark: #333;
+            --background-light: #ffffff;
+            --background-dark: #1a1a1a;
+            --card-light: #fdfdfd;
+            --card-dark: #2c2c2c;
+            --shadow-light: rgba(0, 0, 0, 0.1);
+            --shadow-dark: rgba(255, 255, 255, 0.05);
+            --border-light: #eee;
+            --border-dark: #333;
+        }
+
+        body.light-mode {
+            background-color: var(--background-light);
+            color: var(--text-dark);
+        }
+
+        body.dark-mode {
+            background-color: var(--background-dark);
+            color: var(--text-light);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            scroll-behavior: smooth;
+        }
+
+        /* General styles */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-color);
+            transition: color 0.3s ease;
+        }
+
+        body.dark-mode h1, body.dark-mode h2, body.dark-mode h3, body.dark-mode h4, body.dark-mode h5, body.dark-mode h6 {
+            color: var(--secondary-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: color 0.3s ease;
+        }
+
+        body.dark-mode a {
+            color: var(--secondary-color);
+        }
+
+        a:hover {
+            color: var(--secondary-color);
+        }
+
+        button {
+            background-color: var(--secondary-color);
+            color: var(--text-light);
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 8px var(--shadow-light);
+        }
+
+        body.dark-mode button {
+            box-shadow: 0 4px 8px var(--shadow-dark);
+        }
+
+        button:hover {
+            background-color: #b3915b; /* Slightly darker gold */
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 6px 12px var(--shadow-light);
+        }
+
+        body.dark-mode button:hover {
+            box-shadow: 0 6px 12px var(--shadow-dark);
+        }
+
+        /* Header */
+        .notification-bar {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            text-align: center;
+            padding: 10px 0;
+            font-size: 0.9em;
+            position: relative;
+            z-index: 1000;
+        }
+
+        .header {
+            background-color: var(--background-light);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            box-shadow: 0 2px 5px var(--shadow-light);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        body.dark-mode .header {
+            background-color: var(--background-dark);
+            box-shadow: 0 2px 5px var(--shadow-dark);
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        .nav-menu {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .nav-menu li {
+            margin-left: 30px;
+        }
+
+        .nav-menu a {
+            font-weight: 600;
+            color: var(--primary-color);
+            transition: color 0.3s ease, transform 0.2s ease;
+        }
+
+        body.dark-mode .nav-menu a {
+            color: var(--text-light);
+        }
+
+        .nav-menu a:hover {
+            color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        .header-right-controls {
+            display: flex;
+            align-items: center;
+        }
+
+        .dark-mode-toggle {
+            cursor: pointer;
+            margin-left: 20px;
+            font-size: 1.2em;
+            color: var(--primary-color);
+            transition: color 0.3s ease;
+        }
+
+        body.dark-mode .dark-mode-toggle {
+            color: var(--text-light);
+        }
+
+        .dark-mode-toggle:hover {
+            color: var(--secondary-color);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            margin-left: 20px;
+        }
+
+        .hamburger span {
+            height: 3px;
+            width: 25px;
+            background-color: var(--primary-color);
+            margin-bottom: 5px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        body.dark-mode .hamburger span {
+            background-color: var(--text-light);
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--text-light);
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.4));
+            z-index: 1;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideInUp 1s forwards 0.5s;
+        }
+
+        .hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 15px;
+            color: var(--text-light);
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.3em;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            line-height: 1.6;
+            text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4);
+        }
+
+        .hero .btn {
+            padding: 15px 40px;
+            font-size: 1.1em;
+            border-radius: 8px;
+            animation: slideInFromLeft 1s forwards 0.8s;
+            opacity: 0;
+        }
+
+        /* USP Section */
+        .usp-section {
+            padding: 80px 0;
+            background-color: var(--card-light);
+            transition: background-color 0.3s ease;
+        }
+
+        body.dark-mode .usp-section {
+            background-color: var(--card-dark);
+        }
+
+        .usp-section h2 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 60px;
+            color: var(--primary-color);
+        }
+
+        body.dark-mode .usp-section h2 {
+            color: var(--secondary-color);
+        }
+
+        .usp-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .usp-item {
+            background-color: var(--background-light);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px var(--shadow-light);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+            opacity: 0; /* For JS animation */
+            transform: translateY(20px); /* For JS animation */
+        }
+
+        body.dark-mode .usp-item {
+            background-color: var(--card-dark);
+            box-shadow: 0 5px 15px var(--shadow-dark);
+        }
+
+        .usp-item:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 10px 25px var(--shadow-light);
+        }
+
+        body.dark-mode .usp-item:hover {
+            box-shadow: 0 10px 25px var(--shadow-dark);
+        }
+
+        .usp-item i {
+            font-size: 3em;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        .usp-item h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        body.dark-mode .usp-item h3 {
+            color: var(--secondary-color);
+        }
+
+        /* Portfolio Section */
+        .portfolio-section {
+            padding: 80px 0;
+            background-color: var(--background-light);
+            transition: background-color 0.3s ease;
+        }
+
+        body.dark-mode .portfolio-section {
+            background-color: var(--background-dark);
+        }
+
+        .portfolio-section h2 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 60px;
+            color: var(--primary-color);
+        }
+
+        body.dark-mode .portfolio-section h2 {
+            color: var(--secondary-color);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px var(--shadow-light);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        body.dark-mode .portfolio-item {
+            box-shadow: 0 5px 15px var(--shadow-dark);
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .portfolio-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(44, 62, 80, 0.7);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: var(--text-light);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        .portfolio-overlay h3 {
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+
+        /* Testimonials Section */
+        .testimonials-section {
+            padding: 80px 0;
+            background-color: var(--card-light);
+            transition: background-color 0.3s ease;
+        }
+
+        body.dark-mode .testimonials-section {
+            background-color: var(--card-dark);
+        }
+
+        .testimonials-section h2 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 60px;
+            color: var(--primary-color);
+        }
+
+        body.dark-mode .testimonials-section h2 {
+            color: var(--secondary-color);
+        }
+
+        .testimonial-slider {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            padding-bottom: 20px;
+            margin: 0 auto;
+            max-width: 100%;
+            scrollbar-width: thin; /* Firefox */
+            scrollbar-color: var(--secondary-color) rgba(0,0,0,0.1); /* Firefox */
+        }
+
+        .testimonial-slider::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .testimonial-slider::-webkit-scrollbar-track {
+            background: rgba(0,0,0,0.1);
+            border-radius: 10px;
+        }
+
+        .testimonial-slider::-webkit-scrollbar-thumb {
+            background-color: var(--secondary-color);
+            border-radius: 10px;
+            border: 2px solid rgba(0,0,0,0);
+        }
+
+
+        .testimonial-card {
+            flex: 0 0 380px; /* Fixed width for cards */
+            margin: 0 15px;
+            padding: 30px;
+            background-color: var(--background-light);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px var(--shadow-light);
+            scroll-snap-align: start;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+        }
+
+        body.dark-mode .testimonial-card {
+            background-color: var(--card-dark);
+            box-shadow: 0 5px 15px var(--shadow-dark);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px var(--shadow-light);
+        }
+
+        body.dark-mode .testimonial-card:hover {
+            box-shadow: 0 8px 20px var(--shadow-dark);
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .testimonial-card .client-name {
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+
+        .testimonial-card .stars {
+            color: gold;
+            margin-bottom: 10px;
+        }
+
+        /* Blog Section */
+        .blog-section {
+            padding: 80px 0;
+            background-color: var(--background-light);
+            transition: background-color 0.3s ease;
+        }
+
+        body.dark-mode .blog-section {
+            background-color: var(--background-dark);
+        }
+
+        .blog-section h2 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 60px;
+            color: var(--primary-color);
+        }
+
+        body.dark-mode .blog-section h2 {
+            color: var(--secondary-color);
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .blog-card {
+            background-color: var(--card-light);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px var(--shadow-light);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+        }
+
+        body.dark-mode .blog-card {
+            background-color: var(--card-dark);
+            box-shadow: 0 5px 15px var(--shadow-dark);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px var(--shadow-light);
+        }
+
+        body.dark-mode .blog-card:hover {
+            box-shadow: 0 10px 20px var(--shadow-dark);
+        }
+
+        .blog-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .blog-content {
+            padding: 25px;
+        }
+
+        .blog-content h3 {
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        body.dark-mode .blog-content h3 {
+            color: var(--secondary-color);
+        }
+
+        .blog-content p {
+            font-size: 0.95em;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .blog-card .read-more {
+            color: var(--secondary-color);
+            font-weight: 600;
+            display: inline-block;
+            position: relative;
+        }
+
+        .blog-card .read-more::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -3px;
+            left: 0;
+            background-color: var(--secondary-color);
+            transition: width 0.3s ease;
+        }
+
+        .blog-card .read-more:hover::after {
+            width: 100%;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 100px 0;
+            text-align: center;
+            opacity: 0; /* For JS animation */
+            transform: translateY(50px); /* For JS animation */
+        }
+
+        .cta-section h2 {
+            font-size: 3em;
+            margin-bottom: 30px;
+            color: var(--secondary-color);
+        }
+
+        .cta-section .btn {
+            background-color: var(--secondary-color);
+            padding: 18px 45px;
+            font-size: 1.2em;
+            border-radius: 8px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+            animation: pulse 2s infinite ease-in-out;
+        }
+
+        .cta-section .btn:hover {
+            animation: none;
+            background-color: #b3915b;
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 80px 0;
+            text-align: center;
+            background-color: var(--card-light);
+            transition: background-color 0.3s ease;
+        }
+
+        body.dark-mode .contact-section {
+            background-color: var(--card-dark);
+        }
+
+        .contact-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            color: var(--primary-color);
+        }
+
+        body.dark-mode .contact-section h2 {
+            color: var(--secondary-color);
+        }
+
+        .contact-info p {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .contact-info strong {
+            color: var(--secondary-color);
+        }
+
+        .contact-section .btn {
+            margin-top: 30px;
+            padding: 15px 35px;
+            font-size: 1.1em;
+            border-radius: 8px;
+        }
+
+        /* Modal Form */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 10000; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0, 0, 0, 0.7); /* Black w/ opacity */
+            backdrop-filter: blur(5px);
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        .modal-content {
+            background-color: var(--background-light);
+            margin: 10% auto;
+            padding: 40px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+            transform: translateY(-50px);
+            animation: slideInDown 0.5s forwards;
+            transition: background-color 0.3s ease;
+        }
+
+        body.dark-mode .modal-content {
+            background-color: var(--card-dark);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+        }
+
+        .close-button {
+            color: var(--primary-color);
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 35px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        body.dark-mode .close-button {
+            color: var(--secondary-color);
+        }
+
+        .close-button:hover,
+        .close-button:focus {
+            color: var(--secondary-color);
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .modal-content h3 {
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            font-size: 2em;
+        }
+
+        body.dark-mode .modal-content h3 {
+            color: var(--secondary-color);
+        }
+
+        .modal-content label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        body.dark-mode .modal-content label {
+            color: var(--text-light);
+        }
+
+        .modal-content input[type="text"],
+        .modal-content input[type="email"],
+        .modal-content input[type="tel"],
+        .modal-content textarea {
+            width: calc(100% - 24px); /* Account for padding and border */
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            font-size: 1em;
+            background-color: var(--background-light);
+            color: var(--text-dark);
+            transition: border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        body.dark-mode .modal-content input,
+        body.dark-mode .modal-content textarea {
+            background-color: #333;
+            border-color: var(--border-dark);
+            color: var(--text-light);
+        }
+
+        .modal-content input:focus,
+        .modal-content textarea:focus {
+            border-color: var(--secondary-color);
+            outline: none;
+            box-shadow: 0 0 8px rgba(200, 169, 106, 0.3);
+        }
+
+        .modal-content textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .modal-content button[type="submit"] {
+            width: 100%;
+            padding: 15px;
+            font-size: 1.1em;
+            border-radius: 8px;
+            background-color: var(--secondary-color);
+            color: var(--text-light);
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+        }
+
+        .modal-content button[type="submit"]:hover {
+            background-color: #b3915b;
+            transform: translateY(-3px) scale(1.01);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-note {
+            font-size: 0.85em;
+            color: #666;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        body.dark-mode .form-note {
+            color: #ccc;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 60px 0 20px;
+            font-size: 0.9em;
+            position: relative;
+            overflow: hidden;
+            border-top: 5px solid var(--secondary-color);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--secondary-color);
+            font-size: 1.2em;
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            height: 3px;
+            width: 50px;
+            background-color: var(--secondary-color);
+            border-radius: 2px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-light);
+            transition: color 0.3s ease;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--secondary-color);
+            text-decoration: underline;
+        }
+
+        .footer-col p {
+            line-height: 1.6;
+        }
+
+        .footer-contact {
+            margin-top: 20px;
+        }
+
+        .footer-contact p {
+            margin-bottom: 5px;
+        }
+
+        .social-icons {
+            margin-top: 20px;
+            display: flex;
+            gap: 15px;
+            justify-content: flex-start;
+        }
+
+        .social-icons a {
+            color: var(--secondary-color);
+            font-size: 1.5em;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            transform: translateY(-5px) scale(1.1);
+            color: #f0c97e; /* Lighter gold */
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            margin-top: 40px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideInFromLeft {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes slideInDown {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(200, 169, 106, 0.7); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 20px rgba(200, 169, 106, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(200, 169, 106, 0); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 80px; /* Adjust based on header height */
+                left: 0;
+                width: 100%;
+                background-color: var(--background-light);
+                box-shadow: 0 5px 10px var(--shadow-light);
+                transition: transform 0.3s ease-out;
+                transform: translateY(-100%);
+            }
+
+            body.dark-mode .nav-menu {
+                background-color: var(--background-dark);
+                box-shadow: 0 5px 10px var(--shadow-dark);
+            }
+
+            .nav-menu.active {
+                display: flex;
+                transform: translateY(0);
+            }
+
+            .nav-menu li {
+                margin: 0;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            }
+
+            body.dark-mode .nav-menu li {
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .nav-menu a {
+                display: block;
+                padding: 15px 20px;
+                text-align: center;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2.8em;
+            }
+
+            .hero p {
+                font-size: 1.1em;
+            }
+
+            .usp-grid, .portfolio-grid, .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonial-slider {
+                justify-content: flex-start;
+                padding-left: 20px; /* Ensure first card is visible */
+                padding-right: 20px; /* Ensure last card has space */
+            }
+
+            .testimonial-card {
+                flex: 0 0 90%;
+            }
+
+            .cta-section h2 {
+                font-size: 2.2em;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-col h4::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .social-icons {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 10px 0;
+            }
+
+            .notification-bar {
+                font-size: 0.8em;
+            }
+
+            .logo img {
+                height: 40px;
+            }
+
+            .dark-mode-toggle {
+                margin-left: 10px;
+            }
+
+            .hamburger {
+                margin-left: 10px;
+            }
+
+            .nav-menu {
+                top: 60px; /* Adjust based on header height */
+            }
+
+            .hero {
+                height: 70vh;
+            }
+
+            .hero h1 {
+                font-size: 2.2em;
+            }
+
+            .hero p {
+                font-size: 1em;
+            }
+
+            .usp-section, .portfolio-section, .testimonials-section, .blog-section, .contact-section {
+                padding: 60px 0;
+            }
+
+            .usp-section h2, .portfolio-section h2, .testimonials-section h2, .blog-section h2, .contact-section h2 {
+                font-size: 2em;
+            }
+
+            .cta-section {
+                padding: 80px 0;
+            }
+
+            .cta-section h2 {
+                font-size: 1.8em;
+            }
+
+            .modal-content {
+                margin: 5% auto;
+                padding: 30px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="light-mode">
+    <div class="notification-bar">
+        Experience Unrivaled Luxury: Book Your Consultation Today!
+    </div>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="#home">
+                    <img src="https://raw.githubusercontent.com/devgouravjain/landing-pages/main/images/Logo.jfif-2026-02-24T07:34:46.874+01:00" alt="LuxeDrape Studio 3 Logo">
+                </a>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-right-controls">
+                <div class="dark-mode-toggle" id="darkModeToggle">
+                    <i class="fas fa-moon"></i>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-bg" style="background-image: url('https://raw.githubusercontent.com/devgouravjain/landing-pages/main/images/1ff0a0e8-63c0-4ff9-964a-c1c6873bb149.jfif-2026-02-24T07:34:47.676+01:00');"></div>
+            <div class="hero-content">
+                <h1>Elevate Your Space with LuxeDrape Studio 3: Bespoke Curtains & Window Treatments for Discerning Tastes</h1>
+                <p>Discover custom curtains, luxury curtains India, motorized curtains, blackout curtains, sheer drapes, premium blinds, and smart curtain systems tailored for homeowners, interior designers, architects, luxury apartment owners, hotels, and corporate offices.</p>
+                <button class="btn" id="exploreCollectionsBtn">Explore Our Collections</button>
+            </div>
+        </section>
+
+        <section id="services" class="usp-section">
+            <div class="container">
+                <h2>Our Premium Craftsmanship & Services</h2>
+                <div class="usp-grid">
+                    <div class="usp-item">
+                        <i class="fas fa-ruler-combined"></i>
+                        <h3>Custom Measurements</h3>
+                        <p>Precision tailoring for a perfect fit, every time.</p>
+                    </div>
+                    <div class="usp-item">
+                        <i class="fas fa-gem"></i>
+                        <h3>Imported Fabrics</h3>
+                        <p>Exclusive selection of the finest imported materials.</p>
+                    </div>
+                    <div class="usp-item">
+                        <i class="fas fa-robot"></i>
+                        <h3>Smart Motorized Options</h3>
+                        <p>Effortless control with advanced smart systems.</p>
+                    </div>
+                    <div class="usp-item">
+                        <i class="fas fa-handshake"></i>
+                        <h3>On-site Consultation</h3>
+                        <p>Expert advice and personalized design recommendations at your location.</p>
+                    </div>
+                    <div class="usp-item">
+                        <i class="fas fa-building"></i>
+                        <h3>Bulk Project Handling</h3>
+                        <p>Seamless execution for large-scale hotel and corporate projects.</p>
+                    </div>
+                    <div class="usp-item">
+                        <i class="fas fa-thread"></i>
+                        <h3>Premium Stitching Finish</h3>
+                        <p>Impeccable quality and attention to detail in every stitch.</p>
+                    </div>
+                    <div class="usp-item">
+                        <i class="fas fa-star"></i>
+                        <h3>Modern Curtain Designs</h3>
+                        <p>Stay ahead with contemporary and trending window fashion.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="portfolio-section">
+            <div class="container">
+                <h2>Our Exquisite Portfolio</h2>
+                <div class="portfolio-grid">
+                    <div class="portfolio-item">
+                        <img src="https://raw.githubusercontent.com/devgouravjain/landing-pages/main/images/curtains_520x500_520x500_c6e1c515-ca2b-477b-9f49-22a3dfabc429.webp-2026-02-24T07:34:49.467+01:00" alt="Luxury Drapes">
+                        <div class="portfolio-overlay">
+                            <h3>Luxury Drapes</h3>
+                            <p>Elegant and sophisticated custom window treatments.</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-item">
+                        <img src="https://raw.githubusercontent.com/devgouravjain/landing-pages/main/images/Buy-Curtains-Online-in-India-at-Sabmix-Wholesale-India.jpeg-2026-02-24T07:34:53.230+01:00" alt="Motorized Blinds">
+                        <div class="portfolio-overlay">
+                            <h3>Motorized Blinds</h3>
+                            <p>Modern and convenient smart curtain systems.</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-item">
+                        <img src="https://raw.githubusercontent.com/devgouravjain/landing-pages/main/images/Blinds-and-Curtains-Qatar.webp-2026-02-24T07:34:56.351+01:00" alt="Sheer Curtains">
+                        <div class="portfolio-overlay">
+                            <h3>Sheer Curtains</h3>
+                            <p>Soft light diffusion for a serene ambiance.</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-item">
+                        <img src="https://raw.githubusercontent.com/devgouravjain/landing-pages/main/images/Blackout-Curtains-doha.webp-2026-02-24T07:34:57.396+01:00" alt="Blackout Solutions">
+                        <div class="portfolio-overlay">
+                            <h3>Blackout Solutions</h3>
+                            <p>Ultimate privacy and light control for any room.</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-item">
+                        <img src="https://raw.githubusercontent.com/devgouravjain/landing-pages/main/images/curtain-sec-1.webp-2026-02-24T07:34:54.498+01:00" alt="Modern Designs">
+                        <div class="portfolio-overlay">
+                            <h3>Modern Designs</h3>
+                            <p>Contemporary styles complementing any interior.</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-item">
+                        <img src="https://raw.githubusercontent.com/devgouravjain/landing-pages/main/images/aspire-curtains-img-2.webp-2026-02-24T07:34:55.216+01:00" alt="Hotel Curtain Supplier">
+                        <div class="portfolio-overlay">
+                            <h3>Hotel Curtain Supplier</h3>
+                            <p>Premium solutions for hospitality projects.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="testimonials-section">
+            <div class="container">
+                <h2>What Our Clients Say</h2>
+                <div class="testimonial-slider">
+                    <div class="testimonial-card">
+                        <div class="stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p>"LuxeDrape Studio 3 transformed our living room with their exquisite custom curtains. The quality and service were exceptional!"</p>
+                        <div class="client-name">- Priya S., Homeowner</div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p>"As an interior designer, I highly recommend LuxeDrape Studio 3. Their motorized options and premium fabrics truly stand out."</p>
+                        <div class="client-name">- Raj M., Interior Designer</div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p>"Their team handled our hotel project with utmost professionalism. The bulk order was delivered flawlessly with superior finish."</p>
+                        <div class="client-name">- Hotel Grand Vista, Management</div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p>"The on-site consultation was invaluable. They helped us choose the perfect sheer drapes for our luxury apartment."</p>
+                        <div class="client-name">- Anand K., Luxury Apartment Owner</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="blog" class="blog-section">
+            <div class="container">
+                <h2>Our Latest Insights & Designs</h2>
+                <div class="blog-grid">
+                    <div class="blog-card">
+                        <img src="https://raw.githubusercontent.com/devgouravjain/landing-pages/main/images/B-4-CURTAIN-LABEL-ALL-YOU-NEED-TO-KNOW-04-04-04-1536x943.jpg-2026-02-24T07:34:50.220+01:00" alt="Choosing Curtains">
+                        <div class="blog-content">
+                            <h3>The Ultimate Guide to Choosing Perfect Curtains for Your Home</h3>
+                            <p>Selecting the right curtains can transform your space. Learn about fabrics, styles, and functions...</p>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </div>
+                    <div class="blog-card">
+                        <img src="https://raw.githubusercontent.com/devgouravjain/landing-pages/main/images/B-2-CURTAIN-LABEL-HOW-TO-CHOOSE-PERFECT-02-02-1536x943.jpg-2026-02-24T07:34:51.750+01:00" alt="Motorized Systems">
+                        <div class="blog-content">
+                            <h3>Smart Homes: Integrating Motorized Curtain Systems</h3>
+                            <p>Discover the convenience and luxury of smart curtain systems. A modern upgrade for every home...</p>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </div>
+                    <div class="blog-card">
+                        <img src="https://raw.githubusercontent.com/devgouravjain/landing-pages/main/images/curtain-sec-1.webp-2026-02-24T07:34:54.498+01:00" alt="Luxury Fabrics">
+                        <div class="blog-content">
+                            <h3>Exploring Luxury Fabrics: What Makes a Curtain Premium?</h3>
+                            <p>Dive into the world of high-end fabrics, their origins, and how they enhance your interior design...</p>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2>Ready to Transform Your Space?</h2>
+                <button class="btn" id="openInquiryModal">Schedule a Consultation</button>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2>Contact LuxeDrape Studio 3</h2>
+                <div class="contact-info">
+                    <p>Email: <strong>gouravbizzfly@gmail.com</strong></p>
+                    <p>Phone: <strong>+91 9000012345</strong></p>
+                </div>
+                <button class="btn" id="openContactModal">Inquire Now</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <div class="logo">
+                    <img src="https://raw.githubusercontent.com/devgouravjain/landing-pages/main/images/Logo.jfif-2026-02-24T07:34:46.874+01:00" alt="LuxeDrape Studio 3 Logo" style="height: 60px; filter: brightness(0) invert(1) drop-shadow(0 0 5px var(--secondary-color));">
+                </div>
+                <p style="margin-top: 20px;">LuxeDrape Studio 3 specializes in bespoke luxury curtain and window treatment solutions for premium interiors. Elevate your living.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Connect With Us</h4>
+                <p>Email: gouravbizzfly@gmail.com</p>
+                <p>Phone: +91 9000012345</p>
+                <div class="social-icons">
+                    <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://x.com" target="_blank" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+                    <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Our Expertise</h4>
+                <ul>
+                    <li><a href="#">Motorized Curtains</a></li>
+                    <li><a href="#">Blackout Drapes</a></li>
+                    <li><a href="#">Sheer Window Treatments</a></li>
+                    <li><a href="#">Custom Blinds</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2023 LuxeDrape Studio 3. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+        </div>
+    </footer>
+
+    <!-- The Modal -->
+    <div id="inquiryModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h3>Inquire About Our Services</h3>
+            <form id="contactForm" method="POST">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" name="fullName" required>
+
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="message">Your Message</label>
+                <textarea id="message" name="message" rows="5"></textarea>
+
+                <button type="submit">Send Inquiry</button>
+            </form>
+            <p class="form-note">Your inquiry will be processed confidentially.</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const darkModeToggle = document.getElementById('darkModeToggle');
+            const body = document.body;
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.querySelector('.nav-menu');
+
+            // Dark Mode Toggle
+            darkModeToggle.addEventListener('click', () => {
+                body.classList.toggle('dark-mode');
+                body.classList.toggle('light-mode');
+                const isDarkMode = body.classList.contains('dark-mode');
+                darkModeToggle.innerHTML = isDarkMode ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+                localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+            });
+
+            // Check for saved theme preference
+            if (localStorage.getItem('theme') === 'dark') {
+                body.classList.add('dark-mode');
+                body.classList.remove('light-mode');
+                darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+            } else {
+                body.classList.add('light-mode');
+                body.classList.remove('dark-mode');
+                darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+            }
+
+            // Mobile Navigation Toggle
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+
+            // Close mobile nav on link click
+            document.querySelectorAll('.nav-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                });
+            });
+
+            // Modal functionality
+            const inquiryModal = document.getElementById('inquiryModal');
+            const openInquiryModalBtn = document.getElementById('openInquiryModal');
+            const openContactModalBtn = document.getElementById('openContactModal');
+            const exploreCollectionsBtn = document.getElementById('exploreCollectionsBtn');
+            const closeButton = document.querySelector('.close-button');
+            const contactForm = document.getElementById('contactForm');
+
+            const openModal = () => {
+                inquiryModal.style.display = 'block';
+                document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+            };
+
+            const closeModal = () => {
+                inquiryModal.style.display = 'none';
+                document.body.style.overflow = ''; // Restore scrolling
+            };
+
+            openInquiryModalBtn.addEventListener('click', openModal);
+            openContactModalBtn.addEventListener('click', openModal);
+            exploreCollectionsBtn.addEventListener('click', () => {
+                 // Scroll to portfolio section or open modal, decided to scroll to portfolio
+                document.querySelector('#portfolio').scrollIntoView({ behavior: 'smooth' });
+            });
+            closeButton.addEventListener('click', closeModal);
+
+            window.addEventListener('click', (event) => {
+                if (event.target == inquiryModal) {
+                    closeModal();
+                }
+            });
+
+            // Smooth scroll for internal links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Intersection Observer for scroll animations
+            const animateOnScrollElements = document.querySelectorAll('.usp-item, .cta-section, .portfolio-item, .blog-card');
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                        entry.target.style.animation = 'slideInUp 0.8s forwards'; // Re-apply if needed
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            animateOnScrollElements.forEach(element => {
+                observer.observe(element);
+            });
+
+            // Form submission logic (Webhook Integration)
+            contactForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+
+                const fullName = document.getElementById('fullName').value;
+                const phone = document.getElementById('phone').value;
+                const email = document.getElementById('email').value;
+                const message = document.getElementById('message').value;
+
+                // Mandatory hidden site identification data
+                const siteName = "LuxeDrape Studio 3";
+                const publishedUrl = "https://devgouravjain.github.io/landing-pages/sites/luxedrape-studio-3.html";
+
+                const webhookUrl = "https://n8n.srv938771.hstgr.cloud/webhook/132f0040-a0c9-46ae-9e96-d324622388fb";
+
+                try {
+                    const response = await fetch(webhookUrl, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            fullName,
+                            phone,
+                            email,
+                            message,
+                            siteName,
+                            publishedUrl
+                        })
+                    });
+
+                    if (response.ok) {
+                        alert('Inquiry sent successfully! We will get back to you soon.');
+                        contactForm.reset();
+                        closeModal();
+                    } else {
+                        alert('Failed to send inquiry. Please try again later.');
+                    }
+                } catch (error) {
+                    console.error('Error submitting form:', error);
+                    alert('An error occurred. Please check your internet connection and try again.');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
