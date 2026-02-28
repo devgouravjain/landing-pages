@@ -1,0 +1,318 @@
+<!DOCTYPE html>\n <html lang=\"en\">\n <head>\n
+    <meta charset=\"utf-8\" />\n
+    <meta name=\"viewport\" content=\"width=device-width,initial-scale=1\" />\n <title>Gourav Jain — AI & Automation Engineer — Resume</title>\n <style>
+      \n :root {
+        \n --accent: #0a66c2;
+        \n --muted: #6b7280;
+        \n --bg: #ffffff;
+        \n --text: #0f1724;
+        \n --max-width: 900px;
+        \n --page-padding: 28px;
+        \n --section-gap: 22px;
+        \n --shadow: 0 1px 2px rgba(15, 23, 36, 0.04);
+        \n --font-sans: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif;
+        \n
+      }
+
+      \n\n
+
+      /* Global */
+      \n html,
+      body {
+        \n height: 100%;
+        \n margin: 0;
+        \n background: var(--bg);
+        \n color: var(--text);
+        \n font-family: var(--font-sans);
+        \n font-size: 15px;
+        \n line-height: 1.45;
+        \n -webkit-font-smoothing: antialiased;
+        \n -moz-osx-font-smoothing: grayscale;
+        \n
+      }
+
+      \n\n .page {
+        \n max-width: var(--max-width);
+        \n margin: 28px auto;
+        \n padding: var(--page-padding);
+        \n box-sizing: border-box;
+        \n background: linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1));
+        \n box-shadow: var(--shadow);
+        \n border-radius: 6px;
+        \n
+      }
+
+      \n\n header {
+        \n display: flex;
+        \n flex-direction: column;
+        \n gap: 10px;
+        \n border-bottom: 1px solid #eef2f6;
+        \n padding-bottom: 16px;
+        \n margin-bottom: var(--section-gap);
+        \n
+      }
+
+      \n\n .name-row {
+        \n display: flex;
+        \n flex-wrap: wrap;
+        \n align-items: baseline;
+        \n gap: 12px;
+        \n justify-content: space-between;
+        \n
+      }
+
+      \n\n h1 {
+        \n margin: 0;
+        \n font-size: 24px;
+        \n letter-spacing: -0.2px;
+        \n font-weight: 700;
+        \n
+      }
+
+      \n\n .sub {
+        \n color: var(--muted);
+        \n font-size: 13px;
+        \n font-weight: 600;
+        \n
+      }
+
+      \n\n .contact {
+        \n display: flex;
+        \n flex-wrap: wrap;
+        \n gap: 10px 18px;
+        \n color: var(--muted);
+        \n font-size: 13px;
+        \n
+      }
+
+      \n\n a {
+        \n color: var(--accent);
+        \n text-decoration: none;
+        \n word-break: break-word;
+        \n
+      }
+
+      \n\n section {
+        \n margin-bottom: var(--section-gap);
+        \n
+      }
+
+      \n\n h2 {
+        \n font-size: 14px;
+        \n margin: 0 0 10px 0;
+        \n color: #0f1724;
+        \n letter-spacing: 0.2px;
+        \n font-weight: 700;
+        \n border-left: 4px solid transparent;
+        \n padding-left: 8px;
+        \n
+      }
+
+      \n\n .summary {
+        \n font-size: 14px;
+        \n color: var(--text);
+        \n margin: 0;
+        \n
+      }
+
+      \n\n .meta {
+        \n font-size: 13px;
+        \n color: var(--muted);
+        \n margin-top: 6px;
+        \n
+      }
+
+      \n\n
+
+      /* Experience / Projects */
+      \n .item {
+        \n margin-bottom: 14px;
+        \n
+      }
+
+      \n\n .item-header {
+        \n display: flex;
+        \n flex-wrap: wrap;
+        \n justify-content: space-between;
+        \n gap: 8px;
+        \n align-items: baseline;
+        \n margin-bottom: 6px;
+        \n
+      }
+
+      \n\n .role {
+        \n font-weight: 700;
+        \n font-size: 14px;
+        \n color: var(--text);
+        \n
+      }
+
+      \n\n .org {
+        \n font-size: 13px;
+        \n color: var(--muted);
+        \n
+      }
+
+      \n\n .dates {
+        \n font-size: 13px;
+        \n color: var(--muted);
+        \n white-space: nowrap;
+        \n margin-left: 8px;
+        \n
+      }
+
+      \n\n ul {
+        \n margin: 8px 0 0 20px;
+        \n padding: 0;
+        \n
+      }
+
+      \n\n li {
+        \n margin-bottom: 6px;
+        \n color: var(--text);
+        \n font-size: 14px;
+        \n
+      }
+
+      \n\n
+
+      /* Skills grid */
+      \n .skills {
+        \n display: grid;
+        \n grid-template-columns: repeat(2, 1fr);
+        \n gap: 10px 24px;
+        \n align-items: start;
+        \n
+      }
+
+      \n\n .skill-group {
+        \n font-size: 14px;
+        \n
+      }
+
+      \n\n .skill-list {
+        \n margin: 8px 0 0 18px;
+        \n padding: 0;
+        \n list-style: disc;
+        \n color: var(--text);
+        \n
+      }
+
+      \n\n
+
+      /* Certifications & Education */
+      \n .cert-list,
+      .edu-list {
+        \n list-style: none;
+        \n padding: 0;
+        \n margin: 8px 0 0 0;
+        \n
+      }
+
+      \n\n .cert-list li,
+      .edu-list li {
+        \n margin-bottom: 8px;
+        \n color: var(--text);
+        \n font-size: 14px;
+        \n
+      }
+
+      \n\n .muted {
+        \n color: var(--muted);
+        \n font-size: 13px;
+        \n
+      }
+
+      \n\n
+
+      /* Responsive */
+      \n @media (max-width:640px) {
+        \n .skills {
+          \n grid-template-columns: 1fr;
+          \n
+        }
+
+        \n .page {
+          \n margin: 12px;
+          \n padding: 18px;
+          \n
+        }
+
+        \n h1 {
+          font-size: 20px;
+        }
+
+        \n
+      }
+
+      \n\n
+
+      /* Print */
+      \n @media print {
+        \n :root {
+          --accent: #000000;
+        }
+
+        \n body {
+          \n background: white;
+          \n color: #000;
+          \n
+        }
+
+        \n .page {
+          \n box-shadow: none;
+          \n border-radius: 0;
+          \n margin: 0;
+          \n padding: 12mm;
+          \n max-width: 100%;
+          \n
+        }
+
+        \n a::after {
+          content: \" (\" attr(href) \")\";
+        }
+
+        \n header {
+          border-bottom: 1px solid #ddd;
+        }
+
+        \n .skills {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        \n h1 {
+          font-size: 18px;
+        }
+
+        \n h2 {
+          font-size: 13px;
+        }
+
+        \n li {
+          font-size: 12.5px;
+        }
+
+        \n .muted {
+          font-size: 12px;
+        }
+
+        \n
+
+        /* avoid page breaks inside items */
+        \n .item,
+        .skill-group,
+        section {
+          page-break-inside: avoid;
+        }
+
+        \n
+      }
+
+      \n
+    </style>\n
+  </head>\n <body>\n <main class=\"page\" role=\"main\">\n <header>\n <div class=\"name-row\">\n <div>\n <h1>Gourav Jain</h1>\n <div class=\"sub\">AI & Automation Engineer — Target Role: AI & Automation Engineer</div>\n </div>\n <div class=\"meta\" style=\"text-align:right;\">\n <div class=\"sub\">Total Experience: 3+ years</div>\n <div class=\"muted\">Location: Indore, India</div>\n </div>\n </div>\n\n <div class=\"contact\" aria-label=\"Contact information\">\n <div>Email: <a href=\"mailto:gouravj62@gmail.com\">gouravj62@gmail.com</a>
+          </div>\n <div>Phone: <a href=\"tel:+917757822469\">+91 77578 22469</a>
+          </div>\n <div>LinkedIn: <a href=\"https://www.linkedin.com/in/gouravjain17/\" target=\"_blank\" rel=\"noopener\">linkedin.com/in/gouravjain17</a>
+          </div>\n </div>\n </header>\n\n <section aria-labelledby=\"summary\">\n <h2 id=\"summary\">Professional Summary</h2>\n <p class=\"summary\">\n AI & Automation Engineer with 3+ years of experience designing low-code/no-code workflows across sales, marketing, and operations. Skilled in Zapier, Make, n8n, Salesforce Flows, and AI-powered integrations using OpenAI and APIs. Focused on building scalable automation systems that reduce manual work and improve operational efficiency.\n </p>\n </section>\n\n <section aria-labelledby=\"experience\">\n <h2 id=\"experience\">Work Experience</h2>\n\n <article class=\"item\">\n <div class=\"item-header\">\n <div>\n <div class=\"role\">AI & Automation Engineer</div>\n <div class=\"org\">UAbility Pvt. Ltd. — Gurgaon, Haryana</div>\n </div>\n <div class=\"dates\">Jan 2025 – Jan 2026</div>\n </div>\n <ul>\n <li>Designed and owned end-to-end no-code and low-code workflows using Make, Zapier, and n8n for sales, marketing, and operations.</li>\n <li>Built API-driven integrations and AI-assisted logic to automate CRM and booking workflows.</li>\n <li>Implemented automated document and post-call workflows using OpenAI for summarization and structured extraction.</li>\n <li class=\"muted\">Achievement: Reduced manual booking operations by automating CRM data sync and AI-based document workflows.</li>\n </ul>\n </article>\n\n <article class=\"item\">\n <div class=\"item-header\">\n <div>\n <div class=\"role\">Salesforce Developer (Sales Cloud & Marketing Cloud)</div>\n <div class=\"org\">Gruslabs Software Solutions Pvt. Ltd. — Indore, Madhya Pradesh</div>\n </div>\n <div class=\"dates\">Jan 2023 – Jan 2025</div>\n </div>\n <ul>\n <li>Implemented Sales Cloud and Marketing Cloud solutions, created Flows, Journey Builder automations, and CRM configurations.</li>\n <li>Built campaign automations and lead handling processes to improve conversion and routing.</li>\n <li>Worked on integrations and automation concepts that enabled transition to automation-focused engineering.</li>\n <li class=\"muted\">Achievement: Improved lead handling efficiency and automated campaign workflows.</li>\n </ul>\n </article>\n\n </section>\n\n <section aria-labelledby=\"projects\">\n <h2 id=\"projects\">Key Projects</h2>\n\n <article class=\"item\">\n <div class=\"item-header\">\n <div>\n <div class=\"role\">Post-call documentation automation</div>\n <div class=\"org\">Insuretexas Insurance Company</div>\n </div>\n <div class=\"dates\">Zapier, Dialpad, OpenAI, PDF.co</div>\n </div>\n <ul>\n <li>Triggered workflows on call completion to summarize and extract structured data from transcripts using OpenAI.</li>\n <li>Populated non-editable multi-page PDFs using coordinate-based filling and generated final documents programmatically, eliminating manual post-call entry.</li>\n </ul>\n </article>\n\n <article class=\"item\">\n <div class=\"item-header\">\n <div>\n <div class=\"role\">AI-driven RFQ pricing system</div>\n <div class=\"org\">Custom — FastAPI + LangChain</div>\n </div>\n <div class=\"dates\">FastAPI, LangChain, FAISS, Python, Docker</div>\n </div>\n <ul>\n <li>Built event-driven RFQ automation with Zapier and a FastAPI microservice to calculate pricing, enforce margin logic, and generate quotations.</li>\n <li>Implemented RAG knowledge retrieval with LangChain and FAISS for product/policy queries and exposed APIs with OpenAPI/Swagger UI for integrations.</li>\n </ul>\n </article>\n\n <article class=\"item\">\n <div class=\"item-header\">\n <div>\n <div class=\"role\">Lead nurturing automation (SMS & Email)</div>\n <div class=\"org\">IntegFunding</div>\n </div>\n <div class=\"dates\">Zoho CRM, Twilio, Zoho Campaigns</div>\n </div>\n <ul>\n <li>Architected event-driven SMS/email campaigns and a 7-day SMS drip with engagement-based branching to improve onboarding and handoffs.</li>\n </ul>\n </article>\n\n <article class=\"item\">\n <div class=\"item-header\">\n <div>\n <div class=\"role\">Booking to CRM automation</div>\n <div class=\"org\">Mortgage Guys</div>\n </div>\n <div class=\"dates\">Make.com, GoHighLevel (GHL), Calendly</div>\n </div>\n <ul>\n <li>Automated Calendly bookings into GoHighLevel via Make.com and HTTP APIs, syncing contact and booking details and enabling automated follow-ups.</li>\n </ul>\n </article>\n\n </section>\n\n <section aria-labelledby=\"skills\">\n <h2 id=\"skills\">Skills & Technologies</h2>\n <div class=\"skills\">\n <div class=\"skill-group\">\n <strong>Automation Platforms</strong>\n <ul class=\"skill-list\">\n <li>Zapier, Make.com, n8n, Pabbly Connect</li>\n <li>Salesforce Flows, GoHighLevel (GHL), Zoho CRM, HubSpot CRM</li>\n </ul>\n </div>\n\n <div class=\"skill-group\">\n <strong>AI, APIs & Integrations</strong>\n <ul class=\"skill-list\">\n <li>OpenAI (ChatGPT, GPT-4o), Google Gemini, LangChain, RAG (FAISS)</li>\n <li>REST APIs, Webhooks, OAuth 2.0, Postman, FastAPI</li>\n </ul>\n </div>\n\n <div class=\"skill-group\">\n <strong>Engineering & Dev Tools</strong>\n <ul class=\"skill-list\">\n <li>Python, JavaScript, SQL, HTML/CSS, Docker</li>\n <li>Swagger/OpenAPI, GitHub, Postman</li>\n </ul>\n </div>\n\n <div class=\"skill-group\">\n <strong>Data & Productivity</strong>\n <ul class=\"skill-list\">\n <li>Airtable, Google Sheets, Firebase, Supabase</li>\n <li>Twilio, Calendly, Notion, Jira, ClickUp</li>\n </ul>\n </div>\n </div>\n </section>\n\n <section aria-labelledby=\"certifications\">\n <h2 id=\"certifications\">Certifications</h2>\n <ul class=\"cert-list\">\n <li>Salesforce Certified Administrator — Credential ID: 21561516</li>\n <li>Salesforce Certified Platform Developer I — Credential ID: 2774852</li>\n <li>Salesforce Certified Agentforce Specialist — Credential ID: 6942997</li>\n <li>Prompt Engineering Certification — Credential ID: ORN2026QWDTIXVP1U</li>\n </ul>\n </section>\n\n <section aria-labelledby=\"education\">\n <h2 id=\"education\">Education</h2>\n <ul class=\"edu-list\">\n <li>\n <strong>B. Tech — Computer Science</strong>
+            <br />\n G. H. Raisoni College of Engineering and Management, Pune — 2020\n
+          </li>\n </ul>\n </section>\n\n <footer style=\"border-top:1px solid #eef2f6;padding-top:12px;color:var(--muted);font-size:13px;\">\n <div>Resume generated for: AI & Automation Engineer role — Gourav Jain</div>\n <div style=\"margin-top:6px;\">Available on GitHub Pages friendly layout — printable and single-column.</div>\n </footer>\n </main>\n </body>\n </html>
