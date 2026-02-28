@@ -1,13 +1,208 @@
 <!DOCTYPE html>\n <html lang=\"en\">\n <head>\n
-    <meta charset=\"utf-8\">\n <title>Gourav Jain - Resume</title>\n
-  </head>\n <body>\n <h1>Gourav Jain</h1>\n\n <p>gouravj62@gmail.com | 7757822469 | Indore, India</p>\n\n <h2>Professional Summary</h2>\n <p>AI & Automation Engineer with 3 years of experience designing low-code/no-code and API-driven automation for sales, marketing, and operations. Expert in Zapier, Make, n8n, Salesforce Flows, GoHighLevel and AI integrations using OpenAI (GPT-4o), LangChain and FastAPI. Builds scalable automation systems and RAG-enabled solutions that eliminate manual data entry, streamline lead nurturing, and improve CRM accuracy and campaign delivery.</p>\n\n <h2>Skills / Tools & Technologies</h2>\n <ul>\n <li>Automation Platforms: Zapier, Make.com, n8n, Salesforce Flows, GoHighLevel (GHL), Pabbly Connect</li>\n <li>CRM & Marketing Automation: Salesforce (Sales Cloud, Marketing Cloud), Zoho CRM, HubSpot CRM, Zoho Campaigns</li>\n <li>AI & LLMs: OpenAI (ChatGPT, GPT-4o), Google Gemini, LangChain, FAISS, Prompt Engineering</li>\n <li>APIs & Backend: FastAPI, REST APIs, Webhooks, OAuth2, Swagger/OpenAPI, Postman, Docker</li>\n <li>Programming & Scripting: Python, JavaScript, SQL, HTML/CSS</li>\n <li>Integrations & Tools: Twilio, Calendly, Airtable, Google Sheets, WooCommerce, PDF.co</li>\n </ul>\n\n <h2>Work Experience / Projects</h2>\n\n <p>AI & Automation Engineer — UAbility Pvt. Ltd., Gurgaon, Haryana | Jan 2025 – Jan 2026</p>\n <ul>\n <li>Designed and delivered end-to-end no-code/low-code automation workflows across sales, marketing and operations using Make, Zapier and n8n; reduced manual booking tasks by automating CRM sync and document workflows.</li>\n <li>Built API-driven integrations and webhook pipelines to synchronize booking and contact data between Calendly, GoHighLevel and CRM systems; improved data consistency and reduced duplicate records.</li>\n <li>Implemented AI-assisted post-call documentation using OpenAI to summarize transcripts, extract structured entities, and populate PDF forms programmatically with PDF.co; eliminated manual post-call data entry.</li>\n <li>Developed error handling, conditional logic and retry patterns in automation flows to increase reliability and reduce manual intervention during peak load.</li>\n <li>Tools: Make.com, Zapier, n8n, OpenAI (ChatGPT/GPT-4o), PDF.co, GoHighLevel, Calendly, REST APIs, Webhooks.</li>\n </ul>\n\n <p>Salesforce Developer — Gruslabs Software Solutions Pvt. Ltd., Indore, MP | Jan 2023 – Jan 2025</p>\n <ul>\n <li>Implemented Sales Cloud and Marketing Cloud solutions including Flows, Process Builder replacements, Journey Builder automations and CRM configurations to streamline lead routing and campaign automation.</li>\n <li>Automated lead-to-opportunity processes and campaign data syncs to improve lead handling speed and campaign attribution for sales and marketing teams.</li>\n <li>Integrated external services with Salesforce using REST APIs, middleware and webhooks to enable automated data exchange and reduce manual data reconciliation.</li>\n <li>Created documentation and runbooks for deployable Flows, automation governance and error monitoring to ensure maintainability and compliance.</li>\n <li>Tools: Salesforce Sales Cloud, Marketing Cloud, Flows, Journey Builder, REST APIs, Postman, JavaScript, AMPscript.</li>\n </ul>\n\n <p>Selected Projects</p>\n <ul>\n <li>
-        <strong>Post-call Documentation Automation</strong> — Built Zapier workflow triggered by Dialpad call transcripts; used OpenAI to summarize calls and extract structured fields, then populated multi-page, non-editable PDF forms via PDF.co to remove manual form filling. Tools: Zapier, Dialpad, OpenAI, PDF.co.
-      </li>\n <li>
-        <strong>AI-driven RFQ Pricing System</strong> — Developed FastAPI microservice to compute deterministic pricing and margins; exposed OpenAPI docs and integrated with Zapier for event-driven RFQ ingestion; implemented RAG search with LangChain & FAISS to answer product policy queries. Tools: FastAPI, Python, LangChain, FAISS, Zapier, Docker.
-      </li>\n <li>
-        <strong>Lead Nurturing Automation</strong> — Architected Zoho CRM + Twilio SMS/email nurture flows with event-driven triggers, delayed drips and engagement branching; implemented lifecycle notifications for booked/missed appointments and deal-stage transitions. Tools: Zoho CRM, Twilio, Zoho Campaigns.
-      </li>\n <li>
-        <strong>Booking to CRM Automation</strong> — Automated Calendly → GoHighLevel booking sync using Make.com and HTTP APIs; mapped timezones, contact fields and pipeline updates to support sales follow-ups and automated SMS/email sequences. Tools: Make.com, GoHighLevel, Calendly, HTTP APIs.
-      </li>\n <li>
-        <strong>Medical Supply Order & Pricing Automation</strong> — Parsed unstructured order messages with n8n + OpenAI to map SKUs using historical Google Sheets references; implemented human-in-the-loop approvals and WooCommerce order sync via HTTP requests. Tools: n8n, OpenAI, Google Sheets, WooCommerce, Webhooks.
-      </li>\n </ul>\n\n <h2>Education & Certifications</h2>\n <ul>\n <li>B.Tech, Computer Science — G. H. Raisoni College of Engineering and Management, Pune (2020)</li>\n <li>Salesforce Certified Administrator (Credential ID: 21561516)</li>\n <li>Salesforce Certified Platform Developer I (Credential ID: 2774852)</li>\n <li>Salesforce Certified Agentforce Specialist (Credential ID: 6942997)</li>\n <li>Prompt Engineering Certification (Credential ID: ORN2026QWDTIXVP1U)</li>\n </ul>\n </body>\n </html>
+    <meta charset=\"utf-8\" />\n
+    <meta name=\"viewport\" content=\"width=device-width,initial-scale=1\" />\n <title>Gourav Jain — Resume</title>\n <style>
+      \n :root {
+        \n --accent: #1f4e79;
+        \n --text: #000000;
+        \n --secondary: #333333;
+        \n --divider: #1f4e79;
+        \n --font-family: Arial, Helvetica, sans-serif;
+        \n
+      }
+
+      \n html,
+      body {
+        \n margin: 0;
+        \n padding: 24px;
+        \n font-family: var(--font-family);
+        \n color: var(--text);
+        \n background: #ffffff;
+        \n
+      }
+
+      \n .container {
+        \n max-width: 800px;
+        \n margin: 0 auto;
+        \n
+      }
+
+      \n
+
+      /* Header */
+      \n .header {
+        \n text-align: center;
+        \n padding-bottom: 12px;
+        \n margin-bottom: 12px;
+        \n
+      }
+
+      \n .name {
+        \n font-size: 24px;
+        \n font-weight: 700;
+        \n color: var(--text);
+        \n margin: 0;
+        \n
+      }
+
+      \n .contact-line {
+        \n font-size: 13px;
+        \n color: var(--secondary);
+        \n margin-top: 8px;
+        \n
+      }
+
+      \n .linkedin {
+        \n font-size: 13px;
+        \n color: var(--secondary);
+        \n margin-top: 4px;
+        \n word-break: break-all;
+        \n
+      }
+
+      \n .divider {
+        \n border-bottom: 2px solid var(--divider);
+        \n margin-top: 14px;
+        \n margin-bottom: 18px;
+        \n
+      }
+
+      \n
+
+      /* Section heading */
+      \n .section {
+        \n margin-bottom: 14px;
+        \n
+      }
+
+      \n .section-heading {
+        \n color: var(--accent);
+        \n font-weight: 700;
+        \n text-transform: uppercase;
+        \n padding-bottom: 6px;
+        \n margin-bottom: 10px;
+        \n border-bottom: 2px solid var(--divider);
+        \n font-size: 13px;
+        \n
+      }
+
+      \n
+
+      /* Experience */
+      \n .job {
+        \n margin-bottom: 14px;
+        \n
+      }
+
+      \n .job-header {
+        \n font-weight: 700;
+        \n color: var(--text);
+        \n margin-bottom: 2px;
+        \n
+      }
+
+      \n .job-sub {
+        \n font-size: 13px;
+        \n color: var(--secondary);
+        \n font-style: italic;
+        \n margin-bottom: 8px;
+        \n
+      }
+
+      \n .bullets {
+        \n margin: 0 0 8px 18px;
+        \n
+      }
+
+      \n .bullets li {
+        \n margin-bottom: 6px;
+        \n color: var(--text);
+        \n font-size: 13px;
+        \n line-height: 1.25;
+        \n
+      }
+
+      \n
+
+      /* Projects */
+      \n .project {
+        \n margin-bottom: 12px;
+        \n
+      }
+
+      \n .project-title {
+        \n font-weight: 700;
+        \n color: var(--text);
+        \n margin-bottom: 4px;
+        \n
+      }
+
+      \n .project-tools {
+        \n font-size: 13px;
+        \n color: var(--secondary);
+        \n font-style: italic;
+        \n margin-bottom: 6px;
+        \n
+      }
+
+      \n
+
+      /* Skills */
+      \n .skills-list {
+        \n margin: 0 0 0 18px;
+        \n padding: 0;
+        \n list-style: none;
+        \n
+      }
+
+      \n .skills-list li {
+        \n margin-bottom: 6px;
+        \n font-size: 13px;
+        \n
+      }
+
+      \n
+
+      /* Certifications & Education */
+      \n .row {
+        \n display: flex;
+        \n justify-content: space-between;
+        \n align-items: flex-start;
+        \n font-size: 13px;
+        \n margin-bottom: 8px;
+        \n
+      }
+
+      \n .cert-name {
+        \n color: var(--text);
+        \n font-weight: 600;
+        \n
+      }
+
+      \n .cert-id {
+        \n color: var(--secondary);
+        \n margin-left: 12px;
+        \n
+      }
+
+      \n .edu-left {
+        \n font-weight: 600;
+        \n
+      }
+
+      \n .edu-right {
+        \n color: var(--secondary);
+        \n
+      }
+
+      \n
+
+      /* Footer spacing */
+      \n .small {
+        \n font-size: 12px;
+        \n color: var(--secondary);
+        \n
+      }
+
+      \n
+    </style>\n
+  </head>\n <body>\n <div class=\"container\">\n <header class=\"header\">\n <h1 class=\"name\">Gourav Jain</h1>\n <div class=\"contact-line\">gouravj62@gmail.com | 7757822469</div>\n <div class=\"linkedin\">https://www.linkedin.com/in/gouravjain17/</div>\n <div class=\"divider\" role=\"separator\" aria-hidden=\"true\"></div>\n </header>\n\n <section class=\"section\">\n <div class=\"section-heading\">Summary</div>\n <p class=\"small\" style=\"margin:0 0 12px 0;\">\n AI & Automation Engineer with 3 years building low-code/no-code workflows and API-driven integrations for sales, marketing, and operations. Experienced with Zapier, Make, n8n, Salesforce Flows, and AI integrations (OpenAI, LangChain) to automate CRM, booking, and post-call documentation workflows. Focused on scalable automation that reduces manual work and improves lead handling and operational throughput.\n </p>\n </section>\n\n <section class=\"section\">\n <div class=\"section-heading\">Experience</div>\n\n <div class=\"job\">\n <div class=\"job-header\">UAbility Pvt. Ltd. – AI & Automation Engineer</div>\n <div class=\"job-sub\">Jan 2025 – Jan 2026 | Gurgaon, Haryana</div>\n <ul class=\"bullets\">\n <li>Designed and owned end-to-end low-code/no-code automation workflows using Make, Zapier, and n8n to support CRM, booking, and operational processes.</li>\n <li>Built API-driven integrations and webhook orchestration to sync booking platforms with CRM, eliminating manual data entry and ensuring real-time contact and appointment accuracy.</li>\n <li>Developed AI-assisted post-call documentation using OpenAI to extract structured data from transcripts and auto-generate compliance-ready PDFs, reducing manual post-call effort and turnaround time.</li>\n <li>Implemented monitoring and error-handling patterns for automations to improve reliability and reduce manual intervention in business-critical workflows.</li>\n </ul>\n </div>\n\n <div class=\"job\">\n <div class=\"job-header\">Gruslabs Software Solutions Pvt. Ltd. – Salesforce Developer</div>\n <div class=\"job-sub\">Jan 2023 – Jan 2025 | Indore, Madhya Pradesh</div>\n <ul class=\"bullets\">\n <li>Delivered Sales Cloud and Marketing Cloud solutions including declarative Flows and Journey Builder automations to streamline lead-to-opportunity handoffs.</li>\n <li>Automated campaign workflows and lead assignment logic, improving lead processing consistency and accelerating sales follow-up.</li>\n <li>Integrated external systems with Salesforce via REST APIs and middleware to centralize customer data and reduce duplicate entry across platforms.</li>\n </ul>\n </div>\n </section>\n\n <section class=\"section\">\n <div class=\"section-heading\">Projects</div>\n\n <div class=\"project\">\n <div class=\"project-title\">InsureTexas — Purpose: Post-call Documentation Automation</div>\n <div class=\"project-tools\">Zapier, Dialpad, OpenAI, PDF.co</div>\n <ul class=\"bullets\">\n <li>Automated capture of call transcripts and used OpenAI to summarize and extract structured fields for claims and policy updates.</li>\n <li>Integrated PDF.co to programmatically fill multi-page, non-editable PDFs, enabling automated generation of finalized documents and eliminating manual form entry.</li>\n </ul>\n </div>\n\n <div class=\"project\">\n <div class=\"project-title\">MedOptimal — Purpose: Order & Pricing Automation</div>\n <div class=\"project-tools\">n8n, Google Sheets, WooCommerce, OpenAI</div>\n <ul class=\"bullets\">\n <li>Built AI-assisted order intake to parse unstructured email/WhatsApp orders into SKU-mapped line items using historical data in Google Sheets.</li>\n <li>Automated HTTP requests to sync WooCommerce orders to a centralized sheet and added human-in-the-loop approval gates for exceptions.</li>\n </ul>\n </div>\n\n <div class=\"project\">\n <div class=\"project-title\">IntegFunding — Purpose: Lead Nurturing & Outreach Automation</div>\n <div class=\"project-tools\">Zoho CRM, Zoho Campaigns, Twilio</div>\n <ul class=\"bullets\">\n <li>Architected event-driven SMS and email drips for warm leads with engagement-based branching, improving campaign relevance and follow-up consistency.</li>\n <li>Designed lifecycle notifications for booked/missed appointments and closed deals to streamline sales handoffs and decrease manual tracking.</li>\n </ul>\n </div>\n\n <div class=\"project\">\n <div class=\"project-title\">Mortgage Guys — Purpose: Booking to CRM Automation</div>\n <div class=\"project-tools\">Make.com, GoHighLevel (GHL), Calendly, HTTP APIs</div>\n <ul class=\"bullets\">\n <li>Automated Calendly booking ingestion into GoHighLevel via Make.com and HTTP APIs, mapping contact, timezone, and appointment details into GHL to ensure accurate scheduling and follow-ups.</li>\n <li>Established tag-based triggers for automated SMS/email follow-ups and pipeline updates to reduce manual post-booking tasks.</li>\n </ul>\n </div>\n\n <div class=\"project\">\n <div class=\"project-title\">AI-driven RFQ Pricing Platform — Purpose: RFQ Automation & Pricing</div>\n <div class=\"project-tools\">Zapier, FastAPI, LangChain, FAISS, Python, Docker</div>\n <ul class=\"bullets\">\n <li>Built an event-driven pipeline to convert unstructured RFQ emails into structured data and push to a FastAPI quotation microservice for deterministic pricing and margin enforcement.</li>\n <li>Exposed OpenAPI docs for easy integration, and implemented a RAG system using LangChain + FAISS to answer product/policy queries with source citations.</li>\n </ul>\n </div>\n </section>\n\n <section class=\"section\">\n <div class=\"section-heading\">Skills</div>\n <ul class=\"skills-list\">\n <li>- <strong>Low-Code / No-Code:</strong> Zapier, Make.com, n8n, Salesforce Flows, GoHighLevel, Pabbly Connect </li>\n <li>- <strong>CRM & Marketing Automation:</strong> Salesforce (Sales & Marketing Cloud), Zoho CRM, HubSpot, Zoho Campaigns, Mailchimp </li>\n <li>- <strong>AI & ML:</strong> OpenAI (ChatGPT, GPT-4o), Google Gemini, LangChain, FAISS, Prompt Engineering </li>\n <li>- <strong>Integrations & APIs:</strong> REST APIs, Webhooks, OAuth2, Postman, HTTP modules, API contract (OpenAPI/Swagger) </li>\n <li>- <strong>Programming & Data:</strong> Python, JavaScript, SQL, HTML/CSS, AMPscript </li>\n <li>- <strong>Tools & Infrastructure:</strong> FastAPI, Docker, GitHub, Postman, Notion, Calendly, Airtable, Google Sheets </li>\n </ul>\n </section>\n\n <section class=\"section\">\n <div class=\"section-heading\">Certifications</div>\n <div class=\"row\">\n <div class=\"cert-name\">Salesforce Certified Administrator</div>\n <div class=\"cert-id\">Credential ID: 21561516</div>\n </div>\n <div class=\"row\">\n <div class=\"cert-name\">Salesforce Certified Platform Developer I</div>\n <div class=\"cert-id\">Credential ID: 2774852</div>\n </div>\n <div class=\"row\">\n <div class=\"cert-name\">Salesforce Certified Agentforce Specialist</div>\n <div class=\"cert-id\">Credential ID: 6942997</div>\n </div>\n <div class=\"row\">\n <div class=\"cert-name\">Prompt Engineering</div>\n <div class=\"cert-id\">Credential ID: ORN2026QWDTIXVP1U</div>\n </div>\n </section>\n\n <section class=\"section\">\n <div class=\"section-heading\">Education</div>\n <div class=\"row\">\n <div class=\"edu-left\">B. Tech, Computer Science</div>\n <div class=\"edu-right\">G. H. Raisoni College of Engineering, Pune | 2020</div>\n </div>\n </section>\n\n </div>\n </body>\n </html>
